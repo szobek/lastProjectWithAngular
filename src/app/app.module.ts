@@ -11,6 +11,7 @@ import { BillingWrapperComponent } from './components/billing/wrapper/billing-wr
 import { StatisticsWrapperComponent } from './components/statistics/wrapper/statistics-wrapper.component';
 import { BillingModule } from './modules/billing/billing.module';
 import { StatisticsModule } from './modules/statistics/statistics.module';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { StatisticsModule } from './modules/statistics/statistics.module';
     BillingModule,
     StatisticsModule,
     AppRoutingModule,
+    NgbModule,
   ],
   providers: [],
   bootstrap: [MainContainerComponent]
