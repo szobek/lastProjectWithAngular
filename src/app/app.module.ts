@@ -7,6 +7,8 @@ import { NavComponent } from './components/nav/nav.component';
 import { HomeComponent } from './components/home/home.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { MainContainerComponent } from './components/main-container/main-container.component';
+import { BillingWrapperComponent } from './components/billing-wrapper/billing-wrapper.component';
+import { StatisticsWrapperComponent } from './components/statistics-wrapper/statistics-wrapper.component';
 
 @NgModule({
   declarations: [
@@ -14,13 +16,15 @@ import { MainContainerComponent } from './components/main-container/main-contain
     NavComponent,
     HomeComponent,
     NotFoundComponent,
-    MainContainerComponent
+    MainContainerComponent,
+    BillingWrapperComponent,
+    StatisticsWrapperComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [MainContainerComponent]
 })
 export class AppModule { }
