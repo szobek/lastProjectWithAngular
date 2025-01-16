@@ -1,0 +1,13 @@
+main{
+    display: flex;
+    flex-direction: row;
+    min-height: 600px;
+    aside{
+        background-color: aqua;
+        flex: 2;
+    }
+    #main-content{
+        background-color: blueviolet;
+        flex: 5;
+    }
+}
