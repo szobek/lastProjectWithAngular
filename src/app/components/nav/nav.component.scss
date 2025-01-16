@@ -1,0 +1,11 @@
+ul.nav{
+    list-style-type: none;
+    font-size: 20px;
+    li{
+        margin-bottom: 20px;
+        cursor: pointer;
+        &:hover{
+            color: #f00;
+        }
+    }
+}
