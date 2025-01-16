@@ -10,6 +10,7 @@ import { MainContainerComponent } from './components/main-container/main-contain
 import { BillingWrapperComponent } from './components/billing-wrapper/billing-wrapper.component';
 import { StatisticsWrapperComponent } from './components/statistics-wrapper/statistics-wrapper.component';
 import { BillingModule } from './modules/billing/billing.module';
+import { StatisticsModule } from './modules/statistics/statistics.module';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import { BillingModule } from './modules/billing/billing.module';
   imports: [
     BrowserModule,
     BillingModule,
+    StatisticsModule,
     AppRoutingModule,
   ],
   providers: [],

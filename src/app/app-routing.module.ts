@@ -7,7 +7,6 @@ import { StatisticsWrapperComponent } from './components/statistics-wrapper/stat
 const routes: Routes = [
   {path: '', redirectTo: '/home', pathMatch: 'full'},
   {path: 'home', component: HomeComponent},
-  {path: 'statistics', component: StatisticsWrapperComponent},
   {path: '**', component: NotFoundComponent,pathMatch: 'full'},
 ];
 
