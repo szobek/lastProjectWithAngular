@@ -1,13 +1,16 @@
 .card{
-    width: 45%;
-    min-width: 500px;
+    width: auto;
+    min-width:  33vw;
+    max-width: 55vw;
     border: 1px solid #9edb8f;
     height: 200px;
     border-radius: 20px;
+    margin-bottom: 25px;
     .head{
         text-align: center;
         padding: 15px 0;
         border-bottom: 1px solid #9edb8f;
-        color: antiquewhite;
+        color: rgb(121, 121, 121);
+        font-weight: 500;
     }
 }
