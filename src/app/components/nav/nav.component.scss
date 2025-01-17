@@ -1,11 +1,16 @@
 ul.nav{
     list-style-type: none;
     font-size: 20px;
+    flex-direction: column !important;
     li{
         margin-bottom: 20px;
         cursor: pointer;
         &:hover{
             color: #f00;
+        }
+        &.active-nav-item{
+            text-decoration: underline;
+            font-weight: 600;
         }
     }
 }
