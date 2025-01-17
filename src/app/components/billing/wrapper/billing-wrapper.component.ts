@@ -6,5 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./billing-wrapper.component.scss']
 })
 export class BillingWrapperComponent {
+  invoicePageNumber: number = 1
+  setPage(e: any) {
+    this.invoicePageNumber = e
 
+  }
 }

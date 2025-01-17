@@ -12,6 +12,8 @@ import { StatisticsWrapperComponent } from './components/statistics/wrapper/stat
 import { BillingModule } from './modules/billing/billing.module';
 import { StatisticsModule } from './modules/statistics/statistics.module';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { HttpClientModule } from '@angular/common/http';
+
 
 @NgModule({
   declarations: [
@@ -25,6 +27,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     BillingModule,
     StatisticsModule,
     AppRoutingModule,

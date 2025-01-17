@@ -7,6 +7,7 @@ import { HeaderComponent } from 'src/app/components/billing/header/header.compon
 import { SetupCardComponent } from 'src/app/components/billing/setup-card/setup-card.component';
 import { SetupCardWrapperComponent } from 'src/app/components/billing/setup-card-wrapper/setup-card-wrapper.component';
 import { InvoiceListComponent } from 'src/app/components/billing/invoice-list/invoice-list.component';
+import { InvoicePaginatorComponent } from 'src/app/components/billing/invoice-paginator/invoice-paginator.component';
 const routes:Routes = [
   {path: 'billing', component: BillingWrapperComponent},
 ];
@@ -16,7 +17,8 @@ const routes:Routes = [
     HeaderComponent,
     SetupCardComponent,
     SetupCardWrapperComponent,
-    InvoiceListComponent
+    InvoiceListComponent,
+    InvoicePaginatorComponent
   ],
   imports: [
     CommonModule,
@@ -27,6 +29,8 @@ const routes:Routes = [
     HeaderComponent,
     SetupCardComponent,
     SetupCardWrapperComponent,
-    InvoiceListComponent]
+    InvoiceListComponent,
+    InvoicePaginatorComponent
+  ]
 })
 export class BillingModule { }

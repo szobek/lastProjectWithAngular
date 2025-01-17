@@ -1,19 +1,18 @@
-<p>invoice-list works!</p>
 <table class="table table-striped">
 	<thead>
 		<tr>
-			<th scope="col">#</th>
-			<th scope="col">Country</th>
-			<th scope="col">Area</th>
-			<th scope="col">Population</th>
+			<th >#</th>
+			<th >Title</th>
+			<th >Paid</th>
+			<th >User ID</th>
 		</tr>
 	</thead>
 	<tbody>
-	<tr>
-        <td>2</td>
-        <td>Germany</td>
-        <td>200.000</td>
-        <td>15.000.000</td>
-    </tr>
+		<tr *ngFor="let invoice of invoices; let i = index">
+			<td>{{invoice.id}}</td>
+			<td>{{invoice.title}}</td>
+			<td>{{(invoice.completed)?"paided":"not paided"}}</td>
+			<td>{{invoice.userId}}</td>
+		</tr>
 	</tbody>
 </table>

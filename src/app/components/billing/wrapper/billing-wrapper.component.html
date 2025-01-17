@@ -1,3 +1,4 @@
 <billing-header />
 <billing-setup-card-wrapper />
-<billing-invoice-list />
+<billing-invoice-list [page]=invoicePageNumber />
+<billing-invoice-paginator (pageNumber)="setPage($event)" />
