@@ -3,6 +3,8 @@ import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { CallService } from 'src/app/services/call.service';
 import { EditAddressComponent } from '../modal/edit-address/edit-address.component';
 import { Router } from '@angular/router';
+import { User } from 'src/app/models/User';
+import { Voluntary } from 'src/app/models/Voluntary';
 
 @Component({
   selector: 'billing-setup-card',
@@ -14,23 +16,27 @@ export class SetupCardComponent {
   @Input() cardDescription: string = '';
 
   private modalService = inject(NgbModal);
-  userData: any
+  userData: User|null=null
+  selectedVoluntary:Voluntary|null=null
   constructor(private callService: CallService, private router: Router) {
-    this.callService.userData.subscribe({
-      next: (data: any) => {
+    this.callService.$userData.subscribe({
+      next: (data: User|null) => {
         if (data != null) {
           this.userData = data
           this.userData.formatAddressString=this.formatAddressString()
           this.handleType()
           this.formatAddressString()
+          
         }
       }
     })
   }
 
   formatAddressString(){
-    const address=this.userData["address"]
-    return `${address["street"]}, ${address["suite"]}`
+    if(this.userData!=null){
+      const address=this.userData["address"]
+      return `${address["street"]}, ${address["suite"]}`
+    }else return ""
   }
 
   handleClickOnEditAddressButton() {
@@ -49,15 +55,24 @@ export class SetupCardComponent {
   handleType() {
     switch (this.cardTitle) {
       case 'Address':
-        this.cardDescription = `<ul> <li>Zip: ${this.userData["address"]["zipcode"]}</li> <li>City: ${this.userData["address"]["city"]}</li> <li>Address: ${this.userData.formatAddressString}</li> </ul>`;
+        this.cardDescription =(this.userData!=null)? `<ul> <li>Zip: ${this.userData.address.zipcode}</li> <li>City: ${this.userData.address.city}</li> <li>Address: ${this.userData.formatAddressString}</li> </ul>`:"aaa";
         break;
       case 'voluntary':
-        this.cardDescription = `<ul> <li>voluntary</li> <li>voluntary</li> <li>voluntary</li> </ul>`;
+        this.cardDescription = (this.userData!=null&&this.userData.voluntary!=undefined)? `<div class="card" style="width: 100%;">
+    <div class="card-body">
+      <h5 class="card-title">${this.userData.voluntary.title}</h5>
+      <h6 class="card-subtitle mb-2 text-muted">${this.userData.voluntary.subtitle}</h6>
+      <p class="card-text">${this.userData.voluntary.description}</p>
+    </div>
+  </div>`:"";
         break;
       case 'Subscription':
         this.cardDescription = `<ul> <li>Subscription</li> <li>Subscription</li> <li>Subscription</li> </ul>`;
         break;
       default:
     }
+  }
+  ngOnChanges(){
+    this.handleType()
   }
 }

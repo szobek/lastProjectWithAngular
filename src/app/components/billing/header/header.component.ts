@@ -15,7 +15,7 @@ export class HeaderComponent {
   userData: User | null = null
   balance: string = ""
   constructor() {
-    this.callService.userData.subscribe({
+    this.callService.$userData.subscribe({
       next: (data: User | null) => {
         if (data != null) {
           this.userData = data

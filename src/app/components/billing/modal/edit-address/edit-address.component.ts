@@ -19,7 +19,7 @@ export class EditAddressComponent {
   formBuilder=inject(FormBuilder)
   userdata: User | null = null;
   constructor() {
-    this.callService.userData.subscribe({
+    this.callService.$userData.subscribe({
       next: (data: User|null) => {
         if (data != null) {
 
@@ -38,7 +38,7 @@ export class EditAddressComponent {
     if(this.userdata!=null){
       this.userdata.address.zipcode=this.addressForm.get("zip")?.value
       this.userdata.address.city=this.addressForm.get("city")?.value
-      this.callService.userData.next(this.userdata)
+      this.callService.$userData.next(this.userdata)
       this.activeModal.close()
     }
   }

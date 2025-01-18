@@ -14,7 +14,7 @@ export class BalanceExchangeContentComponent {
   callService = inject(CallService);
   userData: User | null = null
   constructor() {
-    this.callService.userData.subscribe({
+    this.callService.$userData.subscribe({
       next: (data: User | null) => {
         if (data != null) {
           this.userData = data
@@ -28,7 +28,7 @@ export class BalanceExchangeContentComponent {
       next: _ => console.log("vége van"),
       error: e => console.error(e),
       complete: () => {
-        this.callService.userData.next(this.userData)
+        this.callService.$userData.next(this.userData)
         this.activeModal.close()
       }
     })
@@ -40,7 +40,7 @@ export class BalanceExchangeContentComponent {
       next: _ => console.log("vége van"),
       error: e => console.error(e),
       complete: () => {
-        this.callService.userData.next(this.userData)
+        this.callService.$userData.next(this.userData)
         this.activeModal.close()
       }
     })

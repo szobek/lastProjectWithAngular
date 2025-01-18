@@ -1,7 +1,9 @@
+import { Voluntary } from "./Voluntary"
+
 export class User {
     email: string
     id: number
-    formattedString?: string
+    formatAddressString?: string
     name: string
     phone: string
     username: string
@@ -21,6 +23,7 @@ export class User {
         name: string
         catchPhrase: string
     }
+    voluntary?:Voluntary
 
     constructor(
         email: string,
