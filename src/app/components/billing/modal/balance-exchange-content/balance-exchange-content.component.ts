@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, inject } from '@angular/core';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
+import { User } from 'src/app/models/User';
 import { CallService } from 'src/app/services/call.service';
 
 @Component({
@@ -11,26 +12,36 @@ import { CallService } from 'src/app/services/call.service';
 export class BalanceExchangeContentComponent {
   activeModal = inject(NgbActiveModal);
   callService = inject(CallService);
-
-  constructor(private http: HttpClient) { }
-  handleAddTokenToWallet() {
-    this.callService.handleCallBackendToTokenAddToWallet().subscribe({
-      next: _ => console.log("vége van"),
-      error:e=>console.error(e),
-      complete:()=>{
-        console.info("complete call")
-      this.activeModal.close()
+  userData: User | null = null
+  constructor() {
+    this.callService.userData.subscribe({
+      next: (data: User | null) => {
+        if (data != null) {
+          this.userData = data
+        }
       }
     })
   }
-  
-  handleAddTokenToBilling() { 
+  handleAddTokenToWallet() {
+    if (this.userData != null) this.userData.phone = "000000001500"; //small hack because i used substring
     this.callService.handleCallBackendToTokenAddToWallet().subscribe({
       next: _ => console.log("vége van"),
-      error:e=>console.error(e),
-      complete:()=>{
-        console.info("complete call")
-      this.activeModal.close()
+      error: e => console.error(e),
+      complete: () => {
+        this.callService.userData.next(this.userData)
+        this.activeModal.close()
+      }
+    })
+  }
+
+  handleAddTokenToBilling() {
+    if (this.userData != null) this.userData.phone = "00000000100";
+    this.callService.handleCallBackendToTokenAddToWallet().subscribe({
+      next: _ => console.log("vége van"),
+      error: e => console.error(e),
+      complete: () => {
+        this.callService.userData.next(this.userData)
+        this.activeModal.close()
       }
     })
   }
