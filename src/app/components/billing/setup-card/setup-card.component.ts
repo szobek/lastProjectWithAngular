@@ -39,10 +39,10 @@ export class SetupCardComponent {
         this.modalService.open(EditAddressComponent);
         break
       case "voluntary":
-        this.router.navigateByUrl("voluntaries")
+        this.router.navigateByUrl("billing/voluntaries")
         break
       case "Subscription":
-        this.router.navigateByUrl("subscriptions")
+        this.router.navigateByUrl("billing/subscriptions")
     }
   }
 

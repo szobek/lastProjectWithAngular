@@ -10,8 +10,12 @@ import { InvoiceListComponent } from 'src/app/components/billing/invoice-list/in
 import { InvoicePaginatorComponent } from 'src/app/components/billing/invoice-paginator/invoice-paginator.component';
 import { EditAddressComponent } from 'src/app/components/billing/modal/edit-address/edit-address.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { VoluntariesComponent } from 'src/app/components/billing/setup/voluntaries/voluntaries.component';
+import { SubscriptionsComponent } from 'src/app/components/billing/setup/subscriptions/subscriptions.component';
 const routes:Routes = [
   {path: 'billing', component: BillingWrapperComponent},
+  {path: 'billing/voluntaries', component: VoluntariesComponent},
+  {path: 'billing/subscriptions', component: SubscriptionsComponent},
 ];
 
 @NgModule({
@@ -21,13 +25,15 @@ const routes:Routes = [
     SetupCardWrapperComponent,
     InvoiceListComponent,
     InvoicePaginatorComponent,
-    EditAddressComponent
+    EditAddressComponent,
+    VoluntariesComponent,
+    SubscriptionsComponent
   ],
   imports: [
     RouterModule.forRoot(routes),
     CommonModule,
     SharedModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
   ],
   exports: [
     HeaderComponent,
@@ -35,7 +41,9 @@ const routes:Routes = [
     SetupCardWrapperComponent,
     InvoiceListComponent,
     InvoicePaginatorComponent,
-    EditAddressComponent
+    EditAddressComponent,
+    VoluntariesComponent,
+    SubscriptionsComponent
   ]
 })
 export class BillingModule { }
