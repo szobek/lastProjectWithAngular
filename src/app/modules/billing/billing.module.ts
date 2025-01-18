@@ -18,7 +18,7 @@ const routes:Routes = [
     SetupCardComponent,
     SetupCardWrapperComponent,
     InvoiceListComponent,
-    InvoicePaginatorComponent
+    InvoicePaginatorComponent,
   ],
   imports: [
     CommonModule,

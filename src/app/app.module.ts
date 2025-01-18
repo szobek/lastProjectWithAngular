@@ -14,6 +14,7 @@ import { StatisticsModule } from './modules/statistics/statistics.module';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { HttpClientModule } from '@angular/common/http';
 import { BalanceExchangeContentComponent } from './components/billing/modal/balance-exchange-content/balance-exchange-content.component';
+import { EditAddressComponent } from './components/billing/modal/edit-address/edit-address.component';
 
 
 @NgModule({
@@ -26,6 +27,7 @@ import { BalanceExchangeContentComponent } from './components/billing/modal/bala
     BillingWrapperComponent,
     StatisticsWrapperComponent,
     BalanceExchangeContentComponent,
+    EditAddressComponent,
   ],
   imports: [
     BrowserModule,

@@ -3,7 +3,10 @@
     <button type="button" class="btn-close" aria-label="Close" (click)="activeModal.dismiss('Cross click')"></button>
 </div>
 <div class="modal-body">
-    <p>options</p>
+    <ul class="token-exchange">
+        <li (click)="handleAddTokenToWallet()">Add to wallet</li>
+        <li  (click)="handleAddTokenToBilling()">Use in billing</li>
+    </ul>
 </div>
 <div class="modal-footer">
     <button type="button" class="btn btn-outline-secondary" (click)="activeModal.close('Close click')">Close</button>
