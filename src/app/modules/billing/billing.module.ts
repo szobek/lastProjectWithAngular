@@ -8,6 +8,8 @@ import { SetupCardComponent } from 'src/app/components/billing/setup-card/setup-
 import { SetupCardWrapperComponent } from 'src/app/components/billing/setup-card-wrapper/setup-card-wrapper.component';
 import { InvoiceListComponent } from 'src/app/components/billing/invoice-list/invoice-list.component';
 import { InvoicePaginatorComponent } from 'src/app/components/billing/invoice-paginator/invoice-paginator.component';
+import { EditAddressComponent } from 'src/app/components/billing/modal/edit-address/edit-address.component';
+import { ReactiveFormsModule } from '@angular/forms';
 const routes:Routes = [
   {path: 'billing', component: BillingWrapperComponent},
 ];
@@ -19,18 +21,21 @@ const routes:Routes = [
     SetupCardWrapperComponent,
     InvoiceListComponent,
     InvoicePaginatorComponent,
+    EditAddressComponent
   ],
   imports: [
+    RouterModule.forRoot(routes),
     CommonModule,
     SharedModule,
-    RouterModule.forRoot(routes)
+    ReactiveFormsModule
   ],
   exports: [
     HeaderComponent,
     SetupCardComponent,
     SetupCardWrapperComponent,
     InvoiceListComponent,
-    InvoicePaginatorComponent
+    InvoicePaginatorComponent,
+    EditAddressComponent
   ]
 })
 export class BillingModule { }

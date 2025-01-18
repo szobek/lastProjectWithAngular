@@ -1,19 +1,29 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { settings } from '../settings';
+import { BehaviorSubject } from 'rxjs';
+import { User } from '../models/User';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CallService {
-
-  constructor(private http:HttpClient) { }
+  userData:BehaviorSubject<User |null> = new BehaviorSubject<User | null>(null)
+  constructor(private http:HttpClient) {
+    this.getUserDataFromDB()
+   }
+  getUserDataFromDB(){
+    this.http.get<User>(`${settings.BASE_URL}/users/7`).subscribe({
+      next:(data:User)=>{
+        this.userData.next(data)
+      }
+    })
+  }
 
   handleCallBackendToTokenAddToWallet(){
-    this.http.post(`${settings.BASE_URL}/posts`, {}).subscribe({
-      next: _ => console.log("vége van"),
-      error:e=>console.error(e),
-      complete:()=>console.info("complete call")
-    })
+    return this.http.post(`${settings.BASE_URL}/posts`, {})
+  }
+  handleCallBackendToEditAddress(){
+    return this.http.post(`${settings.BASE_URL}/users/7`, {})
   }
 }
