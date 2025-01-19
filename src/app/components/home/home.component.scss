@@ -1,0 +1,20 @@
+$row-base-bg: #33aa92;
+
+.container {
+    &.main {
+        display: flex;
+        flex-wrap: wrap;
+        align-content: center;
+        justify-content: center;
+        height: 100%;
+    }
+
+    .row {
+        background-color: $row-base-bg;
+
+        &.lightblue {
+            background-color: lightblue;
+            color: #726262;
+        }
+    }
+}
