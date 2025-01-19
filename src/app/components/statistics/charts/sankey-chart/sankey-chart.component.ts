@@ -16,10 +16,10 @@ export class SankeyChartComponent {
       {
         type: 'sankey',
         data: [
-          { from: 'A', to: 'X', weight: 2 },
-          { from: 'A', to: 'Y', weight: 2 },
-          { from: 'B', to: 'X', weight: 2 },
-          { from: 'B', to: 'Y', weight: 2 },
+          { from: 'User', to: 'X', weight: 2 },
+          { from: 'User', to: 'Y', weight: 2 },
+          { from: 'Developer', to: 'X', weight: 2 },
+          { from: 'Developer', to: 'Y', weight: 2 },
         ],
       },
     ],
