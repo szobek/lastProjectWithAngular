@@ -14,9 +14,7 @@ import { StatisticsModule } from './modules/statistics/statistics.module';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { HttpClientModule } from '@angular/common/http';
 import { BalanceExchangeContentComponent } from './components/billing/modal/balance-exchange-content/balance-exchange-content.component';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-
-
+import { HighchartsChartModule } from 'highcharts-angular';
 
 @NgModule({
   declarations: [
@@ -32,12 +30,11 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
   imports: [
     BrowserModule,
     HttpClientModule,
-    FormsModule,
-    ReactiveFormsModule,
     BillingModule,
     StatisticsModule,
     AppRoutingModule,
     NgbModule,
+    HighchartsChartModule
   ],
   providers: [],
   bootstrap: [MainContainerComponent]

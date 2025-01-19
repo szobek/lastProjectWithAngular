@@ -4,8 +4,9 @@ import { StatisticsWrapperComponent } from 'src/app/components/statistics/wrappe
 import { RouterModule, Routes } from '@angular/router';
 import { HeaderComponent } from 'src/app/components/statistics/header/header.component';
 import { ChartWrapperComponent } from 'src/app/components/statistics/chart-wrapper/chart-wrapper.component';
-import { LinearChartComponent } from 'src/app/components/statistics/linear-chart/linear-chart.component';
+import { LinearChartComponent } from 'src/app/components/statistics/charts/linear-chart/linear-chart.component';
 import { HighchartsChartModule } from 'highcharts-angular';
+import { BarChartComponent } from 'src/app/components/statistics/charts/bar-chart/bar-chart.component';
 const routes:Routes = [
   {path: 'statistics', component: StatisticsWrapperComponent},
 ];
@@ -15,17 +16,21 @@ const routes:Routes = [
   declarations: [
     HeaderComponent,
     ChartWrapperComponent,
-    LinearChartComponent
+    LinearChartComponent,
+    BarChartComponent
   ],
   imports: [
     CommonModule,
+    HighchartsChartModule,
     RouterModule.forRoot(routes),
-    HighchartsChartModule  
+
   ],
   exports: [  
     HeaderComponent,
     ChartWrapperComponent,
-    LinearChartComponent
+    LinearChartComponent,
+    HighchartsChartModule, 
+    BarChartComponent
   ]
 })
 export class StatisticsModule { }
