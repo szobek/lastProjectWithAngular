@@ -27,7 +27,7 @@
     "@ng-bootstrap/ng-bootstrap": "^15.1.2",
     "@popperjs/core": "^2.11.6",
     "bootstrap": "^5.2.3",
-    "highcharts": "^12.1.2",
+    "highcharts": "^11.4.8",
     "highcharts-angular": "^4.0.1",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",

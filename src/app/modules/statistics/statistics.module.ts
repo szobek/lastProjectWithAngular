@@ -7,6 +7,9 @@ import { ChartWrapperComponent } from 'src/app/components/statistics/chart-wrapp
 import { LinearChartComponent } from 'src/app/components/statistics/charts/linear-chart/linear-chart.component';
 import { HighchartsChartModule } from 'highcharts-angular';
 import { BarChartComponent } from 'src/app/components/statistics/charts/bar-chart/bar-chart.component';
+import { SankeyChartComponent } from 'src/app/components/statistics/charts/sankey-chart/sankey-chart.component';
+
+
 const routes:Routes = [
   {path: 'statistics', component: StatisticsWrapperComponent},
 ];
@@ -17,20 +20,21 @@ const routes:Routes = [
     HeaderComponent,
     ChartWrapperComponent,
     LinearChartComponent,
-    BarChartComponent
+    BarChartComponent,
+    SankeyChartComponent
   ],
   imports: [
     CommonModule,
     HighchartsChartModule,
     RouterModule.forRoot(routes),
-
+    
   ],
   exports: [  
     HeaderComponent,
     ChartWrapperComponent,
     LinearChartComponent,
-    HighchartsChartModule, 
-    BarChartComponent
+    BarChartComponent,
+    SankeyChartComponent
   ]
 })
 export class StatisticsModule { }
