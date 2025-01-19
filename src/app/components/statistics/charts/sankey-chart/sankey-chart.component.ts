@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import * as Highcharts from 'highcharts';
 import HC_Sankey from 'highcharts/modules/sankey';
 HC_Sankey(Highcharts);
@@ -10,7 +10,7 @@ HC_Sankey(Highcharts);
 })
 export class SankeyChartComponent {
   Highcharts: typeof Highcharts = Highcharts;
-
+  @Input() preview: boolean = false
   chartOptions: Highcharts.Options = {
     series: [
       {

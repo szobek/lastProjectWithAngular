@@ -1,34 +1,34 @@
 <div class="chart-card-wrapper">
     <div class="chart-card double">
-        <header>
+        <header routerLink="/statistics/line-chart">
             Lorem ipsum dolor sit amet consectetur adipisicing elit.
         </header>
         <main>
-            <statistics-linear-chart />
+            <statistics-linear-chart [preview]="true"/>
         </main>
     </div>
     <div class="chart-card">
-        <header>
+        <header routerLink="/statistics/bar-chart">
             Lorem ipsum dolor sit amet consectetur adipisicing elit.
         </header>
         <main>
-            <statistics-bar-chart />
+            <statistics-bar-chart [preview]="true" />
         </main>
     </div>
     <div class="chart-card">
-        <header>
+        <header routerLink="/statistics/sankey-chart">
             Lorem ipsum dolor sit amet consectetur adipisicing elit.
         </header>
         <main>
-            <statistics-sankey-chart />
+            <statistics-sankey-chart [preview]="true" />
         </main>
     </div>
     <div class="chart-card double">
-        <header>
+        <header routerLink="/statistics/spiderweb-chart">
             Lorem ipsum dolor sit amet consectetur adipisicing elit.
         </header>
         <main>
-            <statistics-spiderweb-chart />
+            <statistics-spiderweb-chart [preview]="true" />
         </main>
     </div>
 </div>

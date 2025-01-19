@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import * as Highcharts from 'highcharts';
 
 @Component({
@@ -9,6 +9,7 @@ import * as Highcharts from 'highcharts';
 export class LinearChartComponent {
   Highcharts: typeof Highcharts = Highcharts;
   chartRef: Highcharts.Chart | undefined;
+  @Input() preview:boolean=false
   chartOptions:Highcharts.Options = {
     navigation: {
       buttonOptions: {

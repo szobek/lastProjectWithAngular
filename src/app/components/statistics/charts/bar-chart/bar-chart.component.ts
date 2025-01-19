@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import * as Highcharts from 'highcharts';
 
 @Component({
@@ -10,6 +10,7 @@ export class BarChartComponent {
   chartOptions: Highcharts.Options;
   chartRef: Highcharts.Chart | undefined;
   Highcharts: typeof Highcharts = Highcharts;
+  @Input() preview:boolean=false
   constructor(
   ) {
     this.chartOptions = {

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import * as Highcharts from 'highcharts';
 
 declare var require: any;
@@ -12,7 +12,7 @@ More(Highcharts);
 })
 export class SpiderwebChartComponent {
   Highcharts: typeof Highcharts = Highcharts;
-
+  @Input() preview:boolean=false
   chartOptions: Highcharts.Options = {
     chart: {
       polar: true,

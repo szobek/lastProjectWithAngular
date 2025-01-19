@@ -9,9 +9,14 @@ import { HighchartsChartModule } from 'highcharts-angular';
 import { BarChartComponent } from 'src/app/components/statistics/charts/bar-chart/bar-chart.component';
 import { SankeyChartComponent } from 'src/app/components/statistics/charts/sankey-chart/sankey-chart.component';
 import { SpiderwebChartComponent } from 'src/app/components/statistics/charts/spiderweb-chart/spiderweb-chart.component';
+import { ChartTitleComponent } from 'src/app/components/statistics/charts/chart-title/chart-title.component';
 
 const routes:Routes = [
   {path: 'statistics', component: StatisticsWrapperComponent},
+  {path: 'statistics/line-chart', component: LinearChartComponent},
+  {path: 'statistics/bar-chart', component: BarChartComponent},
+  {path: 'statistics/sankey-chart', component: SankeyChartComponent},
+  {path: 'statistics/spiderweb-chart', component: SpiderwebChartComponent},
 ];
 
 
@@ -22,7 +27,8 @@ const routes:Routes = [
     LinearChartComponent,
     BarChartComponent,
     SankeyChartComponent,
-    SpiderwebChartComponent
+    SpiderwebChartComponent,
+    ChartTitleComponent
   ],
   imports: [
     CommonModule,
@@ -36,7 +42,8 @@ const routes:Routes = [
     LinearChartComponent,
     BarChartComponent,
     SankeyChartComponent,
-    SpiderwebChartComponent
+    SpiderwebChartComponent,
+    ChartTitleComponent
   ]
 })
 export class StatisticsModule { }
