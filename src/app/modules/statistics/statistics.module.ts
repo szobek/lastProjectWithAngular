@@ -12,11 +12,11 @@ import { SpiderwebChartComponent } from 'src/app/components/statistics/charts/sp
 import { ChartTitleComponent } from 'src/app/components/statistics/charts/chart-title/chart-title.component';
 
 const routes:Routes = [
-  {path: 'statistics', component: StatisticsWrapperComponent},
-  {path: 'statistics/line-chart', component: LinearChartComponent},
-  {path: 'statistics/bar-chart', component: BarChartComponent},
-  {path: 'statistics/sankey-chart', component: SankeyChartComponent},
-  {path: 'statistics/spiderweb-chart', component: SpiderwebChartComponent},
+  {path: 'statistics', component: StatisticsWrapperComponent,title:"Statistics"},
+  {path: 'statistics/line-chart', component: LinearChartComponent,title: "Linear chart"},
+  {path: 'statistics/bar-chart', component: BarChartComponent, title:"Bar chart"},
+  {path: 'statistics/sankey-chart', component: SankeyChartComponent,title:"Sankey chart"},
+  {path: 'statistics/spiderweb-chart', component: SpiderwebChartComponent , title:"Spiderweb chart"},
 ];
 
 

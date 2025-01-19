@@ -13,9 +13,9 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { VoluntariesComponent } from 'src/app/components/billing/setup/voluntaries/voluntaries.component';
 import { SubscriptionsComponent } from 'src/app/components/billing/setup/subscriptions/subscriptions.component';
 const routes:Routes = [
-  {path: 'billing', component: BillingWrapperComponent},
-  {path: 'billing/voluntaries', component: VoluntariesComponent},
-  {path: 'billing/subscriptions', component: SubscriptionsComponent},
+  {path: 'billing', component: BillingWrapperComponent,title:"Billing"},
+  {path: 'billing/voluntaries', component: VoluntariesComponent,title:"Voluntaries"},
+  {path: 'billing/subscriptions', component: SubscriptionsComponent,title:"Subscriptions"},
 ];
 
 @NgModule({

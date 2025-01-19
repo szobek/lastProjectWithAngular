@@ -6,8 +6,8 @@ import { StatisticsWrapperComponent } from './components/statistics/wrapper/stat
 
 const routes: Routes = [
   {path: '', redirectTo: '/home', pathMatch: 'full'},
-  {path: 'home', component: HomeComponent},
-  {path: '**', component: NotFoundComponent,pathMatch: 'full'},
+  {path: 'home', component: HomeComponent,title:"Home"},
+  {path: '**', component: NotFoundComponent,pathMatch: 'full',title:"Not found"},
 ];
 
 @NgModule({
