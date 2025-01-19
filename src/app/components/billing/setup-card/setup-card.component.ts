@@ -12,8 +12,8 @@ import { Voluntary } from 'src/app/models/Voluntary';
   styleUrls: ['./setup-card.component.scss']
 })
 export class SetupCardComponent {
-  @Input() cardTitle: string = '';
-  @Input() cardDescription: string = '';
+  @Input() cardTitle!: string
+  @Input() cardDescription!: string
 
   private modalService = inject(NgbModal);
   userData: User|null=null

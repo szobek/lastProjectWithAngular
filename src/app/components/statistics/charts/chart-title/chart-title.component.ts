@@ -6,5 +6,5 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./chart-title.component.scss']
 })
 export class ChartTitleComponent {
-@Input() title:string=""
+@Input() title!:string
 }
