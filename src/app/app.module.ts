@@ -34,7 +34,7 @@ import { HighchartsChartModule } from 'highcharts-angular';
     StatisticsModule,
     AppRoutingModule,
     NgbModule,
-    HighchartsChartModule
+    HighchartsChartModule,
   ],
   providers: [],
   bootstrap: [MainContainerComponent]
