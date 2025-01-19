@@ -5,6 +5,7 @@
 			<th >Title</th>
 			<th >Paid</th>
 			<th >User ID</th>
+			<th></th>
 		</tr>
 	</thead>
 	<tbody>
@@ -13,6 +14,7 @@
 			<td>{{invoice.title}}</td>
 			<td>{{(invoice.completed)?"paided":"not paided"}}</td>
 			<td>{{invoice.userId}}</td>
+			<td class="download-text" (click)="handleDownloadInvoice(invoice)">Download</td>
 		</tr>
 	</tbody>
 </table>

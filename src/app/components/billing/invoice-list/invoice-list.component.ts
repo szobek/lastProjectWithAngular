@@ -22,11 +22,16 @@ export class InvoiceListComponent {
     this.http.get<Invoice[]>(`${settings.BASE_URL}/todos?_limit=${settings.INVOICE_LIMIT}&_page=${page}`)
       .subscribe(data => {
         this.invoices = data;
+        this.invoices.map(invoice => invoice.url = "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf")
       });
   }
   ngOnChanges(changes: SimpleChanges) {
     if (changes.hasOwnProperty('page')) {
       this.getInvoiceListFromDB(changes['page'].currentValue)
     }
+  }
+
+  handleDownloadInvoice(invoice: Invoice) {
+    window.open(invoice.url, '_blank')
   }
 }
