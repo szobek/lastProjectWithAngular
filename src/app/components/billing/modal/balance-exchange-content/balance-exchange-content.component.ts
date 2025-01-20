@@ -24,7 +24,7 @@ export class BalanceExchangeContentComponent {
   handleAddTokenToWallet() {
     if (this.userData != null) this.userData.phone = "1500"; 
     this.callService.handleCallBackendToTokenAddToWallet().subscribe({
-      next: _ => console.log("vége van"),
+      next: _ => {},
       error: e => console.error(e),
       complete: () => {
         this.callService.$userData.next(this.userData)
@@ -36,7 +36,7 @@ export class BalanceExchangeContentComponent {
   handleAddTokenToBilling() {
     if (this.userData != null) this.userData.phone = "100";
     this.callService.handleCallBackendToTokenAddToWallet().subscribe({
-      next: _ => console.log("vége van"),
+      next: _ => {},
       error: e => console.error(e),
       complete: () => {
         this.callService.$userData.next(this.userData)

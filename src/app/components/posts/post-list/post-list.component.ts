@@ -17,8 +17,6 @@ export class PostListComponent {
       next:(users_:User[]|null)=>{
         if(users_ !=null){
           this.users=users_
-          console.log("Az users",this.users);
-          
           this.callService.$posts.subscribe({
             next:(data:Post[])=>{
               this.posts=data.slice(0,32)

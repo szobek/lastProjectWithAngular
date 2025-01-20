@@ -25,8 +25,6 @@ export class SinglePostComponent {
         if(this.post===undefined) this.router.navigateByUrl("/posts")
         document.title=this.post.title
         this.postWriter=(this.callService.$users.value?.filter((user:User)=>user.id===this.post?.userId)[0] as User)
-        console.log(this.postWriter);
-        
       }
     })
   }
