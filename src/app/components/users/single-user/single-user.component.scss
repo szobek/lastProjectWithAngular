@@ -1,0 +1,12 @@
+.single-user-card{
+    margin-top: 40px;
+    .post-list{
+        list-style-type: none;
+        li{
+            cursor: pointer;
+            font-weight: 400;
+            font-size: 1.2rem;
+            line-height: 1.7rem;
+        }
+    }
+}

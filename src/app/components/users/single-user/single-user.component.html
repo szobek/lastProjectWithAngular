@@ -1,7 +1,20 @@
-<div *ngIf="selectedUser!=undefined">
-
-    <p >Name: {{selectedUser.name}}</p>
-    <p >Phone: {{selectedUser.phone}}</p>
-    <p >Nickname: {{selectedUser.username}}</p>
-    <p >E-mai: {{selectedUser.email}}</p>
+<button class="base-btn" routerLink="/users">Back to user list</button>
+<div *ngIf="selectedUser!=undefined" class="single-user-card">
+    <div class="card" style="width: 18rem;">
+        <div class="card-body">
+            <h5 class="card-title">{{selectedUser.name}}</h5>
+            <h6 class="card-subtitle mb-2 text-muted">{{selectedUser.username}}</h6>
+            <p class="card-text">{{selectedUser.email}}</p>
+            <p class="card-text">{{selectedUser.phone}}</p>
+            <p class="card-text">Their posts:</p>
+            <ul class="list-group post-list">
+                <li 
+                    *ngFor="let post of userPosts" 
+                    routerLink="/single-post" 
+                    [queryParams]="{id:post.id}"
+                    class="list-group-item"
+                >{{post.title}}</li>
+            </ul>
+        </div>
+    </div>
 </div>
