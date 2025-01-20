@@ -18,6 +18,7 @@ import { PostsModule } from './modules/posts/posts/posts.module';
 import { PostListComponent } from './components/posts/post-list/post-list.component';
 import { SinglePostComponent } from './components/posts/single-post/single-post.component';
 import { CallService } from './services/call.service';
+import { UsersModule } from './modules/users/users/users.module';
 
 @NgModule({
   declarations: [
@@ -37,6 +38,7 @@ import { CallService } from './services/call.service';
     BillingModule,
     StatisticsModule,
     PostsModule,
+    UsersModule,
     AppRoutingModule,
     NgbModule,
     HighchartsChartModule,
