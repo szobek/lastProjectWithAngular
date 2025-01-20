@@ -9,5 +9,9 @@
     list-style-type: none;
     li{
         @extend %post-style;
+        .post-writer{
+            font-weight: 600;
+            text-decoration: underline;
+        }
     }
 }

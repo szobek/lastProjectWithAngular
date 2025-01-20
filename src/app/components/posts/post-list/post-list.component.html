@@ -1,3 +1,8 @@
-<ul class="post-list-wrapper">
-    <li *ngFor="let post of posts" [routerLink]="['/single-post']" [queryParams]="{id:post.id}">{{post.title}} - by: {{post.writer}}</li>
+<ul class="post-list-wrapper list-group">
+    <li 
+    class="list-group-item"
+        *ngFor="let post of posts" 
+        [routerLink]="['/single-post']" 
+        [queryParams]="{id:post.id}"
+    >{{post.title}} - by: <span class="post-writer" [routerLink]="['/single-user',post.userId]">{{post.writer?.name}}</span></li>
 </ul>

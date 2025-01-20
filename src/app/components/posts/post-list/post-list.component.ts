@@ -21,7 +21,7 @@ export class PostListComponent {
             next:(data:Post[])=>{
               this.posts=data.slice(0,32)
               this.posts.map((post:Post)=>{
-                post.writer=this.callService.$users.value?.filter((user:User)=>post.userId===user.id)[0].name
+                post.writer=this.callService.$users.value?.filter((user:User)=>post.userId===user.id)[0]
               })
             }
           })
