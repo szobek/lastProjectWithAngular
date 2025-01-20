@@ -3,6 +3,7 @@ export class Post {
     id: number;
     title: string;
     body: string;
+    writer?:string
 
     constructor(id: number, title: string, userId: number, body: string) {
         this.id = id;
