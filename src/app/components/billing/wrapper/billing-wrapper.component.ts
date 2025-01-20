@@ -10,7 +10,7 @@ export class BillingWrapperComponent {
   callService = inject(CallService)
   invoicePageNumber: number = 1
   constructor() {
-    this.callService.getUserDataFromDB()
+    this.callService.getUserDataFromUsers()
   }
   setPage(e: any) {
     this.invoicePageNumber = e

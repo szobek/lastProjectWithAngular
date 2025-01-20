@@ -38,26 +38,23 @@ export class CallService {
 
   getAllTodoFromDB(){
     this.http.get<Todo[]>(`${settings.BASE_URL}/todos`).subscribe({
-      next: (todos: Todo[]) => {
-        this.$todos.next(todos)
-      }
+      next: (todos: Todo[]) => this.$todos.next(todos)
     })
   }
-  getUserDataFromDB() {
-    if (this.$userData.value === null) {
-      this.http.get<User>(`${settings.BASE_URL}/users/7`).subscribe({
-        next: (data: User) => {
-          this.$userData.next(data)
+  getUserDataFromUsers() {
+    this.$users.subscribe({
+      next:(data:User[]|null)=>{
+        if(data){
+          const user = data.filter((user:User)=>user.id===7)[0]
+          if(user!=null)this.$userData.next(user )
         }
-      })
-    }
+      }
+    })
   }
   getAllUserFromDB() {
     if (this.$users.value === null) {
       this.http.get<User[]>(`${settings.BASE_URL}/users`).subscribe({
-        next: (data: User[]) => {
-          this.$users.next(data)
-        }
+        next: (data: User[]) => this.$users.next(data)
       })
     }
   }
