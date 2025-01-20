@@ -11,9 +11,8 @@ export class PostListComponent {
   callService = inject(CallService)
   posts:Post[]=[]
   constructor(){
-    this.callService.getPostLitFromDb().subscribe({
+    this.callService.$posts.subscribe({
       next:(data:Post[])=>{
-        this.callService.$posts.next(data)
         this.posts=data.slice(0,32)
       }
     })
