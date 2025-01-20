@@ -17,8 +17,10 @@ export class CallService {
     {title:"1200/month",subtitle:"all data",description:"it's a premium option",id:3},
   ])
   $posts:BehaviorSubject<Post[]>=new BehaviorSubject<Post[]>([])
+  $users:BehaviorSubject<User[]|null>=new BehaviorSubject<User[]|null>(null)
   constructor(private http:HttpClient) {
     this.getUserDataFromDB()
+    this.getAllUserFromDB()
    }
   getUserDataFromDB(){
     if(this.$userData.value===null){
@@ -26,6 +28,16 @@ export class CallService {
       this.http.get<User>(`${settings.BASE_URL}/users/7`).subscribe({
         next:(data:User)=>{
           this.$userData.next(data)
+        }
+      })
+    }
+  }
+  getAllUserFromDB(){
+    if(this.$users.value===null){
+
+      this.http.get<User[]>(`${settings.BASE_URL}/users`).subscribe({
+        next:(data:User[])=>{
+          this.$users.next(data)
         }
       })
     }
