@@ -1,3 +1,8 @@
-<ul>
-    <li [routerLink]="['/single-user',user.id]" *ngFor="let user of users">{{user.name}}</li>
+<h2>User list</h2>
+<ul class="list-group user-list">
+    <li 
+        class="list-group-item"
+        [routerLink]="['/single-user',user.id]" 
+        *ngFor="let user of users"
+    >{{user.name}}</li>
 </ul>
