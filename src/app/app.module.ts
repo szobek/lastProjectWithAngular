@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { inject, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -17,6 +17,7 @@ import { HighchartsChartModule } from 'highcharts-angular';
 import { PostsModule } from './modules/posts/posts/posts.module';
 import { PostListComponent } from './components/posts/post-list/post-list.component';
 import { SinglePostComponent } from './components/posts/single-post/single-post.component';
+import { CallService } from './services/call.service';
 
 @NgModule({
   declarations: [
@@ -43,4 +44,9 @@ import { SinglePostComponent } from './components/posts/single-post/single-post.
   providers: [],
   bootstrap: [MainContainerComponent]
 })
-export class AppModule { }
+export class AppModule {
+  callService=inject(CallService)
+  constructor(){
+    this.callService.getAllDataFromDB()
+  }
+ }
