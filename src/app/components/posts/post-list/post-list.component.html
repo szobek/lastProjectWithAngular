@@ -1,0 +1,3 @@
+<ul class="post-list-wrapper">
+    <li *ngFor="let post of posts" [routerLink]="['/single-post']" [queryParams]="{id:post.id}">{{post.title}}</li>
+</ul>

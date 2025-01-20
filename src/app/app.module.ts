@@ -14,6 +14,9 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { HttpClientModule } from '@angular/common/http';
 import { BalanceExchangeContentComponent } from './components/billing/modal/balance-exchange-content/balance-exchange-content.component';
 import { HighchartsChartModule } from 'highcharts-angular';
+import { PostsModule } from './modules/posts/posts/posts.module';
+import { PostListComponent } from './components/posts/post-list/post-list.component';
+import { SinglePostComponent } from './components/posts/single-post/single-post.component';
 
 @NgModule({
   declarations: [
@@ -24,12 +27,15 @@ import { HighchartsChartModule } from 'highcharts-angular';
     BillingWrapperComponent,
     StatisticsWrapperComponent,
     BalanceExchangeContentComponent,
+    PostListComponent,
+    SinglePostComponent,
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     BillingModule,
     StatisticsModule,
+    PostsModule,
     AppRoutingModule,
     NgbModule,
     HighchartsChartModule,

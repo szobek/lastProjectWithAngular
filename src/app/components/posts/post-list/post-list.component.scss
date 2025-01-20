@@ -1,0 +1,13 @@
+%post-style{
+    font-size: 18px;
+    color: #252424;
+    line-height: 28px;
+    font-weight: 400;
+    cursor: pointer;
+}
+.post-list-wrapper{
+    list-style-type: none;
+    li{
+        @extend %post-style;
+    }
+}
