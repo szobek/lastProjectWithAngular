@@ -1,4 +1,3 @@
-import { HttpClient } from '@angular/common/http';
 import { Component, inject } from '@angular/core';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { User } from 'src/app/models/User';
@@ -23,7 +22,7 @@ export class BalanceExchangeContentComponent {
     })
   }
   handleAddTokenToWallet() {
-    if (this.userData != null) this.userData.phone = "000000001500"; //small hack because i used substring
+    if (this.userData != null) this.userData.phone = "1500"; 
     this.callService.handleCallBackendToTokenAddToWallet().subscribe({
       next: _ => console.log("vége van"),
       error: e => console.error(e),
@@ -35,7 +34,7 @@ export class BalanceExchangeContentComponent {
   }
 
   handleAddTokenToBilling() {
-    if (this.userData != null) this.userData.phone = "00000000100";
+    if (this.userData != null) this.userData.phone = "100";
     this.callService.handleCallBackendToTokenAddToWallet().subscribe({
       next: _ => console.log("vége van"),
       error: e => console.error(e),
