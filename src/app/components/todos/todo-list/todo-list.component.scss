@@ -1,0 +1,11 @@
+.todo-item{
+display: flex;
+align-items: center;
+    &.completed{
+        text-decoration: line-through;
+    }   
+    button{
+        display: flex;
+        margin: 0 20px 0 30px;
+    }
+}

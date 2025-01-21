@@ -19,6 +19,8 @@ import { PostListComponent } from './components/posts/post-list/post-list.compon
 import { SinglePostComponent } from './components/posts/single-post/single-post.component';
 import { CallService } from './services/call.service';
 import { UsersModule } from './modules/users/users/users.module';
+import { TodoListComponent } from './components/todos/todo-list/todo-list.component';
+import { TodoModule } from './modules/todo/todo/todo.module';
 
 @NgModule({
   declarations: [
@@ -31,6 +33,7 @@ import { UsersModule } from './modules/users/users/users.module';
     BalanceExchangeContentComponent,
     PostListComponent,
     SinglePostComponent,
+    TodoListComponent,
   ],
   imports: [
     BrowserModule,
@@ -39,6 +42,7 @@ import { UsersModule } from './modules/users/users/users.module';
     StatisticsModule,
     PostsModule,
     UsersModule,
+    TodoModule,
     AppRoutingModule,
     NgbModule,
     HighchartsChartModule,
