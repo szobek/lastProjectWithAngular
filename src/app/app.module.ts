@@ -21,6 +21,8 @@ import { CallService } from './services/call.service';
 import { UsersModule } from './modules/users/users/users.module';
 import { TodoListComponent } from './components/todos/todo-list/todo-list.component';
 import { TodoModule } from './modules/todo/todo/todo.module';
+import { TaskModule } from './modules/task/task/task.module';
+import { TaskListComponent } from './components/task/task-list/task-list.component';
 
 @NgModule({
   declarations: [
@@ -34,6 +36,7 @@ import { TodoModule } from './modules/todo/todo/todo.module';
     PostListComponent,
     SinglePostComponent,
     TodoListComponent,
+    TaskListComponent,
   ],
   imports: [
     BrowserModule,
@@ -43,6 +46,7 @@ import { TodoModule } from './modules/todo/todo/todo.module';
     PostsModule,
     UsersModule,
     TodoModule,
+    TaskModule,
     AppRoutingModule,
     NgbModule,
     HighchartsChartModule,

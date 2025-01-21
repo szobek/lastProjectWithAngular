@@ -1,0 +1,13 @@
+<h2>All tasks</h2>
+<ul class="list-group">
+    <li class="list-group-item" *ngFor="let task of tasks">
+    <input type="checkbox" [checked]="task.completed" (change)="handleChangeCheckbox(task)">    {{task.title}}
+    </li>
+</ul>
+
+<h2>Completed tasks</h2>
+<ul class="list-group">
+    <li class="list-group-item" *ngFor="let task of completedTasks">
+    {{task.title}}
+    </li>
+</ul>
