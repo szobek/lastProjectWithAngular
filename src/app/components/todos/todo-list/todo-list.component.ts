@@ -13,7 +13,7 @@ export class TodoListComponent {
   constructor() {
     this.callService.$todos.subscribe((data) => {
       if(data){
-        this.todos = data;
+        this.todos = data.slice(0,10);
       }
     });
   }
