@@ -1,13 +1,24 @@
-<h2>All tasks</h2>
-<ul class="list-group">
-    <li class="list-group-item" *ngFor="let task of tasks">
-    <input type="checkbox" [checked]="task.completed" (change)="handleChangeCheckbox(task)">    {{task.title}}
-    </li>
-</ul>
+<div class="task-wrapper">
+    <h2>All tasks</h2>
+    <ul class="list-group task-all-list">
+        <li class="list-group-item" *ngFor="let task of tasks" (click)="handleChangeCheckbox(task)">
+            <input type="checkbox" [checked]="task.completed" (change)="handleChangeCheckbox(task)">
+            {{task.title}}
+        </li>
+    </ul>
 
-<h2>Completed tasks</h2>
-<ul class="list-group">
-    <li class="list-group-item" *ngFor="let task of completedTasks">
-    {{task.title}}
-    </li>
-</ul>
+    <h2>Completed tasks</h2>
+    <ul class="list-group">
+        <li class="list-group-item" *ngFor="let task of completedTasks">
+            {{task.title}}
+        </li>
+    </ul>
+
+    <h2>Incompleted tasks</h2>
+    <ul class="list-group">
+        <li class="list-group-item" *ngFor="let task of IncompletedTasks">
+            {{task.title}}
+        </li>
+    </ul>
+
+</div>
