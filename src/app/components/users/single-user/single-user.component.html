@@ -1,7 +1,10 @@
 <button class="base-btn" routerLink="/users">Back to user list</button>
 <div *ngIf="selectedUser!=undefined" class="single-user-card">
-    <div class="card" style="width: 18rem;">
+    <div class="card" >
         <div class="card-body">
+            <div class="image-wrapper">
+                <img src="/assets/people.png" alt="" >
+            </div>
             <h5 class="card-title">{{selectedUser.name}}</h5>
             <h6 class="card-subtitle mb-2 text-muted">{{selectedUser.username}}</h6>
             <p class="card-text">{{selectedUser.email}}</p>

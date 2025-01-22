@@ -1,12 +1,38 @@
 .single-user-card{
     margin-top: 40px;
-    .post-list{
-        list-style-type: none;
-        li{
-            cursor: pointer;
-            font-weight: 400;
-            font-size: 1.2rem;
-            line-height: 1.7rem;
+    .card{
+        width: 40vw;
+        .card-title{
+            font-size: 2rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .card-subtitle{
+            font-size: 1.5rem;
+            font-weight: 500;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .card-body{
+            .image-wrapper{
+                width: 300px;
+                margin: auto;
+                img{
+                    width: 100%;
+                    height: auto;
+                }
+            }
+
+            .post-list{
+                list-style-type: none;
+                li{
+                    cursor: pointer;
+                    font-weight: 400;
+                    font-size: 1.2rem;
+                    line-height: 1.7rem;
+                }
+            }
         }
     }
 }
