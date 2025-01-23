@@ -2,6 +2,7 @@ ul.nav{
     list-style-type: none;
     font-size: 20px;
     flex-direction: column !important;
+    position: fixed;
     li{
         margin-bottom: 20px;
         cursor: pointer;
