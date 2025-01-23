@@ -1,3 +1,4 @@
+import { Subscription } from "./Subscription"
 import { Voluntary } from "./Voluntary"
 
 export class User {
@@ -24,7 +25,7 @@ export class User {
         catchPhrase: string
     }
     voluntary?:Voluntary
-
+subscription?:Subscription
     constructor(
         email: string,
         id: number,

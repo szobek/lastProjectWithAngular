@@ -67,7 +67,12 @@ export class SetupCardComponent {
   </div>`:"";
         break;
       case 'Subscription':
-        this.cardDescription = `<ul> <li>Subscription</li> <li>Subscription</li> <li>Subscription</li> </ul>`;
+        this.cardDescription = (this.userData!=null&&this.userData.subscription!=undefined)? `<div class="card" style="width: 100%;">
+                <div class="card-body">
+            <h5 class="card-title">${this.userData.subscription.title}</h5>
+            <h6 class="card-subtitle mb-2 text-muted">${this.userData.subscription.subtitle}</h6>
+            <p class="card-text">${this.userData.subscription.description}</p>
+        </div>`:"";
         break;
       default:
     }

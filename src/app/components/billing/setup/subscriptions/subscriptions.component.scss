@@ -1,0 +1,25 @@
+.subscription-wrapper{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  padding: 20px;
+  border: 1px solid #e0e0e0;
+  border-radius: 5px;
+  width: 100%;
+  gap: 20px;
+  .card{
+    width: 300px;
+    &.bgWhite{
+      background-color: #fff;
+    }
+    &.bgGreen{
+      background-color: #577535;
+    }
+    &.bgOrange{
+      background-color: #f5a623;
+    }
+  }
+}

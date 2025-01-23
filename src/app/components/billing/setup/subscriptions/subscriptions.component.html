@@ -1,1 +1,15 @@
 <button (click)="handleBackButtonToBilling()" class="base-btn">Back to billing</button>
+<p>Please select an option</p>
+<div class="subscription-wrapper">
+
+    <div *ngFor="let subscription of subscriptions" class="card" 
+    [ngClass]="{'bgWhite':subscription.id===1,'bgGreen':subscription.id===2,'bgOrange':subscription.id===3}" >
+        <div class="card-body">
+            <h5 class="card-title">{{subscription.title}}</h5>
+            <h6 class="card-subtitle mb-2 text-muted">{{subscription.subtitle}}</h6>
+            <p class="card-text">{{subscription.description}}</p>
+            <button (click)="handleSelectSubscriptionOption(subscription)" class="base-btn ">Use </button>
+        </div>
+    </div>
+    
+</div>

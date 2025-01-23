@@ -6,6 +6,7 @@ import { User } from '../models/User';
 import { Voluntary } from '../models/Voluntary';
 import { Post } from '../models/Post';
 import { Todo } from '../models/Todo';
+import { Subscription } from '../models/Subscription';
 
 @Injectable({
   providedIn: 'root'
@@ -17,9 +18,15 @@ export class CallService {
     { title: "500/month", subtitle: "base data", description: "it's a middle option", id: 2 },
     { title: "1200/month", subtitle: "all data", description: "it's a premium option", id: 3 },
   ])
+  $subscriptions: BehaviorSubject<Subscription[]> = new BehaviorSubject<Subscription[]>([
+    { title: "free package", subtitle: "", description: "it's a free option", id: 1 },
+    { title: "medium package", subtitle: "you have a medium package", description: "it's a medium option", id: 2 },
+    { title: "premium package", subtitle: "you have a premium package", description: "it's a premium option", id: 3 },
+  ])
   $posts: BehaviorSubject<Post[]> = new BehaviorSubject<Post[]>([])
   $users: BehaviorSubject<User[] | null> = new BehaviorSubject<User[] | null>(null)
   $todos: BehaviorSubject<Todo[] | null> = new BehaviorSubject<Todo[] | null>(null)
+  
   http = inject(HttpClient)
 
   getAllDataFromDB() {
