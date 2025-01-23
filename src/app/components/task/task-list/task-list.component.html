@@ -3,7 +3,6 @@
         <li class="nav-item">
             <a class="nav-link " [ngClass]="{'selectedTab':selectedTab==='all'}" aria-current="page" (click)="selectedTab='all'">All</a>
             <div *ngSwitchCase="'all'">
-                <h2>All tasks</h2>
                 <ul class="list-group task-all-list">
                     <li class="list-group-item" *ngFor="let task of tasks" (click)="handleChangeCheckbox(task)">
                         <p> <input type="checkbox" [checked]="task.completed" (change)="handleChangeCheckbox(task)">
@@ -17,7 +16,6 @@
         <li class="nav-item">
             <a class="nav-link" [ngClass]="{'selectedTab':selectedTab==='completed'}" (click)="selectedTab='completed'">Completed</a>
             <div *ngSwitchCase="'completed'">
-                <h2>Completed tasks</h2>
                 <ul class="list-group">
                     <li class="list-group-item" *ngFor="let task of completedTasks">
                         <p>{{task.title}}</p>
@@ -29,7 +27,6 @@
         <li class="nav-item">
             <a class="nav-link" [ngClass]="{'selectedTab':selectedTab==='incompleted'}" (click)="selectedTab='incompleted'">Incompleted</a>
             <div *ngSwitchCase="'incompleted'">
-                <h2>Incompleted tasks</h2>
                 <ul class="list-group">
                     <li class="list-group-item" *ngFor="let task of IncompletedTasks">
                         <p>{{task.title}}</p>
