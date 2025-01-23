@@ -1,5 +1,5 @@
 <button class="base-btn " [ngClass]="{'disabled':countSelectedInvoices()===0}">Download selected ( {{countSelectedInvoices()}})</button>
-<table class="table table-striped">
+<table class="table table-striped invoice-table" >
 	<thead>
 		<tr>
 			<th><input type="checkbox" (change)="handleCheckAll()" [checked]="allChecked"></th>
