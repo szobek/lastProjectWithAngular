@@ -10,6 +10,7 @@ import { settings } from 'src/app/settings';
 })
 export class InvoiceListComponent {
   @Input() page: number = 1;
+  allChecked = false;
   http = inject(HttpClient)
 
   invoices: Invoice[] = []
@@ -22,7 +23,11 @@ export class InvoiceListComponent {
     this.http.get<Invoice[]>(`${settings.BASE_URL}/todos?_limit=${settings.INVOICE_LIMIT}&_page=${page}`)
       .subscribe(data => {
         this.invoices = data;
-        this.invoices.map(invoice => invoice.url = "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf")
+        this.invoices.map(invoice => {
+          invoice.url = "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf"
+   invoice.selected = false
+   this.allChecked=false
+        })
       });
   }
   ngOnChanges(changes: SimpleChanges) {
@@ -33,5 +38,19 @@ export class InvoiceListComponent {
 
   handleDownloadInvoice(invoice: Invoice) {
     window.open(invoice.url, '_blank')
+  }
+
+  handleCheckAll() {
+    this.allChecked=!this.allChecked
+    this.invoices.map(invoice => {
+      invoice.selected = this.allChecked
+    })
+  }
+
+  handleChangeCheckboxOnInvoice(invoice: Invoice) {
+    invoice.selected = !invoice.selected
+  }
+  countSelectedInvoices():number { 
+    return this.invoices.filter(invoice => invoice.selected).length
   }
 }

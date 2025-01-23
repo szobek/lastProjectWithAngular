@@ -4,6 +4,7 @@ export class Invoice {
   userId: number;
   completed: boolean;
   url?:string
+  selected?:boolean
 
   constructor(id: string, title: string, userId: number, completed: boolean) {
     this.id = id;

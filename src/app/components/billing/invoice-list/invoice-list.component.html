@@ -1,6 +1,8 @@
+<button class="base-btn " [ngClass]="{'disabled':countSelectedInvoices()===0}">Download selected ( {{countSelectedInvoices()}})</button>
 <table class="table table-striped">
 	<thead>
 		<tr>
+			<th><input type="checkbox" (change)="handleCheckAll()" [checked]="allChecked"></th>
 			<th >#</th>
 			<th >Title</th>
 			<th >Paid</th>
@@ -10,6 +12,7 @@
 	</thead>
 	<tbody>
 		<tr *ngFor="let invoice of invoices; let i = index">
+			<td><input type="checkbox" [checked]="allChecked" (change)="handleChangeCheckboxOnInvoice(invoice)"></td>
 			<td>{{invoice.id}}</td>
 			<td>{{invoice.title}}</td>
 			<td>{{(invoice.completed)?"paided":"not paided"}}</td>

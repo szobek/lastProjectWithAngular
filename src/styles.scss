@@ -11,6 +11,11 @@ body{
     border-radius: 13px;
     cursor: pointer;
     font-weight: 500;
+    &.disabled{
+        background-color: #c5c5c5;
+        color: #fff;
+        cursor: not-allowed;
+    }
 }
 /* Importing Bootstrap SCSS file. */
 @import 'bootstrap/scss/bootstrap';
