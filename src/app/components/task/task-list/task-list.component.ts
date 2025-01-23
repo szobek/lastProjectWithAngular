@@ -12,6 +12,7 @@ export class TaskListComponent {
   tasks: Todo[] = []
   completedTasks: Todo[] = []
   IncompletedTasks: Todo[] = []
+  selectedTab: string = 'all'
   constructor() {
     this.generateTaskList()
   }
