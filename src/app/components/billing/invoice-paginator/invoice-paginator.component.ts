@@ -44,6 +44,7 @@ export class InvoicePaginatorComponent {
     if(this.pageNum>1)this.pageNum--
     else this.pageNum=1
     this.page.emit(this.pageNum)
+    if (this.pageNum >0 &&this.pageNum< this.pages.length) this.disableNext = false
     if (this.pageNum === 1) {
       this.disablePrev = true
       return
