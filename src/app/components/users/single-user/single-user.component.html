@@ -9,7 +9,7 @@
             <h6 class="card-subtitle mb-2 text-muted">{{selectedUser.username}}</h6>
             <p class="card-text">{{selectedUser.email}}</p>
             <p class="card-text">{{selectedUser.phone}}</p>
-            <p class="card-text">Their posts:</p>
+            <p class="card-text post-list-title">Their posts:</p>
             <ul class="list-group post-list">
                 <li 
                     *ngFor="let post of userPosts" 

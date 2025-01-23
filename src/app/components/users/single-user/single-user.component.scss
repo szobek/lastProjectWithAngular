@@ -23,7 +23,12 @@
                     height: auto;
                 }
             }
-
+            .post-list-title{
+                font-size: 1.5rem;
+                font-weight: 500;
+                margin-bottom: 20px;
+                text-align: center;
+            }
             .post-list{
                 list-style-type: none;
                 li{
