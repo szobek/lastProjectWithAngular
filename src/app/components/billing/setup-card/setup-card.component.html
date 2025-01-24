@@ -3,5 +3,5 @@
         <div class="title">{{cardTitle}} </div>
         <div class="edit-button"><button (click)="handleClickOnEditAddressButton()" class="base-btn">Edit</button></div>
     </div>
-    <div class="body" [innerHTML]="cardDescription"></div>
+    <div class="body" [innerHTML]="sanitizedHtml"></div>
 </div>

@@ -5,6 +5,7 @@ import { EditAddressComponent } from '../modal/edit-address/edit-address.compone
 import { Router } from '@angular/router';
 import { User } from 'src/app/models/User';
 import { Voluntary } from 'src/app/models/Voluntary';
+import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 
 @Component({
   selector: 'billing-setup-card',
@@ -12,9 +13,11 @@ import { Voluntary } from 'src/app/models/Voluntary';
   styleUrls: ['./setup-card.component.scss']
 })
 export class SetupCardComponent {
+  sanitizedHtml!: SafeHtml;
+sanitizer=inject(DomSanitizer)
   @Input() cardTitle!: string
   @Input() cardDescription!: string
-
+html!:string
   private modalService = inject(NgbModal);
   userData: User|null=null
   selectedVoluntary:Voluntary|null=null
@@ -55,24 +58,27 @@ export class SetupCardComponent {
   handleType() {
     switch (this.cardTitle) {
       case 'Address':
-        this.cardDescription =(this.userData!=null)? `<ul> <li>Zip: ${this.userData.address.zipcode}</li> <li>City: ${this.userData.address.city}</li> <li>Address: ${this.userData.formatAddressString}</li> </ul>`:"aaa";
+        this.html =(this.userData!=null)? `<ul> <li>Zip: ${this.userData.address.zipcode}</li> <li>City: ${this.userData.address.city}</li> <li>Address: ${this.userData.formatAddressString}</li> </ul>`:"aaa";
+        this.sanitizedHtml = this.sanitizer.bypassSecurityTrustHtml(this.html);
         break;
       case 'voluntary':
-        this.cardDescription = (this.userData!=null&&this.userData.voluntary!=undefined)? `<div class="card" style="width: 100%;">
+        this.html = (this.userData!=null&&this.userData.voluntary!=undefined)? `<div class="card" style="width: 100%;">
     <div class="card-body">
       <h5 class="card-title">${this.userData.voluntary.title}</h5>
       <h6 class="card-subtitle mb-2 text-muted">${this.userData.voluntary.subtitle}</h6>
       <p class="card-text">${this.userData.voluntary.description}</p>
     </div>
   </div>`:"";
-        break;
-      case 'Subscription':
-        this.cardDescription = (this.userData!=null&&this.userData.subscription!=undefined)? `<div class="card" style="width: 100%;">
-                <div class="card-body">
-            <h5 class="card-title">${this.userData.subscription.title}</h5>
-            <h6 class="card-subtitle mb-2 text-muted">${this.userData.subscription.subtitle}</h6>
-            <p class="card-text">${this.userData.subscription.description}</p>
-        </div>`:"";
+  this.sanitizedHtml = this.sanitizer.bypassSecurityTrustHtml(this.html);
+  break;
+  case 'Subscription':
+    this.html = (this.userData!=null&&this.userData.subscription!=undefined)? `<div class="card" style="width: 100%;">
+    <div class="card-body">
+    <h5 class="card-title">${this.userData.subscription.title}</h5>
+    <h6 class="card-subtitle mb-2 text-muted">${this.userData.subscription.subtitle}</h6>
+    <p class="card-text">${this.userData.subscription.description}</p>
+    </div>`:"";
+    this.sanitizedHtml = this.sanitizer.bypassSecurityTrustHtml(this.html);
         break;
       default:
     }
