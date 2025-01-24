@@ -5,7 +5,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { SampleListComponent } from 'src/app/components/dragDrop/sample-list/sample-list.component';
 import { DragDropModule } from '@angular/cdk/drag-drop';
 const routes:Routes = [
-  {path: 'dragdrop', component: SampleListComponent},
+  {path: 'dragdrop', component: SampleListComponent,title: 'Drag & Drop'} ,
 ]
 
 
