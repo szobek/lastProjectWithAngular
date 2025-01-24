@@ -2,6 +2,7 @@ import { Component, inject, Input, SimpleChanges } from '@angular/core';
 import { Invoice } from 'src/app/models/Invoice';
 import { HttpClient } from "@angular/common/http";
 import { settings } from 'src/app/settings';
+import { CallService } from 'src/app/services/call.service';
 
 @Component({
   selector: 'billing-invoice-list',
@@ -12,7 +13,7 @@ export class InvoiceListComponent {
   @Input() page: number = 1;
   allChecked = false;
   http = inject(HttpClient)
-
+callService = inject(CallService)
   invoices: Invoice[] = []
 
   ngOnInit() {
@@ -52,5 +53,8 @@ export class InvoiceListComponent {
   }
   countSelectedInvoices():number { 
     return this.invoices.filter(invoice => invoice.selected).length
+  }
+  handleClickOnDownloadButton(){
+    window.open("https://www.learningcontainer.com/wp-content/uploads/2020/05/sample-zip-file.zip", '_blank')
   }
 }

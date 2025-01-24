@@ -75,4 +75,18 @@ export class CallService {
   getPostLitFromDb() {
     return this.http.get<Post[]>(`${settings.BASE_URL}/posts`)
   }
+
+  downloadInvoicesZIP(ids:number[]) {
+    return this.http.get(
+      `https://www.learningcontainer.com/wp-content/uploads/2020/05/sample-zip-file.zip`,
+    
+      {
+        'headers': {
+          'Content-Type': 'application/json',
+          'Accept': 'application/zip',
+          'Access-Control-Allow-Origin': '*'
+        }
+      }
+    )
+  }
 }

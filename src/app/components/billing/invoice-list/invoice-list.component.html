@@ -1,4 +1,4 @@
-<button class="base-btn " [ngClass]="{'disabled':countSelectedInvoices()===0}">Download selected ( {{countSelectedInvoices()}})</button>
+<button class="base-btn " (click)="handleClickOnDownloadButton()" [ngClass]="{'disabled':countSelectedInvoices()===0}">Download selected ( {{countSelectedInvoices()}})</button>
 <table class="table table-striped invoice-table" >
 	<thead>
 		<tr>
