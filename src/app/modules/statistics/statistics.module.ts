@@ -10,6 +10,7 @@ import { BarChartComponent } from 'src/app/components/statistics/charts/bar-char
 import { SankeyChartComponent } from 'src/app/components/statistics/charts/sankey-chart/sankey-chart.component';
 import { SpiderwebChartComponent } from 'src/app/components/statistics/charts/spiderweb-chart/spiderweb-chart.component';
 import { ChartTitleComponent } from 'src/app/components/statistics/charts/chart-title/chart-title.component';
+import { SharedModule } from "../shared/shared.module";
 
 const routes:Routes = [
   {path: 'statistics', component: StatisticsWrapperComponent,title:"Statistics"},
@@ -34,8 +35,8 @@ const routes:Routes = [
     CommonModule,
     HighchartsChartModule,
     RouterModule.forRoot(routes),
-    
-  ],
+    SharedModule
+],
   exports: [  
     HeaderComponent,
     ChartWrapperComponent,

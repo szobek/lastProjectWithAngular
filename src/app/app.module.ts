@@ -15,14 +15,11 @@ import { HttpClientModule } from '@angular/common/http';
 import { BalanceExchangeContentComponent } from './components/billing/modal/balance-exchange-content/balance-exchange-content.component';
 import { HighchartsChartModule } from 'highcharts-angular';
 import { PostsModule } from './modules/posts/posts/posts.module';
-import { PostListComponent } from './components/posts/post-list/post-list.component';
 import { SinglePostComponent } from './components/posts/single-post/single-post.component';
 import { CallService } from './services/call.service';
 import { UsersModule } from './modules/users/users/users.module';
-import { TodoListComponent } from './components/todos/todo-list/todo-list.component';
 import { TodoModule } from './modules/todo/todo/todo.module';
 import { TaskModule } from './modules/task/task/task.module';
-import { TaskListComponent } from './components/task/task-list/task-list.component';
 
 @NgModule({
   declarations: [
@@ -33,10 +30,7 @@ import { TaskListComponent } from './components/task/task-list/task-list.compone
     BillingWrapperComponent,
     StatisticsWrapperComponent,
     BalanceExchangeContentComponent,
-    PostListComponent,
     SinglePostComponent,
-    TodoListComponent,
-    TaskListComponent,
   ],
   imports: [
     BrowserModule,
@@ -50,7 +44,7 @@ import { TaskListComponent } from './components/task/task-list/task-list.compone
     AppRoutingModule,
     NgbModule,
     HighchartsChartModule,
-  ],
+],
   providers: [],
   bootstrap: [MainContainerComponent]
 })

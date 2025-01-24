@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { SharedModule } from '../shared/shared.module';
 import { RouterModule, Routes } from '@angular/router';
 import { BillingWrapperComponent } from 'src/app/components/billing/wrapper/billing-wrapper.component';
 import { HeaderComponent } from 'src/app/components/billing/header/header.component';
@@ -12,6 +11,7 @@ import { EditAddressComponent } from 'src/app/components/billing/modal/edit-addr
 import { ReactiveFormsModule } from '@angular/forms';
 import { VoluntariesComponent } from 'src/app/components/billing/setup/voluntaries/voluntaries.component';
 import { SubscriptionsComponent } from 'src/app/components/billing/setup/subscriptions/subscriptions.component';
+import { SharedModule } from "../shared/shared.module";
 const routes:Routes = [
   {path: 'billing', component: BillingWrapperComponent,title:"Billing"},
   {path: 'billing/voluntaries', component: VoluntariesComponent,title:"Voluntaries"},
@@ -32,9 +32,9 @@ const routes:Routes = [
   imports: [
     RouterModule.forRoot(routes),
     CommonModule,
-    SharedModule,
     ReactiveFormsModule,
-  ],
+    SharedModule
+],
   exports: [
     HeaderComponent,
     SetupCardComponent,
