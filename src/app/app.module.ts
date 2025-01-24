@@ -20,6 +20,8 @@ import { CallService } from './services/call.service';
 import { UsersModule } from './modules/users/users/users.module';
 import { TodoModule } from './modules/todo/todo/todo.module';
 import { TaskModule } from './modules/task/task/task.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { myDragDropModule } from './modules/dragDrop/drag-drop/drag-drop.module';
 
 @NgModule({
   declarations: [
@@ -41,9 +43,11 @@ import { TaskModule } from './modules/task/task/task.module';
     UsersModule,
     TodoModule,
     TaskModule,
+    myDragDropModule,
     AppRoutingModule,
     NgbModule,
     HighchartsChartModule,
+    BrowserAnimationsModule,
 ],
   providers: [],
   bootstrap: [MainContainerComponent]
