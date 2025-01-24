@@ -1,9 +1,10 @@
 import { Component, Input } from '@angular/core';
 import * as Highcharts from 'highcharts';
-
+import Accessibility from 'highcharts/modules/accessibility';
 declare var require: any;
 const More = require('highcharts/highcharts-more');
 More(Highcharts);
+Accessibility(Highcharts);
 
 @Component({
   selector: 'statistics-spiderweb-chart',
