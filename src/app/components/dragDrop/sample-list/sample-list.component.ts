@@ -37,14 +37,13 @@ export class SampleListComponent {
     // to -> container
     const from = event.previousContainer.id;
     const to = event.container.id;
-    const complete = (from === "todo" && to === "done") ? true : false
-    this.handleDrppedTextChangeCompleted(
-      event.item.element.nativeElement.innerText,
+    const complete = (from === "todo" && to === "done")
+    this.handleDroppedTextChangeCompleted(
       event.item.element.nativeElement.dataset['id'] + "",
       complete
     );
   }
-  handleDrppedTextChangeCompleted(todoTitle: string, id: string, complete: boolean) {
+  handleDroppedTextChangeCompleted( id: string, complete: boolean) {
     const todos=this.callService.$todos.value
     if(todos){
       const selectedTodo = todos.filter((todo: Todo) => todo.id.toString() === id)[0]
