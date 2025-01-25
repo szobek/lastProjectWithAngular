@@ -25,6 +25,7 @@ import { myDragDropModule } from './modules/dragDrop/drag-drop/drag-drop.module'
 import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 import { FormsModule } from '@angular/forms';
 import {MatButtonModule} from '@angular/material/button';
+import {MatIconModule} from '@angular/material/icon';
 
 
 @NgModule({
@@ -55,6 +56,7 @@ import {MatButtonModule} from '@angular/material/button';
     BrowserAnimationsModule,
     MatSlideToggleModule,
     MatButtonModule,
+    MatIconModule,
 ],
   providers: [],
   bootstrap: [MainContainerComponent]

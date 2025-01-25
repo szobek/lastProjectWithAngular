@@ -4,6 +4,8 @@ ul.nav{
     flex-direction: column !important;
     position: fixed;
     li{
+        display: flex;
+        align-items: center;
         margin-bottom: 20px;
         cursor: pointer;
         &:hover{
@@ -12,6 +14,10 @@ ul.nav{
         &.active-nav-item{
             text-decoration: underline;
             font-weight: 600;
+        }
+        .nav-icon{
+            color: rgb(29, 31, 34);
+            margin-right: 20px;
         }
     }
 }
