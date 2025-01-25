@@ -13,16 +13,8 @@ import { Subscription } from '../models/Subscription';
 })
 export class CallService {
   $userData: BehaviorSubject<User | null> = new BehaviorSubject<User | null>(null)
-  $voluntaries: BehaviorSubject<Voluntary[]> = new BehaviorSubject([
-    { title: "0/month", subtitle: "no data", description: "it's a free option", id: 1 },
-    { title: "500/month", subtitle: "base data", description: "it's a middle option", id: 2 },
-    { title: "1200/month", subtitle: "all data", description: "it's a premium option", id: 3 },
-  ])
-  $subscriptions: BehaviorSubject<Subscription[]> = new BehaviorSubject<Subscription[]>([
-    { title: "free package", subtitle: "", description: "it's a free option", id: 1 },
-    { title: "medium package", subtitle: "you have a medium package", description: "it's a medium option", id: 2 },
-    { title: "premium package", subtitle: "you have a premium package", description: "it's a premium option", id: 3 },
-  ])
+  $voluntaries: BehaviorSubject<Voluntary[]> = new BehaviorSubject<Voluntary[]>([])
+  $subscriptions: BehaviorSubject<Subscription[]> = new BehaviorSubject<Subscription[]>([])
   $posts: BehaviorSubject<Post[]> = new BehaviorSubject<Post[]>([])
   $users: BehaviorSubject<User[] | null> = new BehaviorSubject<User[] | null>(null)
   $todos: BehaviorSubject<Todo[] | null> = new BehaviorSubject<Todo[] | null>(null)
@@ -33,6 +25,8 @@ export class CallService {
     this.getAllUserFromDB()
     this.getAllPostsFromDB()
     this.getAllTodoFromDB()
+    this.$subscriptions.next(settings.SUBSCRIPTIONS)
+    this.$voluntaries.next(settings.VOLUNTARIES)
   }
 
   getAllPostsFromDB() {
