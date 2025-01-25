@@ -74,7 +74,7 @@ export class CallService {
     return this.http.get<Post[]>(`${settings.BASE_URL}/posts`)
   }
 
-  downloadInvoicesZIP(ids:number[]) {
+  downloadInvoicesZIP() {
     return this.http.get(
       settings.DUMMY_ZIP_URL,
       {
