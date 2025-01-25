@@ -1,5 +1,5 @@
 $row-base-bg: #33aa92;
-$row-base-bg-dark: #d0dfdc;
+$row-base-bg-dark: #232525;
 
 .container {
     &.main {
@@ -39,10 +39,12 @@ $row-base-bg-dark: #d0dfdc;
     .row{
         background-color: $row-base-bg-dark;
         .single-todo{
-            color: #070606;
+            color: #ffffff;
            
         }
-        
+        button{
+            background-color: rgb(23, 36, 65);
+        }
         &.lightblue{
             background-color: lightblue;
             color: #726262;
