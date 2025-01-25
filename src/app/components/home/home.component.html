@@ -1,4 +1,4 @@
-<div class="container main">
+<div class="container main" [ngClass]="{'dark':!lightMode}">
     <div class="row lightblue">
         <p>It's a sample webapp to show my code</p>
         <p>Work with Angular</p>
@@ -9,7 +9,9 @@
             <p class="single-todo" [ngClass]="{'completed':singleTodo?.completed}">{{singleTodo?.title}}</p>
             <mat-slide-toggle [(ngModel)]="isChecked" (change)="handleSliderChange(singleTodo)" />
             <button mat-flat-button (click)="handleClickOnButton(singleTodo)">{{buttonText}}</button>
-            <div class="col-md-6">
-            </div>
+        </div>
+        <div class="col-md-6">
+            <mat-slide-toggle [(ngModel)]="lightMode" (change)="handleClickOnModeChangeButton()" />
+            {{modeText}}
         </div>
     </div>

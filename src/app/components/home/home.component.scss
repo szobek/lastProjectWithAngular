@@ -1,4 +1,5 @@
 $row-base-bg: #33aa92;
+$row-base-bg-dark: #d0dfdc;
 
 .container {
     &.main {
@@ -25,11 +26,24 @@ $row-base-bg: #33aa92;
             padding: 5px 10px;
             margin: 5px;
             cursor: pointer;
-            &.delete {
-                background-color: red;
-            }
+           
         }
         &.lightblue {
+            background-color: lightblue;
+            color: #726262;
+        }
+    }
+}
+
+.container.dark{
+    .row{
+        background-color: $row-base-bg-dark;
+        .single-todo{
+            color: #070606;
+           
+        }
+        
+        &.lightblue{
             background-color: lightblue;
             color: #726262;
         }
