@@ -25,7 +25,7 @@ callService = inject(CallService)
       .subscribe(data => {
         this.invoices = data;
         this.invoices.map(invoice => {
-          invoice.url = "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf"
+          invoice.url = settings.DUMMY_PDF_URL
    invoice.selected = false
    this.allChecked=false
         })
@@ -55,6 +55,6 @@ callService = inject(CallService)
     return this.invoices.filter(invoice => invoice.selected).length
   }
   handleClickOnDownloadButton(){
-    window.open("https://www.learningcontainer.com/wp-content/uploads/2020/05/sample-zip-file.zip", '_blank')
+    window.open(settings.DUMMY_ZIP_URL, '_blank')
   }
 }
