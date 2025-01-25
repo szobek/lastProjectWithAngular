@@ -76,8 +76,7 @@ export class CallService {
 
   downloadInvoicesZIP(ids:number[]) {
     return this.http.get(
-      `https://www.learningcontainer.com/wp-content/uploads/2020/05/sample-zip-file.zip`,
-    
+      settings.DUMMY_ZIP_URL,
       {
         'headers': {
           'Content-Type': 'application/json',
