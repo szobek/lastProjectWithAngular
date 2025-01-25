@@ -37,15 +37,13 @@ export class CallService {
 
   getAllPostsFromDB() {
     this.http.get<Post[]>(`${settings.BASE_URL}/posts`).subscribe({
-      next: (posts: Post[]) => {
-        this.$posts.next(posts)
-      }
+      next: (posts: Post[]) =>         this.$posts.next(posts)
     })
   }
 
   getAllTodoFromDB(){
     this.http.get<Todo[]>(`${settings.BASE_URL}/todos`).subscribe({
-      next: (todos: Todo[]) => this.$todos.next(todos)
+      next: (todos: Todo[]) =>         this.$todos.next(todos)
     })
   }
   getUserDataFromUsers() {

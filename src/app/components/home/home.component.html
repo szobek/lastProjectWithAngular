@@ -4,4 +4,12 @@
         <p>Work with Angular</p>
         <p>It's normally show in big monitor,because the invoice list table and paginator is wide</p>
     </div>
+    <div class="row">
+        <div class="col-md-6">
+<p class="single-todo" [ngClass]="{'completed':singleTodo?.completed}">{{singleTodo?.title}}</p>
+<mat-slide-toggle [(ngModel)]="isChecked" (change)="handleSliderChange(singleTodo)" />
+
+        <div class="col-md-6">
+        </div>
+    </div>
 </div>

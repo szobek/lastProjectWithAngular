@@ -3,15 +3,21 @@ $row-base-bg: #33aa92;
 .container {
     &.main {
         display: flex;
+        flex-direction: column;
         flex-wrap: wrap;
         align-content: center;
         justify-content: center;
         height: 100%;
     }
-
     .row {
         background-color: $row-base-bg;
-
+        .single-todo {
+            color: #726262;
+            font-size: 1.5rem;
+            &.completed {
+                text-decoration: line-through;
+            }
+        }
         &.lightblue {
             background-color: lightblue;
             color: #726262;

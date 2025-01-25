@@ -22,6 +22,8 @@ import { TodoModule } from './modules/todo/todo/todo.module';
 import { TaskModule } from './modules/task/task/task.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { myDragDropModule } from './modules/dragDrop/drag-drop/drag-drop.module';
+import {MatSlideToggleModule} from '@angular/material/slide-toggle';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -35,6 +37,7 @@ import { myDragDropModule } from './modules/dragDrop/drag-drop/drag-drop.module'
     SinglePostComponent,
   ],
   imports: [
+    FormsModule,
     BrowserModule,
     HttpClientModule,
     BillingModule,
@@ -48,6 +51,7 @@ import { myDragDropModule } from './modules/dragDrop/drag-drop/drag-drop.module'
     NgbModule,
     HighchartsChartModule,
     BrowserAnimationsModule,
+    MatSlideToggleModule
 ],
   providers: [],
   bootstrap: [MainContainerComponent]
