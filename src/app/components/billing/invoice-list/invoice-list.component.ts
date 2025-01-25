@@ -13,7 +13,7 @@ export class InvoiceListComponent {
   @Input() page: number = 1;
   allChecked = false;
   http = inject(HttpClient)
-callService = inject(CallService)
+  callService = inject(CallService)
   invoices: Invoice[] = []
 
   ngOnInit() {
@@ -26,8 +26,8 @@ callService = inject(CallService)
         this.invoices = data;
         this.invoices.map(invoice => {
           invoice.url = settings.DUMMY_PDF_URL
-   invoice.selected = false
-   this.allChecked=false
+          invoice.selected = false
+          this.allChecked = false
         })
       });
   }
@@ -42,7 +42,7 @@ callService = inject(CallService)
   }
 
   handleCheckAll() {
-    this.allChecked=!this.allChecked
+    this.allChecked = !this.allChecked
     this.invoices.map(invoice => {
       invoice.selected = this.allChecked
     })
@@ -51,10 +51,10 @@ callService = inject(CallService)
   handleChangeCheckboxOnInvoice(invoice: Invoice) {
     invoice.selected = !invoice.selected
   }
-  countSelectedInvoices():number { 
+  countSelectedInvoices(): number {
     return this.invoices.filter(invoice => invoice.selected).length
   }
-  handleClickOnDownloadButton(){
+  handleClickOnDownloadButton() {
     window.open(settings.DUMMY_ZIP_URL, '_blank')
   }
 }

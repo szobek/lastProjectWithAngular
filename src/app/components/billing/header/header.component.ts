@@ -19,7 +19,7 @@ export class HeaderComponent {
       next: (data: User | null) => {
         if (data != null) {
           this.userData = data
-          this.balance = (data.phone.length>4)? data?.phone.substring(8) : data?.phone
+          this.balance = (data.phone.length > 4) ? data?.phone.substring(8) : data?.phone
         }
       }
     })

@@ -18,7 +18,7 @@ export class CallService {
   $posts: BehaviorSubject<Post[]> = new BehaviorSubject<Post[]>([])
   $users: BehaviorSubject<User[] | null> = new BehaviorSubject<User[] | null>(null)
   $todos: BehaviorSubject<Todo[] | null> = new BehaviorSubject<Todo[] | null>(null)
-  
+
   http = inject(HttpClient)
 
   getAllDataFromDB() {
@@ -31,21 +31,21 @@ export class CallService {
 
   getAllPostsFromDB() {
     this.http.get<Post[]>(`${settings.BASE_URL}/posts`).subscribe({
-      next: (posts: Post[]) =>         this.$posts.next(posts)
+      next: (posts: Post[]) => this.$posts.next(posts)
     })
   }
 
-  getAllTodoFromDB(){
+  getAllTodoFromDB() {
     this.http.get<Todo[]>(`${settings.BASE_URL}/todos`).subscribe({
-      next: (todos: Todo[]) =>         this.$todos.next(todos)
+      next: (todos: Todo[]) => this.$todos.next(todos)
     })
   }
   getUserDataFromUsers() {
     this.$users.subscribe({
-      next:(data:User[]|null)=>{
-        if(data){
-          const user = data.filter((user:User)=>user.id===7)[0]
-          if(user!=null)this.$userData.next(user )
+      next: (data: User[] | null) => {
+        if (data) {
+          const user = data.filter((user: User) => user.id === 7)[0]
+          if (user != null) this.$userData.next(user)
         }
       }
     })
@@ -64,10 +64,6 @@ export class CallService {
   handleCallBackendToEditAddress() {
     return this.http.post(`${settings.BASE_URL}/users/7`, {})
   }
-  getPostLitFromDb() {
-    return this.http.get<Post[]>(`${settings.BASE_URL}/posts`)
-  }
-
   downloadInvoicesZIP() {
     return this.http.get(
       settings.DUMMY_ZIP_URL,
