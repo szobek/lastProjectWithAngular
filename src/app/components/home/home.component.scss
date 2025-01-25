@@ -18,6 +18,17 @@ $row-base-bg: #33aa92;
                 text-decoration: line-through;
             }
         }
+        button{
+            background-color: #44608f;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            margin: 5px;
+            cursor: pointer;
+            &.delete {
+                background-color: red;
+            }
+        }
         &.lightblue {
             background-color: lightblue;
             color: #726262;

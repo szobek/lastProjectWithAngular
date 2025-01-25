@@ -13,6 +13,7 @@ export class HomeComponent {
   isChecked: boolean = false;
   callService = inject(CallService)
   singleTodo!: Todo | null
+  buttonText:string = "Mark as completed"
   constructor() {
     this.callService.$todos.subscribe({
       next: (todos: Todo[] | null) => {
@@ -26,5 +27,14 @@ export class HomeComponent {
 
 handleSliderChange(todo:Todo|null){
   if(todo)  todo.completed = this.isChecked
+}
+handleClickOnButton(todo:Todo|null){
+  if(todo){
+
+    todo.completed = !this.isChecked
+    this.buttonText=todo.completed?"Mark as uncompleted":"Mark as completed"
+  }
+  this.isChecked = !this.isChecked 
+
 }
 }

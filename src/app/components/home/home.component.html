@@ -6,10 +6,10 @@
     </div>
     <div class="row">
         <div class="col-md-6">
-<p class="single-todo" [ngClass]="{'completed':singleTodo?.completed}">{{singleTodo?.title}}</p>
-<mat-slide-toggle [(ngModel)]="isChecked" (change)="handleSliderChange(singleTodo)" />
-
-        <div class="col-md-6">
+            <p class="single-todo" [ngClass]="{'completed':singleTodo?.completed}">{{singleTodo?.title}}</p>
+            <mat-slide-toggle [(ngModel)]="isChecked" (change)="handleSliderChange(singleTodo)" />
+            <button mat-flat-button (click)="handleClickOnButton(singleTodo)">{{buttonText}}</button>
+            <div class="col-md-6">
+            </div>
         </div>
     </div>
-</div>

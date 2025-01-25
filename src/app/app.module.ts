@@ -24,6 +24,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { myDragDropModule } from './modules/dragDrop/drag-drop/drag-drop.module';
 import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 import { FormsModule } from '@angular/forms';
+import {MatButtonModule} from '@angular/material/button';
+
 
 @NgModule({
   declarations: [
@@ -51,7 +53,8 @@ import { FormsModule } from '@angular/forms';
     NgbModule,
     HighchartsChartModule,
     BrowserAnimationsModule,
-    MatSlideToggleModule
+    MatSlideToggleModule,
+    MatButtonModule,
 ],
   providers: [],
   bootstrap: [MainContainerComponent]
