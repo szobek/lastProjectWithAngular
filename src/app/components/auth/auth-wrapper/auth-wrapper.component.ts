@@ -1,8 +1,5 @@
 import { Component, inject } from '@angular/core';
-import { FormGroup } from '@angular/forms';
-import { Router } from '@angular/router';
 import { CallService } from 'src/app/services/call.service';
-import { DataService } from 'src/app/services/data.service';
 
 @Component({
   selector: 'app-auth-wrapper',
@@ -14,7 +11,6 @@ export class AuthWrapperComponent {
   callService = inject(CallService)
   userByJWT!: any
   responsedMe: boolean = false
-  router = inject(Router)
 
   handleClickOnMeButton() {
     let isRetry: boolean = false
