@@ -1,3 +1,4 @@
+import { HttpErrorResponse } from '@angular/common/http';
 import { Component, EventEmitter, inject, Output } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { CallService } from 'src/app/services/call.service';
@@ -13,7 +14,7 @@ export class LoginComponent {
   isLogged: boolean = false
   fb = inject(FormBuilder)
 
-  @Output('setLogged') logged:EventEmitter<boolean>=new EventEmitter()
+  @Output('setLogged') logged: EventEmitter<boolean> = new EventEmitter()
 
   constructor() {
     this.loginForm = this.fb.group({
@@ -31,6 +32,9 @@ export class LoginComponent {
           localStorage.setItem('refreshToken', data.refreshToken)
           this.logged.emit(true)
         },
+        error: (e: HttpErrorResponse) => {
+          alert(e.error.message)
+        }
       })
     } else {
       alert('Form is invalid');
