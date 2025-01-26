@@ -13,25 +13,11 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-                JWT authentication with dummy data and API
+                <p>JWT authentication with dummy data and API</p>
             </div>
         </div>
     </div>
     <div>
-
-        <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
-
-            <mat-form-field appearance="fill">
-                <mat-label>Username</mat-label>
-                <input matInput placeholder="Username" formControlName="username">
-                <mat-icon matSuffix>person</mat-icon>
-            </mat-form-field>
-            <mat-form-field appearance="fill">
-                <mat-label>password</mat-label>
-                <input type="password" matInput placeholder="password" formControlName="password">
-                <mat-icon matSuffix>password</mat-icon>
-            </mat-form-field>
-            <button class="btn btn-primary">Login</button>
-        </form>
+        <auth-login (setLogged)="handleSetIsLogged($event)" />
     </div>
 </ng-template>

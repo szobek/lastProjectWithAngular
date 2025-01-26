@@ -1,5 +1,5 @@
 import { Component, inject } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormGroup } from '@angular/forms';
 import { CallService } from 'src/app/services/call.service';
 import { DataService } from 'src/app/services/data.service';
 
@@ -10,32 +10,9 @@ import { DataService } from 'src/app/services/data.service';
 })
 export class AuthWrapperComponent {
   isLogged: boolean = false
-  fb = inject(FormBuilder)
   callService = inject(CallService)
-  loginForm!: FormGroup
   userByJWT!: any
   responsedMe: boolean = false
-  dataService = inject(DataService)
-  constructor() {
-    this.loginForm = this.fb.group({
-      username: ['emilys', [Validators.required]],
-      password: ['emilyspass', [Validators.required]]
-    })
-  }
-
-  onSubmit(): void {
-    if (this.loginForm.valid) {
-      this.callService.login(this.loginForm.controls["username"].value, this.loginForm.controls["password"].value).subscribe({
-        next: (data: any) => {
-          this.isLogged = true
-          localStorage.setItem('accessToken', `Bearer ${data.accessToken}`)
-          localStorage.setItem('refreshToken', data.refreshToken)
-        },
-      })
-    } else {
-      alert('Form is invalid');
-    }
-  }
 
   handleClickOnMeButton() {
     let isRetry: boolean = false
@@ -62,5 +39,8 @@ export class AuthWrapperComponent {
         }
       }
     })
+  }
+  handleSetIsLogged(e:any){
+    this.isLogged=e
   }
 }
