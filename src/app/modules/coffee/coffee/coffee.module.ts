@@ -4,7 +4,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { CoffeeListComponent } from 'src/app/components/coffee/coffee-list/coffee-list.component';
 import { SingleCoffeeComponent } from 'src/app/components/coffee/single-coffee/single-coffee.component';
 const routes: Routes = [
-  {path: 'coffees', component:CoffeeListComponent},
+  {path: 'coffees', component:CoffeeListComponent,title:'Coffee list'},
   {path: 'coffee/:id', component:SingleCoffeeComponent},
 ]
 

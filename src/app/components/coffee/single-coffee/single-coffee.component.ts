@@ -22,6 +22,7 @@ export class SingleCoffeeComponent {
       if(coffees){
         this.allCoffee=coffees
         this.singleCoffee=this.allCoffee.filter((coffee:any)=>coffee.id===this.id)[0]
+        document.title=this.singleCoffee.name
         if(this.singleCoffee===undefined) this.router.navigateByUrl('/coffees')
       }
     })
