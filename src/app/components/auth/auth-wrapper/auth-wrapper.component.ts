@@ -1,5 +1,6 @@
 import { Component, inject } from '@angular/core';
 import { FormGroup } from '@angular/forms';
+import { Router } from '@angular/router';
 import { CallService } from 'src/app/services/call.service';
 import { DataService } from 'src/app/services/data.service';
 
@@ -13,6 +14,7 @@ export class AuthWrapperComponent {
   callService = inject(CallService)
   userByJWT!: any
   responsedMe: boolean = false
+  router = inject(Router)
 
   handleClickOnMeButton() {
     let isRetry: boolean = false
@@ -34,13 +36,20 @@ export class AuthWrapperComponent {
                   this.responsedMe = true
                 }
               })
+            },
+            error:_=> {
+              location.reload()
+              localStorage.removeItem('accessToken')
+              localStorage.removeItem('refreshToken')
             }
           })
+        } else {
+          location.reload()
         }
       }
     })
   }
-  handleSetIsLogged(e:any){
-    this.isLogged=e
+  handleSetIsLogged(e: any) {
+    this.isLogged = e
   }
 }
