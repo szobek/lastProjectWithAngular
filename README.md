@@ -12,6 +12,7 @@ Users - Felhasználó lista
 Todos - Todo lista  
 Tasks - Taskok listája  
 Drag&drop - A drag&drop kipróbálására egy oldal  
+Coffee - Kávék listája  
 
 ## Funkciók
 
@@ -49,3 +50,7 @@ Tasks
   
 Drag&drop  
     - Taskok mozgathatóak  
+  
+Coffee  
+    - Kávék listázása  
+    - Ha kattint egyen, megnyitja a kávé adatait  
