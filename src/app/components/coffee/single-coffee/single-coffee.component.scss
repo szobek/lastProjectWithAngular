@@ -1,0 +1,16 @@
+
+.single-coffee-wrapper{
+    display: flex;
+    justify-content: center;
+    .card{
+        width: 20rem;
+        .card-body{
+            .card-text{
+                .single-coffee-option-item{
+                    list-style-type: decimal;
+                }
+            }
+        }
+    }
+
+}

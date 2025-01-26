@@ -1,0 +1,30 @@
+<div class="single-coffee-wrapper" *ngIf="singleCoffee; else load">
+    <div class="card" >
+        <img class="card-img-top" [src]="singleCoffee.image_url" alt="Card image cap">
+        <div class="card-body">
+            <h5 class="card-title">{{singleCoffee.name}}</h5>
+            <p class="card-text">{{singleCoffee.description}}</p>
+            <p class="card-text">price: {{singleCoffee.price | currency}}</p>
+            <p class="card-text">region: {{singleCoffee.region}}</p>
+            <p class="card-text">weight: {{singleCoffee.weight}}g</p>
+            <p class="card-text">Roast level: {{singleCoffee.roast_level}}</p>
+            <p class="card-text">Flavours: </p>
+            <div class="card-text">
+                <ul>
+                    <li class="single-coffee-option-item" *ngFor="let flavour of singleCoffee.flavor_profile">{{flavour}}</li>
+                </ul>
+            </div>
+            <p class="card-text">Grind options: </p>
+            <div class="card-text">
+                <ul>
+                    <li class="single-coffee-option-item" *ngFor="let grind of singleCoffee.grind_option">{{grind}}</li>
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+    
+</div>
+<ng-template #load>
+    <p>Loading...</p>
+  </ng-template>

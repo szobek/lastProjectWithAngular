@@ -7,6 +7,7 @@ import { Voluntary } from '../models/Voluntary';
 import { Post } from '../models/Post';
 import { Todo } from '../models/Todo';
 import { Subscription } from '../models/Subscription';
+import { Coffee } from '../models/Coffee';
 
 @Injectable({
   providedIn: 'root'
@@ -18,6 +19,7 @@ export class CallService {
   $posts: BehaviorSubject<Post[]> = new BehaviorSubject<Post[]>([])
   $users: BehaviorSubject<User[] | null> = new BehaviorSubject<User[] | null>(null)
   $todos: BehaviorSubject<Todo[] | null> = new BehaviorSubject<Todo[] | null>(null)
+  $coffees: BehaviorSubject<Coffee[] | null> = new BehaviorSubject<Coffee[] | null>(null)
 
   http = inject(HttpClient)
 
@@ -25,6 +27,7 @@ export class CallService {
     this.getAllUserFromDB()
     this.getAllPostsFromDB()
     this.getAllTodoFromDB()
+    this.getAllCoffeeFromDB()
     this.$subscriptions.next(settings.SUBSCRIPTIONS)
     this.$voluntaries.next(settings.VOLUNTARIES)
   }
@@ -56,6 +59,12 @@ export class CallService {
         next: (data: User[]) => this.$users.next(data)
       })
     }
+  }
+
+  getAllCoffeeFromDB() {
+    this.http.get(settings.COFFEE_URL).subscribe({
+      next: (data: any) => this.$coffees.next(data)
+    })
   }
 
   handleCallBackendToTokenAddToWallet() {
