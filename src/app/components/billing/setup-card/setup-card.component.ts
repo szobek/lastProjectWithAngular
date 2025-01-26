@@ -6,6 +6,7 @@ import { Router } from '@angular/router';
 import { User } from 'src/app/models/User';
 import { Voluntary } from 'src/app/models/Voluntary';
 import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
+import { DataService } from 'src/app/services/data.service';
 
 @Component({
   selector: 'billing-setup-card',
@@ -19,10 +20,11 @@ sanitizer=inject(DomSanitizer)
   @Input() cardDescription!: string
 html!:string
   private modalService = inject(NgbModal);
+  private dataService=inject(DataService)
   userData: User|null=null
   selectedVoluntary:Voluntary|null=null
   constructor(private callService: CallService, private router: Router) {
-    this.callService.$userData.subscribe({
+    this.dataService.$userData.subscribe({
       next: (data: User|null) => {
         if (data != null) {
           this.userData = data

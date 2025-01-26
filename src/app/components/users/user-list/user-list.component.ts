@@ -1,6 +1,6 @@
 import { Component, inject } from '@angular/core';
 import { User } from 'src/app/models/User';
-import { CallService } from 'src/app/services/call.service';
+import { DataService } from 'src/app/services/data.service';
 
 @Component({
   selector: 'app-user-list',
@@ -9,9 +9,9 @@ import { CallService } from 'src/app/services/call.service';
 })
 export class UserListComponent {
   users: User[] = []
-  callService = inject(CallService)
+  private dataService=inject(DataService)
   constructor() {
-    this.callService.$users.subscribe({
+    this.dataService.$users.subscribe({
       next: (users_: User[] | null) => { if (users_ != null) this.users = users_ }
     })
   }

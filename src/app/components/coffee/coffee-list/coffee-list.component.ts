@@ -1,6 +1,6 @@
 import { Component, inject } from '@angular/core';
 import { Coffee } from 'src/app/models/Coffee';
-import { CallService } from 'src/app/services/call.service';
+import { DataService } from 'src/app/services/data.service';
 
 @Component({
   selector: 'app-coffee-list',
@@ -8,10 +8,10 @@ import { CallService } from 'src/app/services/call.service';
   styleUrls: ['./coffee-list.component.scss']
 })
 export class CoffeeListComponent {
-  callService = inject(CallService)
+  private dataService=inject(DataService)
   coffees: Coffee[] = []
   constructor() {
-    this.callService.$coffees.subscribe({
+    this.dataService.$coffees.subscribe({
       next: (data: Coffee[] | null) => {
         if (data) this.coffees = data;
       }

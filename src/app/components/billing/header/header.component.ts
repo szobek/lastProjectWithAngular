@@ -2,7 +2,7 @@ import { Component, inject } from '@angular/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { BalanceExchangeContentComponent } from '../modal/balance-exchange-content/balance-exchange-content.component';
 import { User } from 'src/app/models/User';
-import { CallService } from 'src/app/services/call.service';
+import { DataService } from 'src/app/services/data.service';
 
 @Component({
   selector: 'billing-header',
@@ -11,11 +11,11 @@ import { CallService } from 'src/app/services/call.service';
 })
 export class HeaderComponent {
   private modalService = inject(NgbModal);
-  private callService = inject(CallService)
+  private dataService=inject(DataService)
   userData: User | null = null
   balance: string = ""
   constructor() {
-    this.callService.$userData.subscribe({
+    this.dataService.$userData.subscribe({
       next: (data: User | null) => {
         if (data != null) {
           this.userData = data

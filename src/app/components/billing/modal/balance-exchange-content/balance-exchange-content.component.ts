@@ -2,6 +2,7 @@ import { Component, inject } from '@angular/core';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { User } from 'src/app/models/User';
 import { CallService } from 'src/app/services/call.service';
+import { DataService } from 'src/app/services/data.service';
 
 @Component({
   selector: 'app-balance-exchange-content',
@@ -11,9 +12,10 @@ import { CallService } from 'src/app/services/call.service';
 export class BalanceExchangeContentComponent {
   activeModal = inject(NgbActiveModal);
   callService = inject(CallService);
+  private dataService=inject(DataService)
   userData: User | null = null
   constructor() {
-    this.callService.$userData.subscribe({
+    this.dataService.$userData.subscribe({
       next: (data: User | null) => {
         if (data != null) {
           this.userData = data
@@ -27,7 +29,7 @@ export class BalanceExchangeContentComponent {
       next: _ => {},
       error: e => console.error(e),
       complete: () => {
-        this.callService.$userData.next(this.userData)
+        this.dataService.$userData.next(this.userData)
         this.activeModal.close()
       }
     })
@@ -39,7 +41,7 @@ export class BalanceExchangeContentComponent {
       next: _ => {},
       error: e => console.error(e),
       complete: () => {
-        this.callService.$userData.next(this.userData)
+        this.dataService.$userData.next(this.userData)
         this.activeModal.close()
       }
     })

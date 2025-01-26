@@ -1,4 +1,4 @@
-export class Subscription {
+export class MySubscription {
     id: number;
 title: string
 subtitle: string

@@ -1,6 +1,7 @@
 import { Component, inject } from '@angular/core';
 import { Todo } from 'src/app/models/Todo';
 import { CallService } from 'src/app/services/call.service';
+import { DataService } from 'src/app/services/data.service';
 
 @Component({
   selector: 'app-task-list',
@@ -8,7 +9,7 @@ import { CallService } from 'src/app/services/call.service';
   styleUrls: ['./task-list.component.scss'],
 })
 export class TaskListComponent {
-  callService = inject(CallService)
+  private dataService=inject(DataService)
   tasks: Todo[] = []
   completedTasks: Todo[] = []
   IncompletedTasks: Todo[] = []
@@ -18,14 +19,14 @@ export class TaskListComponent {
   }
   handleChangeCheckbox(todo: Todo) {
     todo.completed = !todo.completed
-    this.callService.$todos.next(this.tasks)
+    this.dataService.$todos.next(this.tasks)
   }
   ngOnChanges() {
     this.generateTaskList()
 
   }
   generateTaskList() {
-    this.callService.$todos
+    this.dataService.$todos
       .subscribe({
         next: (todos: Todo[] | null) => {
           if (todos) {

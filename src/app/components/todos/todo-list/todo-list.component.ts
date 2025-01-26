@@ -1,6 +1,6 @@
 import { Component, inject } from '@angular/core';
 import { Todo } from 'src/app/models/Todo';
-import { CallService } from 'src/app/services/call.service';
+import { DataService } from 'src/app/services/data.service';
 
 @Component({
   selector: 'app-todo-list',
@@ -9,9 +9,9 @@ import { CallService } from 'src/app/services/call.service';
 })
 export class TodoListComponent {
   todos:Todo[] = [];
-  callService = inject(CallService);
+  private dataService=inject(DataService)
   constructor() {
-    this.callService.$todos.subscribe((data) => {
+    this.dataService.$todos.subscribe((data) => {
       if(data){
         this.todos = data.slice(0,10);
       }

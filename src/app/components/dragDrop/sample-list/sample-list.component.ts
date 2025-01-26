@@ -1,7 +1,7 @@
 import { Component, inject } from '@angular/core';
 import { CdkDragDrop, moveItemInArray, transferArrayItem } from '@angular/cdk/drag-drop';
-import { CallService } from 'src/app/services/call.service';
 import { Todo } from 'src/app/models/Todo';
+import { DataService } from 'src/app/services/data.service';
 
 @Component({
   selector: 'app-sample-list',
@@ -11,9 +11,9 @@ import { Todo } from 'src/app/models/Todo';
 export class SampleListComponent {
   todoList!: Todo[];
   todoListDone!: Todo[];
-  callService = inject(CallService);
+  private dataService=inject(DataService)
   constructor() {
-    this.callService.$todos.subscribe({
+    this.dataService.$todos.subscribe({
       next: (todos: Todo[] | null) => {
         if (todos) {
           this.todoList = todos.slice(0, 5).filter((todo: Todo) => !todo.completed)
@@ -44,11 +44,11 @@ export class SampleListComponent {
     );
   }
   handleDroppedTextChangeCompleted( id: string, complete: boolean) {
-    const todos=this.callService.$todos.value
+    const todos=this.dataService.$todos.value
     if(todos){
       const selectedTodo = todos.filter((todo: Todo) => todo.id.toString() === id)[0]
       selectedTodo.completed = complete
-      this.callService.$todos.next(todos)
+      this.dataService.$todos.next(todos)
     }
   }
 }

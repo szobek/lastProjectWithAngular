@@ -2,7 +2,7 @@ import { Component, inject } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { User } from 'src/app/models/User';
-import { CallService } from 'src/app/services/call.service';
+import { DataService } from 'src/app/services/data.service';
 
 @Component({
   selector: 'app-edit-address',
@@ -15,11 +15,11 @@ export class EditAddressComponent {
     city:new FormControl(),
   })
   activeModal = inject(NgbActiveModal);
-  callService = inject(CallService);
   formBuilder=inject(FormBuilder)
+  private dataService=inject(DataService)
   userdata: User | null = null;
   constructor() {
-    this.callService.$userData.subscribe({
+    this.dataService.$userData.subscribe({
       next: (data: User|null) => {
         if (data != null) {
 
@@ -38,7 +38,7 @@ export class EditAddressComponent {
     if(this.userdata!=null){
       this.userdata.address.zipcode=this.addressForm.get("zip")?.value
       this.userdata.address.city=this.addressForm.get("city")?.value
-      this.callService.$userData.next(this.userdata)
+      this.dataService.$userData.next(this.userdata)
       this.activeModal.close()
     }
   }

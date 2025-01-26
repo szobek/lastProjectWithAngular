@@ -1,6 +1,7 @@
 import { Component, inject } from '@angular/core';
 import { Todo } from 'src/app/models/Todo';
 import { CallService } from 'src/app/services/call.service';
+import { DataService } from 'src/app/services/data.service';
 
 
 @Component({
@@ -11,13 +12,13 @@ import { CallService } from 'src/app/services/call.service';
 })
 export class HomeComponent {
   isChecked: boolean = false;
-  callService = inject(CallService)
+  private dataService=inject(DataService)
   singleTodo!: Todo | null
   buttonText: string = "Mark as completed"
   lightMode: boolean = true
   modeText: string = "Light mode"
   constructor() {
-    this.callService.$todos.subscribe({
+    this.dataService.$todos.subscribe({
       next: (todos: Todo[] | null) => {
         if (todos) {
           this.singleTodo = todos.filter((todo: Todo) => todo.id === 1)[0]
