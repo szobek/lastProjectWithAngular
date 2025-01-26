@@ -24,5 +24,6 @@ export const settings = {
         {name:'Tasks',path:'/tasks',icon:'format_list_numbered',ariaLabel:'Tasks icon'},
         {name:'Drag&drop',path:'/dragdrop',icon:'open_with',ariaLabel:'Drag&drop icon'},
         {name:'Coffee',path:'/coffees',icon:'coffee',ariaLabel:'Coffee icon'},
+        {name:'Authentication',path:'/auth',icon:'no_encryption',ariaLabel:'Auth icon'},
     ],
 }

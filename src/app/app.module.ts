@@ -27,6 +27,8 @@ import { FormsModule } from '@angular/forms';
 import {MatButtonModule} from '@angular/material/button';
 import {MatIconModule} from '@angular/material/icon';
 import { CoffeeModule } from './modules/coffee/coffee/coffee.module';
+import { MyauthententicationModule } from './modules/myauthententication/myauthententication/myauthententication.module';
+
 
 
 @NgModule({
@@ -52,6 +54,7 @@ import { CoffeeModule } from './modules/coffee/coffee/coffee.module';
     TaskModule,
     myDragDropModule,
     CoffeeModule,
+    MyauthententicationModule,
     AppRoutingModule,
     NgbModule,
     HighchartsChartModule,

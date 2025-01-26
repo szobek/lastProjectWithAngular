@@ -10,9 +10,9 @@ import { DataService } from './data.service';
   providedIn: 'root'
 })
 export class CallService {
-  
+
   http = inject(HttpClient)
-  dataService=inject(DataService)
+  dataService = inject(DataService)
 
   getAllDataFromDB() {
     this.getAllUserFromDB()
@@ -75,5 +75,21 @@ export class CallService {
         }
       }
     )
+  }
+
+  login(username: string, password: string) {
+    return this.http.post('https://dummyjson.com/auth/login', {
+      username, password
+    })
+  }
+
+  refreshToken(){
+    return this.http.post('https://dummyjson.com/auth/refresh',{refreshToken:localStorage.getItem('refreshToken')||""})
+  }
+
+  getUserByJWT(){
+    return this.http.get('https://dummyjson.com/auth/me',{headers:{
+      'Authorization':localStorage.getItem('accessToken')||""
+    }})
   }
 }
