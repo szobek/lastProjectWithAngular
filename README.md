@@ -13,6 +13,7 @@ Todos - Todo lista
 Tasks - Taskok listája  
 Drag&drop - A drag&drop kipróbálására egy oldal  
 Coffee - Kávék listája  
+Authentication - JWT azonosítás
 
 ## Funkciók
 
@@ -54,3 +55,8 @@ Drag&drop
 Coffee  
     - Kávék listázása  
     - Ha kattint egyen, megnyitja a kávé adatait  
+  
+Authentication  
+    - username és pass megadása egy login formban  
+    - Védett tartalom megjelenítése ha sikeres a login  
+    - Gombbal lekérdezi a loginolt user adatait
