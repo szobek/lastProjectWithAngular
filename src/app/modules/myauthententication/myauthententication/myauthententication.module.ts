@@ -7,6 +7,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatIconModule} from '@angular/material/icon';
 import {MatInputModule} from '@angular/material/input';
+import { SharedModule } from '../../shared/shared.module';
 
 const routes: Routes = [
   { path: 'auth', component: AuthWrapperComponent, title: 'Auth' }
@@ -23,7 +24,8 @@ const routes: Routes = [
     ReactiveFormsModule,
     MatFormFieldModule,
     MatIconModule,
-    MatInputModule
+    MatInputModule,
+    SharedModule
   ],
   exports: [
     LoginComponent,

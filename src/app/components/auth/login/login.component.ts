@@ -18,14 +18,15 @@ export class LoginComponent {
 
   constructor() {
     this.loginForm = this.fb.group({
-      username: ['emilys', [Validators.required]],
-      password: ['emilyspass', [Validators.required]]
+      username: ['', [Validators.required]],
+      password: ['', [Validators.required]]
     })
   }
 
   onSubmit(): void {
     if (this.loginForm.valid) {
-      this.callService.login(this.loginForm.controls["username"].value, this.loginForm.controls["password"].value).subscribe({
+      this.callService.login(this.loginForm.controls["username"].value, this.loginForm.controls["password"].value)
+      .subscribe({
         next: (data: any) => {
           this.isLogged = true
           localStorage.setItem('accessToken', `Bearer ${data.accessToken}`)

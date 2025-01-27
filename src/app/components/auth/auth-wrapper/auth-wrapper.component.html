@@ -1,3 +1,4 @@
+<shared-module-title title="JWT authentication with dummy data and API" />
 <div *ngIf="isLogged; else loginTemplate">
     <p>
         Auth content
@@ -13,11 +14,9 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-                <p>JWT authentication with dummy data and API</p>
+                <p></p>
+                <auth-login (setLogged)="handleSetIsLogged($event)" />
             </div>
         </div>
-    </div>
-    <div>
-        <auth-login (setLogged)="handleSetIsLogged($event)" />
     </div>
 </ng-template>

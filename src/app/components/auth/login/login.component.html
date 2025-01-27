@@ -1,14 +1,19 @@
-<form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
-
-    <mat-form-field appearance="fill">
-        <mat-label>Username</mat-label>
-        <input matInput placeholder="Username" formControlName="username">
-        <mat-icon matSuffix>person</mat-icon>
-    </mat-form-field>
-    <mat-form-field appearance="fill">
-        <mat-label>password</mat-label>
-        <input type="password" matInput placeholder="password" formControlName="password">
-        <mat-icon matSuffix>password</mat-icon>
-    </mat-form-field>
-    <button class="btn btn-primary">Login</button>
-</form>
+<div class="login-wrapper">
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+        <mat-form-field appearance="fill">
+            <mat-label>Username</mat-label>
+            <input matInput placeholder="Username" formControlName="username">
+            <mat-icon matSuffix>person</mat-icon>
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+            <mat-label>password</mat-label>
+            <input type="password" matInput placeholder="password" formControlName="password">
+            <mat-icon matSuffix>password</mat-icon>
+        </mat-form-field>
+        <button class="btn btn-primary">Login</button>
+        <ul class="list-group login-data">
+            <li class="list-group-item">username: emilys</li>
+            <li class="list-group-item">password: emilyspass</li>
+        </ul>
+    </form>
+</div>
