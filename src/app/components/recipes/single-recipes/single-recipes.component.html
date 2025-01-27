@@ -1,0 +1,34 @@
+<div class="single-recipe-wrapper">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+
+                <img [src]="singleRecipe.image_url" [alt]="singleRecipe.name">
+            </div>
+            <div class="col-md-8">
+
+                <h3>{{singleRecipe.name}}</h3>
+                <p>{{singleRecipe.description}}</p>
+                <hr>
+                <p class="block-header">Ingredients: </p>
+                <ol>
+                    <li *ngFor="let ingredient of singleRecipe.ingredients">{{ingredient}}</li>
+                </ol>
+                <hr>
+                <p class="block-header">Instructions:</p>
+                <p>{{singleRecipe.instruction}}</p>
+                <div *ngIf="singleRecipe.video_url!=''">
+                    <hr>
+                    <p>Video: </p>
+
+                    <iframe width="560" height="315" [src]="safeRecipeVideoSource" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+                <hr>
+                <p>Author: {{singleRecipeAuthor?.name}}</p>
+                <p>Rating: {{singleRecipe.rating}}</p>
+                <p>Cook time: {{singleRecipe.cook_time}}min</p>
+                <p>Preparation time: {{singleRecipe.preparation_time}}min</p>
+            </div>
+        </div>
+    </div>
+</div>

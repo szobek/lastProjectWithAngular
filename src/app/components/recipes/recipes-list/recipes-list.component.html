@@ -1,0 +1,8 @@
+<div class="recipes-list-wrapper">
+    <div class="card" *ngFor="let singleRecipe of recipes" [routerLink]="['/single-recipe',singleRecipe.id]">
+        <img class="card-img-top" [src]="singleRecipe.image_url" [alt]="singleRecipe.name">
+        <div class="card-body">
+            <h5 class="card-title">{{singleRecipe.name}}</h5>
+        </div>
+    </div>
+</div>

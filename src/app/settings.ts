@@ -25,6 +25,7 @@ export const settings = {
         {name:'Drag&drop',path:'/dragdrop',icon:'open_with',ariaLabel:'Drag&drop icon'},
         {name:'Coffee',path:'/coffees',icon:'coffee',ariaLabel:'Coffee icon'},
         {name:'Authentication',path:'/auth',icon:'no_encryption',ariaLabel:'Auth icon'},
+        {name:'Recipes',path:'/recipes',icon:'book',ariaLabel:'Recipes icon'},
     ],
     DUMMY_JSON_URL:'https://dummyjson.com/auth'
 }

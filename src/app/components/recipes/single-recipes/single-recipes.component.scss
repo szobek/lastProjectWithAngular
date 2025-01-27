@@ -1,0 +1,16 @@
+$wrapper-border-radius:12px;
+.single-recipe-wrapper {
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    border-top-left-radius: $wrapper-border-radius;
+    border-top-right-radius: $wrapper-border-radius;
+    padding: 15px;
+    img{
+        width: 100%;
+    }
+    .block-header{
+        text-decoration: underline;
+        font-size: 18px;
+    }
+}

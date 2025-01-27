@@ -1,0 +1,11 @@
+$card-width:18rem;
+
+.recipes-list-wrapper{
+    display: flex;
+    gap: 50px;
+}
+.card{
+    width: $card-width;
+    height: auto;
+    cursor: pointer;
+}

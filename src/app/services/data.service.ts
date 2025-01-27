@@ -6,6 +6,7 @@ import { Todo } from '../models/Todo';
 import { User } from '../models/User';
 import { Voluntary } from '../models/Voluntary';
 import { MySubscription } from '../models/MySubscription';
+import { Recipe } from '../models/Recipe';
 
 @Injectable({
   providedIn: 'root'
@@ -18,5 +19,6 @@ export class DataService {
   $users: BehaviorSubject<User[] | null> = new BehaviorSubject<User[] | null>(null)
   $todos: BehaviorSubject<Todo[] | null> = new BehaviorSubject<Todo[] | null>(null)
   $coffees: BehaviorSubject<Coffee[] | null> = new BehaviorSubject<Coffee[] | null>(null)
+  $recipes: BehaviorSubject<Recipe[] | null> = new BehaviorSubject<Recipe[] | null>(null)
  
 }
