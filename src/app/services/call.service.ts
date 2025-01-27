@@ -78,17 +78,17 @@ export class CallService {
   }
 
   login(username: string, password: string) {
-    return this.http.post('https://dummyjson.com/auth/login', {
+    return this.http.post(`${settings.DUMMY_JSON_URL}/login`, {
       username, password
     })
   }
 
   refreshToken(){
-    return this.http.post('https://dummyjson.com/auth/refresh',{refreshToken:localStorage.getItem('refreshToken')||""})
+    return this.http.post(`${settings.DUMMY_JSON_URL}/refresh`,{refreshToken:localStorage.getItem('refreshToken')||""})
   }
 
   getUserByJWT(){
-    return this.http.get('https://dummyjson.com/auth/me',{headers:{
+    return this.http.get(`${settings.DUMMY_JSON_URL}/me`,{headers:{
       'Authorization':localStorage.getItem('accessToken')||""
     }})
   }
