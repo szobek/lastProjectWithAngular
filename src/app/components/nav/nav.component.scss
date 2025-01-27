@@ -1,23 +1,40 @@
-ul.nav{
+ul.nav {
+
     list-style-type: none;
     font-size: 20px;
     flex-direction: column !important;
     position: fixed;
-    li{
+
+    li {
         display: flex;
         align-items: center;
         margin-bottom: 20px;
         cursor: pointer;
-        &:hover{
+
+        &:hover {
             color: #f00;
         }
-        &.active-nav-item{
+
+        &.active-nav-item {
             text-decoration: underline;
             font-weight: 600;
         }
-        .nav-icon{
+
+        .nav-icon {
             color: rgb(52, 78, 117);
             margin-right: 20px;
         }
+    }
+}
+
+@media only screen and (min-width: 375px) and (max-width: 865px) {
+    .nav-text {
+        display: none;
+    }
+}
+
+@media only screen and (min-width: 865px) and (max-width: 1250px) {
+    .nav-text {
+        font-size: 0.7rem;
     }
 }
