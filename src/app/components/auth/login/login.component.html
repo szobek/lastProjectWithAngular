@@ -3,12 +3,12 @@
         <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
             <mat-form-field appearance="fill">
                 <mat-label>Username</mat-label>
-                <input matInput placeholder="Username" formControlName="username">
+                <input matInput autocomplete="off" placeholder="Username" formControlName="username">
                 <mat-icon matSuffix>person</mat-icon>
             </mat-form-field>
             <mat-form-field appearance="fill">
                 <mat-label>password</mat-label>
-                <input type="password" matInput placeholder="password" formControlName="password">
+                <input type="password" autocomplete="off" matInput placeholder="password" formControlName="password">
                 <mat-icon matSuffix>password</mat-icon>
             </mat-form-field>
             <button class="btn btn-primary">Login</button>
