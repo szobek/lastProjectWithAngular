@@ -83,13 +83,19 @@ export class CallService {
     })
   }
 
-  refreshToken(){
-    return this.http.post(`${settings.DUMMY_JSON_URL}/refresh`,{refreshToken:localStorage.getItem('refreshToken')||""})
+  refreshToken() {
+    return this.http.post(`${settings.DUMMY_JSON_URL}/refresh`, { refreshToken: localStorage.getItem('refreshToken') || "" })
   }
 
-  getUserByJWT(){
-    return this.http.get(`${settings.DUMMY_JSON_URL}/me`,{headers:{
-      'Authorization':localStorage.getItem('accessToken')||""
-    }})
+  getUserByJWT() {
+    return this.http.get(`${settings.DUMMY_JSON_URL}/me`, {
+      headers: {
+        'Authorization': localStorage.getItem('accessToken') || ""
+      }
+    })
+  }
+
+  savePostInDB(post: Post) {
+    return this.http.post(`${settings.BASE_URL}/posts`, post)
   }
 }

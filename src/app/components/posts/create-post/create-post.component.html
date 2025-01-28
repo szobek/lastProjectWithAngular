@@ -1,0 +1,24 @@
+<div class="form-wrapper">
+    <div *ngIf="alertShowSuccess" class="alert alert-success fade show" role="alert">
+        {{alertText}}
+        <button class="btn-close" (click)="setToDefaultAlert()" aria-label="Close"></button>
+    </div>
+    <div *ngIf="alertShowError" class="alert alert-danger fade show" role="alert">
+        {{alertText}}
+        <button class="btn-close" (click)="setToDefaultAlert()" aria-label="Close"></button>
+    </div>
+    <form [formGroup]="createPostForm" (ngSubmit)="onSubmit()">
+        <mat-form-field appearance="fill" class="custom">
+            <mat-label>Title</mat-label>
+            <input matInput autocomplete="off" placeholder="Title" formControlName="title" color="#36f">
+        </mat-form-field>
+        <mat-form-field appearance="fill" class="custom">
+            <mat-label>Body</mat-label>
+            <input autocomplete="off" matInput placeholder="Body" formControlName="body">
+        </mat-form-field>
+        <button class="base-btn">
+            <mat-icon>plus_one</mat-icon>
+            Save post
+        </button>
+    </form>
+</div>

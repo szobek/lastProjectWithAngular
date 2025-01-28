@@ -1,0 +1,18 @@
+.form-wrapper {
+    .alert{
+        display: flex;
+        justify-content: space-between;
+    }
+    form {
+        display: flex;
+        flex-direction: column;
+        width: 20%;
+        .custom mat-label {
+            color: #1976d2;
+        }
+        .base-btn {
+            width: 110px;
+        }
+    }
+}
+
