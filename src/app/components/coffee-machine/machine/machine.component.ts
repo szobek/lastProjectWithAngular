@@ -45,9 +45,7 @@ export class MachineComponent {
       case 0:
         image += (this.makedCoffee.milk === 0) ? "ristretto.jpg" : "ristretto-with-milk.jpg"
         break
-
     }
     this.makedCoffeeImage = image
-
   }
 }
