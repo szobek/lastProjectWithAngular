@@ -14,7 +14,8 @@ Tasks - Taskok listája
 Drag&drop - A drag&drop kipróbálására egy oldal  
 Coffee - Kávék listája  
 Authentication - JWT azonosítás  
-Recipes - Receptek gyűjteménye
+Recipes - Receptek gyűjteménye  
+Coffee Machine - Kávé készítő oldal
 
 
 ## Funkciók
@@ -65,4 +66,10 @@ Authentication
 
 Recipes  
     - Receptek listája képpel  
-    - Kattintásra átmegy a recept részleteire      
+    - Kattintásra átmegy a recept részleteire   
+
+Coffee Machine  
+    - Kávé típus választás  
+    - Tejjel vagy tej nélkül  
+    - Cukor mennyisége
+    - A fenti adatok alapján kép elérés generálása
