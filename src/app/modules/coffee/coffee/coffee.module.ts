@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
 import { CoffeeListComponent } from 'src/app/components/coffee/coffee-list/coffee-list.component';
 import { SingleCoffeeComponent } from 'src/app/components/coffee/single-coffee/single-coffee.component';
+import { SharedModule } from '../../shared/shared.module';
 const routes: Routes = [
   {path: 'coffees', component:CoffeeListComponent,title:'Coffee list'},
   {path: 'coffee/:id', component:SingleCoffeeComponent},
@@ -16,7 +17,8 @@ const routes: Routes = [
   ],
   imports: [
     CommonModule,
-    RouterModule.forRoot(routes)
+    RouterModule.forRoot(routes),
+    SharedModule
   ],
   exports: [
     CoffeeListComponent,
