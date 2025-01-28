@@ -29,6 +29,7 @@ import {MatIconModule} from '@angular/material/icon';
 import { CoffeeModule } from './modules/coffee/coffee/coffee.module';
 import { MyauthententicationModule } from './modules/myauthententication/myauthententication/myauthententication.module';
 import { RecipesModule } from './modules/recipes/recipes/recipes.module';
+import { CoffeeMachineModule } from './modules/coffeeMachine/coffee-machine/coffee-machine.module';
 
 
 
@@ -57,6 +58,7 @@ import { RecipesModule } from './modules/recipes/recipes/recipes.module';
     CoffeeModule,
     MyauthententicationModule,
     RecipesModule,
+    CoffeeMachineModule,
     AppRoutingModule,
     NgbModule,
     HighchartsChartModule,

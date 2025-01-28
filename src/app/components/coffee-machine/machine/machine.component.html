@@ -1,0 +1,31 @@
+<div class="machine-wrapper">
+    <p>Please select coffee type:</p>
+    <div class="coffee-types-wrapper">
+        <mat-radio-group  class="example-radio-group"
+            [(ngModel)]="makedCoffee.coffeeType">
+            <mat-radio-button *ngFor="let type of coffee.type" class="example-radio-button" [value]="type.value">{{type.viewValue}}</mat-radio-button>
+        </mat-radio-group>
+    </div>
+    <div class="coffee-milk-wrapper">
+        <p>Please select milk</p>
+        <mat-form-field>
+            <mat-label>Coffee with or without milk</mat-label>
+            <mat-select [(ngModel)]="makedCoffee.milk">
+                <mat-option *ngFor="let milk of coffee.milk" [value]="milk.value">{{milk.viewValue}}</mat-option>
+            </mat-select>
+        </mat-form-field>
+    </div>
+    <div>
+        <p>Please select sugar amount</p>
+        <mat-slider min="0" max="5" step="1" showTickMarks discrete [displayWith]="formatLabel" color="#36f">
+            <input matSliderThumb [(ngModel)]="makedCoffee.sugarAmount">
+        </mat-slider>
+    </div>
+    <button class="base-btn" (click)="generateSelectedCoffeeImage()">Make</button>
+    <hr>
+    <div *ngIf="makedCoffeeImage" class="maked-coffee">
+
+        <p>The selected:</p>
+        <img  [src]="makedCoffeeImage" alt="">
+    </div>
+</div>

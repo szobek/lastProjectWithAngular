@@ -26,6 +26,7 @@ export const settings = {
         {name:'Coffee',path:'/coffees',icon:'coffee',ariaLabel:'Coffee icon'},
         {name:'Authentication',path:'/auth',icon:'no_encryption',ariaLabel:'Auth icon'},
         {name:'Recipes',path:'/recipes',icon:'book',ariaLabel:'Recipes icon'},
+        {name:'Coffee Machine',path:'/coffeeMachine',icon:'miscellaneous_services',ariaLabel:'Machine icon'},
     ],
     DUMMY_JSON_URL:'https://dummyjson.com/auth'
 }
