@@ -8,6 +8,7 @@ import { MachineComponent } from 'src/app/components/coffee-machine/machine/mach
 import {MatSliderModule} from '@angular/material/slider';
 import {MatRadioModule} from '@angular/material/radio';
 import { FormsModule } from '@angular/forms';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import { FormsModule } from '@angular/forms';
     MatFormFieldModule,
     MatSliderModule,
     MatRadioModule,
+    MatProgressSpinnerModule,
     FormsModule
   ]
 })

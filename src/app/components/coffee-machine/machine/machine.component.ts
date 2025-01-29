@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { interval, Subscription } from 'rxjs';
 
 type MakedCoffee = {
   milk: number
@@ -12,6 +13,9 @@ type MakedCoffee = {
   styleUrls: ['./machine.component.scss']
 })
 export class MachineComponent {
+  spinnerValue: number = 0
+  spinnerShow: boolean = false
+  makedCoffeeShow: boolean = false
   coffee = {
     milk: [
       { value: 0, viewValue: 'Without milk' },
@@ -34,6 +38,17 @@ export class MachineComponent {
   }
 
   generateSelectedCoffeeImage() {
+    const subs$: Subscription = interval(200).subscribe(res => {
+      this.spinnerValue = this.spinnerValue + 10;
+      this.spinnerShow = true
+      if (this.spinnerValue === 120) {
+        subs$.unsubscribe();
+        this.makedCoffeeShow = true
+        this.spinnerShow = false
+        this.spinnerValue = 0;
+      }
+    });
+    
     let image = "/assets/coffee-images/"
     switch (this.makedCoffee.coffeeType) {
       case 2:

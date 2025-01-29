@@ -20,11 +20,23 @@
         <mat-slider min="0" max="5" step="1" showTickMarks discrete [displayWith]="formatLabel" color="#36f">
             <input matSliderThumb [(ngModel)]="makedCoffee.sugarAmount">
         </mat-slider>
+
+       
     </div>
     <button class="base-btn" (click)="generateSelectedCoffeeImage()">Make</button>
     <hr>
     <div *ngIf="makedCoffeeImage" class="maked-coffee">
-        <p>The selected:</p>
-        <img  [src]="makedCoffeeImage" alt="">
+        <div *ngIf="spinnerShow">
+            <mat-progress-spinner
+            diameter="60"
+            [value]="spinnerValue"
+            mode="determinate">
+            </mat-progress-spinner>
+        </div>
+        <div *ngIf="makedCoffeeShow">
+
+            <p>The selected:</p>
+            <img  [src]="makedCoffeeImage" alt="">
+        </div>
     </div>
 </div>
