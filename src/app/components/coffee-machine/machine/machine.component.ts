@@ -43,24 +43,24 @@ export class MachineComponent {
       this.spinnerShow = true
       if (this.spinnerValue === 120) {
         subs$.unsubscribe();
-        this.makedCoffeeShow = true
         this.spinnerShow = false
         this.spinnerValue = 0;
+        let image = "/assets/coffee-images/"
+        switch (this.makedCoffee.coffeeType) {
+          case 2:
+            image += (this.makedCoffee.milk === 0) ? "americano.jpg" : "americano-with-milk.jpg"
+            break
+          case 1:
+            image += (this.makedCoffee.milk === 0) ? "presso.jpg" : "presso-with-milk.jpg"
+            break
+          case 0:
+            image += (this.makedCoffee.milk === 0) ? "ristretto.jpg" : "ristretto-with-milk.jpg"
+            break
+        }
+        this.makedCoffeeImage = image
+        this.makedCoffeeShow = true
       }
     });
-    
-    let image = "/assets/coffee-images/"
-    switch (this.makedCoffee.coffeeType) {
-      case 2:
-        image += (this.makedCoffee.milk === 0) ? "americano.jpg" : "americano-with-milk.jpg"
-        break
-      case 1:
-        image += (this.makedCoffee.milk === 0) ? "presso.jpg" : "presso-with-milk.jpg"
-        break
-      case 0:
-        image += (this.makedCoffee.milk === 0) ? "ristretto.jpg" : "ristretto-with-milk.jpg"
-        break
-    }
-    this.makedCoffeeImage = image
+
   }
 }
