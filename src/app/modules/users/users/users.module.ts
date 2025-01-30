@@ -12,7 +12,6 @@ const routes: Routes = [
 
 @NgModule({
   declarations: [
-    UserListComponent,
     SingleUserComponent,
   ],
   imports: [
@@ -21,7 +20,6 @@ const routes: Routes = [
     SharedModule
   ],
   exports: [
-    UserListComponent,
     SingleUserComponent
   ]
 })
