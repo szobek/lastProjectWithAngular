@@ -12,11 +12,8 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { VoluntariesComponent } from 'src/app/components/billing/setup/voluntaries/voluntaries.component';
 import { SubscriptionsComponent } from 'src/app/components/billing/setup/subscriptions/subscriptions.component';
 import { SharedModule } from "../shared/shared.module";
-const routes:Routes = [
-  {path: 'billing', component: BillingWrapperComponent,title:"Billing"},
-  {path: 'billing/voluntaries', component: VoluntariesComponent,title:"Voluntaries"},
-  {path: 'billing/subscriptions', component: SubscriptionsComponent,title:"Subscriptions"},
-];
+import { BillingRoutingModule } from './billing-routing.module';
+
 
 @NgModule({
   declarations: [
@@ -30,10 +27,10 @@ const routes:Routes = [
     SubscriptionsComponent
   ],
   imports: [
-    RouterModule.forRoot(routes),
+    BillingRoutingModule,
     CommonModule,
     ReactiveFormsModule,
-    SharedModule
+    SharedModule,
 ],
   exports: [
     HeaderComponent,
@@ -44,6 +41,7 @@ const routes:Routes = [
     EditAddressComponent,
     VoluntariesComponent,
     SubscriptionsComponent
-  ]
+  ],
+  bootstrap:[]
 })
 export class BillingModule { }
