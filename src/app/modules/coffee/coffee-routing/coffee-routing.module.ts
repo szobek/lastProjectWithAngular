@@ -5,6 +5,7 @@ import { CoffeeListComponent } from 'src/app/components/coffee/coffee-list/coffe
 import { SingleCoffeeComponent } from 'src/app/components/coffee/single-coffee/single-coffee.component';
 
 const routes: Routes = [
+  {path: '', component:CoffeeListComponent},
   {path: 'coffee/:id', component:SingleCoffeeComponent},
 ]
 
@@ -12,7 +13,7 @@ const routes: Routes = [
   declarations: [],
   imports: [
     CommonModule,
-    RouterModule.forRoot(routes)
+    RouterModule.forChild(routes)
   ],
   exports: [
     RouterModule
