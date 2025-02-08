@@ -26,11 +26,11 @@ import { FormsModule } from '@angular/forms';
 import {MatButtonModule} from '@angular/material/button';
 import {MatIconModule} from '@angular/material/icon';
 import { CoffeeModule } from './modules/coffee/coffee/coffee.module';
-import { MyauthententicationModule } from './modules/myauthententication/myauthententication/myauthententication.module';
 import { RecipesModule } from './modules/recipes/recipes/recipes.module';
 import { CoffeeMachineModule } from './modules/coffeeMachine/coffee-machine/coffee-machine.module';
 import { TodoRoutingModule } from './modules/todo/todo-routing.module';
 import { UsersModule } from './modules/users/users.module';
+import { MyauthenticationModule } from './modules/myauthentication/myauthentication.module';
 
 
 
@@ -58,7 +58,7 @@ import { UsersModule } from './modules/users/users.module';
     TaskModule,
     myDragDropModule,
     CoffeeModule,
-    MyauthententicationModule,
+    MyauthenticationModule,
     RecipesModule,
     CoffeeMachineModule,
     AppRoutingModule,

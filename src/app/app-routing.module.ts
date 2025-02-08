@@ -12,6 +12,7 @@ const routes: Routes = [
   {path: 'users', loadChildren: () => import('./modules/users/users.module').then(m => m.UsersModule)},
   {path: 'tasks', loadChildren: () => import('./modules/task/task.module').then(m => m.TaskModule)},
   {path: 'drahdrop', loadChildren: () => import('./modules/dragDrop/drag-drop.module').then(m => m.myDragDropModule)},
+  {path: 'auth', loadChildren: () => import('./modules/myauthentication/myauthentication.module').then(m => m.MyauthenticationModule)},
   {path: '**', component: NotFoundComponent,pathMatch: 'full',title:"Not found"},
 ];
 
