@@ -10,6 +10,7 @@ const routes: Routes = [
   {path: 'billing', loadChildren: () => import('./modules/billing/billing.module').then(m => m.BillingModule)},
   {path: 'todos', loadChildren: () => import('./modules/todo/todo.module').then(m => m.TodoModule)},
   {path: 'users', loadChildren: () => import('./modules/users/users.module').then(m => m.UsersModule)},
+  {path: 'tasks', loadChildren: () => import('./modules/task/task.module').then(m => m.TaskModule)},
   {path: '**', component: NotFoundComponent,pathMatch: 'full',title:"Not found"},
 ];
 

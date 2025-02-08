@@ -18,7 +18,7 @@ import { PostsModule } from './modules/posts/posts/posts.module';
 import { SinglePostComponent } from './components/posts/single-post/single-post.component';
 import { CallService } from './services/call.service';
 import { TodoModule } from './modules/todo/todo.module';
-import { TaskModule } from './modules/task/task/task.module';
+import { TaskModule } from './modules/task/task.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { myDragDropModule } from './modules/dragDrop/drag-drop/drag-drop.module';
 import {MatSlideToggleModule} from '@angular/material/slide-toggle';
