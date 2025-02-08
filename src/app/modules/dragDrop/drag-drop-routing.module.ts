@@ -1,26 +1,20 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterModule, Routes } from '@angular/router';
 import { SampleListComponent } from 'src/app/components/dragDrop/sample-list/sample-list.component';
-import { DragDropModule } from '@angular/cdk/drag-drop';
+
 const routes:Routes = [
   {path: 'dragdrop', component: SampleListComponent,title: 'Drag & Drop'} ,
 ]
 
-
 @NgModule({
-  declarations: [
-    SampleListComponent
-  ],
+  declarations: [],
   imports: [
     CommonModule,
-    BrowserAnimationsModule,
-    RouterModule.forRoot(routes),
-    DragDropModule
+    RouterModule.forChild(routes)
   ],
   exports: [
-    SampleListComponent,
+    RouterModule
   ]
 })
-export class myDragDropModule { }
+export class DragDropRoutingModule { }

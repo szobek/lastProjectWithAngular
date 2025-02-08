@@ -20,7 +20,7 @@ import { CallService } from './services/call.service';
 import { TodoModule } from './modules/todo/todo.module';
 import { TaskModule } from './modules/task/task.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { myDragDropModule } from './modules/dragDrop/drag-drop/drag-drop.module';
+import { myDragDropModule } from './modules/dragDrop/drag-drop.module';
 import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 import { FormsModule } from '@angular/forms';
 import {MatButtonModule} from '@angular/material/button';

@@ -11,6 +11,7 @@ const routes: Routes = [
   {path: 'todos', loadChildren: () => import('./modules/todo/todo.module').then(m => m.TodoModule)},
   {path: 'users', loadChildren: () => import('./modules/users/users.module').then(m => m.UsersModule)},
   {path: 'tasks', loadChildren: () => import('./modules/task/task.module').then(m => m.TaskModule)},
+  {path: 'drahdrop', loadChildren: () => import('./modules/dragDrop/drag-drop.module').then(m => m.myDragDropModule)},
   {path: '**', component: NotFoundComponent,pathMatch: 'full',title:"Not found"},
 ];
 
