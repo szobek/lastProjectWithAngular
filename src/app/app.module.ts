@@ -17,7 +17,6 @@ import { HighchartsChartModule } from 'highcharts-angular';
 import { PostsModule } from './modules/posts/posts/posts.module';
 import { SinglePostComponent } from './components/posts/single-post/single-post.component';
 import { CallService } from './services/call.service';
-import { UsersModule } from './modules/users/users/users.module';
 import { TodoModule } from './modules/todo/todo.module';
 import { TaskModule } from './modules/task/task/task.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -31,6 +30,7 @@ import { MyauthententicationModule } from './modules/myauthententication/myauthe
 import { RecipesModule } from './modules/recipes/recipes/recipes.module';
 import { CoffeeMachineModule } from './modules/coffeeMachine/coffee-machine/coffee-machine.module';
 import { TodoRoutingModule } from './modules/todo/todo-routing.module';
+import { UsersModule } from './modules/users/users.module';
 
 
 

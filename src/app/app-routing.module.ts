@@ -9,6 +9,7 @@ const routes: Routes = [
   {path: 'coffees', loadChildren: () => import('./modules/coffee/coffee/coffee.module').then(m => m.CoffeeModule)},
   {path: 'billing', loadChildren: () => import('./modules/billing/billing.module').then(m => m.BillingModule)},
   {path: 'todos', loadChildren: () => import('./modules/todo/todo.module').then(m => m.TodoModule)},
+  {path: 'users', loadChildren: () => import('./modules/users/users.module').then(m => m.UsersModule)},
   {path: '**', component: NotFoundComponent,pathMatch: 'full',title:"Not found"},
 ];
 
