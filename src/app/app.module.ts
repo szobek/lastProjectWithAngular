@@ -32,8 +32,6 @@ import { TodoRoutingModule } from './modules/todo/todo-routing.module';
 import { UsersModule } from './modules/users/users.module';
 import { MyauthenticationModule } from './modules/myauthentication/myauthentication.module';
 
-
-
 @NgModule({
   declarations: [
     NavComponent,

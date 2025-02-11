@@ -21,6 +21,6 @@ export class DataService {
   $todos: BehaviorSubject<Todo[] | null> = new BehaviorSubject<Todo[] | null>(null)
   $coffees: BehaviorSubject<Coffee[] | null> = new BehaviorSubject<Coffee[] | null>(null)
   $recipes: BehaviorSubject<Recipe[] | null> = new BehaviorSubject<Recipe[] | null>(null)
-  $films:BehaviorSubject<Movie[]>=new BehaviorSubject<Movie[]>([])
+  $movies:BehaviorSubject<Movie[]>=new BehaviorSubject<Movie[]>([])
  
 }

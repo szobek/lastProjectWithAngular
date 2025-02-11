@@ -1,0 +1,32 @@
+<div class="container">
+    <div class="row">
+        <div class="col-12m-5">
+            <button mat-raised-button color="primary" routerLink="/movies">Go back to movies</button>
+        </div>
+    </div>
+    <div class="row justify-content-center">
+        <div class="col-auto">
+            <div class="detail-wrapper">
+                <mat-card class="example-card" appearance="outlined">
+                    <mat-card-header>
+                        <div mat-card-avatar class="example-header-image"></div>
+                        <mat-card-title>{{singleMovie?.title}}</mat-card-title>
+                    </mat-card-header>
+                    <img mat-card-image [src]="singleMovie?.photos?.[0]" alt="Photo of a {{singleMovie?.title}}">
+                    <mat-card-content>
+                        <p>
+                            {{singleMovie?.description}}
+                        </p>
+                        <p>Rating: {{singleMovie?.rating}}</p>
+                        <p>Release Date: {{singleMovie?.year}}</p>
+                        <p class="text-center" >Stars:</p>
+                        <mat-list role="list">
+                            <mat-list-item role="listitem" *ngFor="let star of singleMovie?.stars">{{star}}</mat-list-item>
+                        </mat-list>
+                    </mat-card-content>
+
+                </mat-card>
+            </div>
+        </div>
+    </div>
+</div>

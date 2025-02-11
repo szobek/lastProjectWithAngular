@@ -21,7 +21,7 @@ export class CallService {
     this.getAllCoffeeFromDB()
     this.dataService.$subscriptions.next(settings.SUBSCRIPTIONS)
     this.dataService.$voluntaries.next(settings.VOLUNTARIES)
-    this.dataService.$films.next(settings.movies)
+    this.dataService.$movies.next(settings.movies)
   }
 
   getAllPostsFromDB() {

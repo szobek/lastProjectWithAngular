@@ -27,13 +27,14 @@ export const settings = {
         {name:'Authentication',path:'/auth',icon:'no_encryption',ariaLabel:'Auth icon'},
         {name:'Recipes',path:'/recipes',icon:'book',ariaLabel:'Recipes icon'},
         {name:'Coffee Machine',path:'/coffeeMachine',icon:'miscellaneous_services',ariaLabel:'Machine icon'},
+        {name:'Movies',path:'/movies',icon:'local_movies',ariaLabel:'Film icon'},
     ],
     DUMMY_JSON_URL:'https://dummyjson.com/auth',
     movies:[
         { 
           id: 1,
           title: "Titanic", 
-          description: "", 
+          description: "A seventeen-year-old aristocrat falls in love with a kind but poor artist aboard the luxurious, ill-fated R.M.S. Titanic.", 
           year: 1997, 
           long: 194, 
           director: "James Cameron", 
@@ -51,7 +52,7 @@ export const settings = {
           long: 152, 
           director: "Chris Columbus", 
           genres: ["Adventure", "Fantasy"], 
-          photos: ["https://play-lh.googleusercontent.com/SF5BMT_IsoF7GBl4USjTr4CrNvXkFClA26qvzyKX6chRdGaXr6JDvnTVqO3wv2EF161VC2jD80YTedD-6HI","https://www.proprofs.com/quiz-school/topic_images/p1bhr84ns65u8lebg01fis9lk3.jpg"], 
+          photos: ["https://www.proprofs.com/quiz-school/topic_images/p1bhr84ns65u8lebg01fis9lk3.jpg"], 
           rating: 7.7, 
           stars: ["Daniel Radcliffe", "Rupert Grint", "Emma Watson"], 
           writers: ["J.K. Rowling"] 
@@ -64,7 +65,7 @@ export const settings = {
           long: 152, 
           director: "Christopher Nolan", 
           genres: ["Action", "Crime", "Drama", "Thriller"], 
-          photos: ["https://lh4.googleusercontent.com/proxy/S7gg9eh50TQatrbr5wb_Ql7bj7TmPA8fW3hPYZnIPgIl6yfCmjjZV26bgaEMAbvYbdUU460QozUAHiP4-CybDgoacsiSlHyiuYp9","https://res.cloudinary.com/jerrick/image/upload/d_642250b563292b35f27461a7.png,f_jpg,fl_progressive,q_auto,w_1024/642a837281640a001d74206f.jpg"], 
+          photos: ["https://res.cloudinary.com/jerrick/image/upload/d_642250b563292b35f27461a7.png,f_jpg,fl_progressive,q_auto,w_1024/642a837281640a001d74206f.jpg"], 
           rating: 9.0, 
           stars: ["Christian Bale", "Heath Ledger", "Aaron Eckhart"], 
           writers: ["Jonathan Nolan", "Christopher Nolan", "David S. Goyer"] 
@@ -77,7 +78,7 @@ export const settings = {
           long: 129, 
           director: "Matthew Vaughn", 
           genres: ["Action", "Adventure", "Comedy"], 
-          photos: ["https://play-lh.googleusercontent.com/5xf36Y_b9cTisDgTmVwvliVScyr_YSbUcpEtGL-D0X1Z9u5HTn-0Tovn6DM0Toxy_us","https://i.ebayimg.com/00/s/MTYwMFgxMDY2/z/T3IAAOSwqudkZ0QV/$_57.JPG?set_id=8800005007","https://www.usatoday.com/gcdn/-mm-/7c403137ff4035e7da70585e79a544a0ac13309f/c=935-30-2125-1620/local/-/media/USATODAY/USATODAY/2014/07/27/1406507485000-kingsman-the-secret-service-KSS-JB-D25-02636-rgb.jpg"], 
+          photos: ["https://i.ebayimg.com/00/s/MTYwMFgxMDY2/z/T3IAAOSwqudkZ0QV/$_57.JPG?set_id=8800005007","https://www.usatoday.com/gcdn/-mm-/7c403137ff4035e7da70585e79a544a0ac13309f/c=935-30-2125-1620/local/-/media/USATODAY/USATODAY/2014/07/27/1406507485000-kingsman-the-secret-service-KSS-JB-D25-02636-rgb.jpg"], 
           rating: 7.7, 
           stars: ["Colin Firth", "Taron Egerton", "Samuel L. Jackson"], 
           writers: ["Matthew Vaughn","Mark Millar","Jane Goldman"] 

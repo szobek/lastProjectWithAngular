@@ -1,0 +1,4 @@
+<shared-module-title title="Movies" />
+<mat-list role="list">
+    <mat-list-item role="listitem" [routerLink]="[ movie.id ]" *ngFor="let movie of filteredMovies">{{movie.title}}</mat-list-item>
+</mat-list>
