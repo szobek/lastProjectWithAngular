@@ -6,7 +6,7 @@ import { SingleCoffeeComponent } from 'src/app/components/coffee/single-coffee/s
 
 const routes: Routes = [
   {path: '', component:CoffeeListComponent},
-  {path: 'coffee/:id', component:SingleCoffeeComponent},
+  {path: ':id', component:SingleCoffeeComponent},
 ]
 
 @NgModule({

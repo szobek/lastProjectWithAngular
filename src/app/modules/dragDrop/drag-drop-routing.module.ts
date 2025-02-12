@@ -4,7 +4,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { SampleListComponent } from 'src/app/components/dragDrop/sample-list/sample-list.component';
 
 const routes:Routes = [
-  {path: 'dragdrop', component: SampleListComponent,title: 'Drag & Drop'} ,
+  {path: '', component: SampleListComponent,title: 'Drag & Drop'} ,
 ]
 
 @NgModule({
@@ -17,4 +17,4 @@ const routes:Routes = [
     RouterModule
   ]
 })
-export class DragDropRoutingModule { }
+export class MyDragDropRoutingModule { }

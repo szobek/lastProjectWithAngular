@@ -1,10 +1,9 @@
 <shared-module-title title="Post list" />
-<button class="base-btn" routerLink="/create-post">Create post</button>
+<button class="base-btn" routerLink="create-post">Create post</button>
 <ul class="post-list-wrapper list-group">
     <li 
     class="list-group-item"
         *ngFor="let post of posts" 
-        [routerLink]="['/single-post']" 
-        [queryParams]="{id:post.id}"
-    >{{post.title}} - by: <span class="post-writer" [routerLink]="['/single-user',post.userId]">{{post.writer?.name}}</span></li>
+        [routerLink]="['single-post',post.id]" 
+    >{{post.title}} - by: <span class="post-writer" [routerLink]="['/users/single-user',post.userId]">{{post?.writer?.name}}</span></li>
 </ul>

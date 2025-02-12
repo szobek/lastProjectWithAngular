@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SampleListComponent } from 'src/app/components/dragDrop/sample-list/sample-list.component';
-import { DragDropRoutingModule } from './drag-drop-routing.module';
+import { MyDragDropRoutingModule } from './drag-drop-routing.module';
 import { DragDropModule } from '@angular/cdk/drag-drop';
 
 @NgModule({
@@ -11,12 +11,8 @@ import { DragDropModule } from '@angular/cdk/drag-drop';
   ],
   imports: [
     CommonModule,
-    BrowserAnimationsModule,
-    DragDropRoutingModule,
+    MyDragDropRoutingModule,
     DragDropModule
-  ],
-  exports: [
-    SampleListComponent,
   ]
 })
 export class myDragDropModule { }

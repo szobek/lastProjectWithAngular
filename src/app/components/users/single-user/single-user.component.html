@@ -13,8 +13,7 @@
             <ul class="list-group post-list">
                 <li 
                     *ngFor="let post of userPosts" 
-                    routerLink="/single-post" 
-                    [queryParams]="{id:post.id}"
+                    [routerLink]="['/posts/single-post',post.id]" 
                     class="list-group-item"
                 >
                 <span>{{post.title}}</span>

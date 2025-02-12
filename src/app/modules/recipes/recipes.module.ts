@@ -1,7 +1,7 @@
 import { inject, NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RecipesRoutingModule } from '../recipes-routing/recipes-routing.module';
-import { SharedModule } from '../../shared/shared.module';
+import { RecipesRoutingModule } from './recipes-routing.module';
+import { SharedModule } from '../shared/shared.module';
 import { RecipesWrapperComponent } from 'src/app/components/recipes/recipes-wrapper/recipes-wrapper.component';
 import { Recipe } from 'src/app/models/Recipe';
 import { DataService } from 'src/app/services/data.service';

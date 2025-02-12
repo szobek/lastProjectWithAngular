@@ -7,8 +7,8 @@ import { BillingWrapperComponent } from 'src/app/components/billing/wrapper/bill
 
 const routes:Routes = [
   {path: '', component: BillingWrapperComponent,title:"Voluntaries"},
-  {path: 'billing/voluntaries', component: VoluntariesComponent,title:"Voluntaries"},
-  {path: 'billing/subscriptions', component: SubscriptionsComponent,title:"Subscriptions"},
+  {path: 'voluntaries', component: VoluntariesComponent,title:"Voluntaries"},
+  {path: 'subscriptions', component: SubscriptionsComponent,title:"Subscriptions"},
 ];
 
 @NgModule({

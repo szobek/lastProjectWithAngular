@@ -13,20 +13,23 @@ import { DataService } from 'src/app/services/data.service';
 export class SinglePostComponent {
   id!: number
   post!: Post | null
-  postWriter!:User
+  postWriter!: User
   activatedRoute = inject(ActivatedRoute)
-  private dataService=inject(DataService)
+  private dataService = inject(DataService)
   router = inject(Router)
 
   ngOnInit() {
-    this.id = Number(this.activatedRoute.snapshot.queryParamMap.get('id'));
-    this.dataService.$posts.subscribe({
-      next: (posts: Post[]) => {
-        this.post = posts.filter((post: any) => { return post.id === this.id; })[0]
-        if(this.post===undefined) this.router.navigateByUrl("/posts")
-        document.title=this.post.title
-        this.postWriter=(this.dataService.$users.value?.filter((user:User)=>user.id===this.post?.userId)[0] as User)
-      }
-    })
+    this.activatedRoute.paramMap.subscribe((params: any) => {
+      this.id = Number(params["params"]["id"])
+      this.dataService.$posts.subscribe({
+        next: (posts: Post[] | null) => {
+          if (posts) {
+            this.post = posts.filter((post: Post) => { return post.id === this.id })[0]
+            this.postWriter = this.dataService.$users.value?.filter((user: User) => { return user.id === this.post?.userId })[0] || {} as User
+            document.title = this.post.title
+          }
+        }
+      })
+    });
   }
 }

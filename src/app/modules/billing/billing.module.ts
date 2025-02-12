@@ -13,10 +13,12 @@ import { VoluntariesComponent } from 'src/app/components/billing/setup/voluntari
 import { SubscriptionsComponent } from 'src/app/components/billing/setup/subscriptions/subscriptions.component';
 import { SharedModule } from "../shared/shared.module";
 import { BillingRoutingModule } from './billing-routing.module';
+import { BalanceExchangeContentComponent } from 'src/app/components/billing/modal/balance-exchange-content/balance-exchange-content.component';
 
 
 @NgModule({
   declarations: [
+    BillingWrapperComponent,
     HeaderComponent,
     SetupCardComponent,
     SetupCardWrapperComponent,
@@ -24,6 +26,7 @@ import { BillingRoutingModule } from './billing-routing.module';
     InvoicePaginatorComponent,
     EditAddressComponent,
     VoluntariesComponent,
+    BalanceExchangeContentComponent,
     SubscriptionsComponent
   ],
   imports: [
@@ -31,17 +34,6 @@ import { BillingRoutingModule } from './billing-routing.module';
     CommonModule,
     ReactiveFormsModule,
     SharedModule,
-],
-  exports: [
-    HeaderComponent,
-    SetupCardComponent,
-    SetupCardWrapperComponent,
-    InvoiceListComponent,
-    InvoicePaginatorComponent,
-    EditAddressComponent,
-    VoluntariesComponent,
-    SubscriptionsComponent
-  ],
-  bootstrap:[]
+]
 })
 export class BillingModule { }

@@ -1,6 +1,6 @@
 <shared-module-title title="Coffee list" />
 <div class="coffee-list-wrapper">
     <ul class="list-group list-group-flush">
-        <li class="list-group-item" *ngFor="let coffee of coffees" [routerLink]="['/coffee',coffee.id]">{{coffee.name}}</li>
+        <li class="list-group-item" *ngFor="let coffee of coffees" [routerLink]="['/coffees',coffee.id]">{{coffee.name}}</li>
     </ul>
 </div>

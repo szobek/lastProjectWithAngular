@@ -6,8 +6,8 @@ import { SingleRecipesComponent } from 'src/app/components/recipes/single-recipe
 
 
 const routes: Routes = [
-  {path: 'recipes', component: RecipesWrapperComponent,title:"Recipes List"},
-  {path: 'single-recipe/:id', component: SingleRecipesComponent},
+  {path: '', component: RecipesWrapperComponent,title:"Recipes List"},
+  {path: ':id', component: SingleRecipesComponent},
 ];
 
 
@@ -15,7 +15,7 @@ const routes: Routes = [
   declarations: [],
   imports: [
     CommonModule,
-    RouterModule.forRoot(routes)
+    RouterModule.forChild(routes)
   ],exports:[RouterModule]
 })
 export class RecipesRoutingModule { }

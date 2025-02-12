@@ -1,6 +1,6 @@
 <shared-module-title title="User list" />
 <ul class="list-group user-list">
-    <li class="list-group-item" [routerLink]="['/single-user',user.id]" *ngFor="let user of users">
+    <li class="list-group-item" [routerLink]="['/users/single-user',user.id]" *ngFor="let user of users">
         <mat-icon>person</mat-icon>
         {{user.name}}
     </li>
