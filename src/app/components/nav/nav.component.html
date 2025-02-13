@@ -1,6 +1,6 @@
 <ul class="nav">
     <li routerLink="{{navItem.path}}" [title]="navItem.name" routerLinkActive="active-nav-item" *ngFor="let navItem of navItems">
-        <mat-icon aria-hidden="false"[ariaLabel]="navItem.ariaLabel" fontIcon="{{navItem.icon}}" class="nav-icon"/>
-        <span class="nav-text">{{navItem.name}}</span>
+        <mat-icon aria-hidden="false"[ariaLabel]="navItem.ariaLabel"  fontIcon="{{navItem.icon}}" class="nav-icon"/>
+        <span class="nav-text" [title]="navItem.name" >{{navItem.name}}</span>
     </li>
 </ul>
