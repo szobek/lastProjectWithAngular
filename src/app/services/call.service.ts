@@ -47,7 +47,7 @@ export class CallService {
     this.dataService.$users.subscribe({
       next: (data: User[] | null) => {
         if (data) {
-          const user = data.filter((user: User) => user.id === 7)[0]
+          const user = data.filter((user: User) => user.id === this.dataService.$settings.value[0]["userId"])[0]
           if (user != null) this.dataService.$userData.next(user)
         }
       }
