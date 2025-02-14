@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component, EventEmitter, inject, Output } from '@angular/core';
+import { DataService } from 'src/app/services/data.service';
 import { settings } from 'src/app/settings';
 
 @Component({
@@ -15,6 +16,7 @@ export class InvoicePaginatorComponent {
   disablePrev: boolean = true
   disableNext: boolean = false
   pageNum: number = 1
+  dataService = inject(DataService)
 
   constructor(private http: HttpClient) {
     this.getAllPgeFromDB()
@@ -33,7 +35,7 @@ export class InvoicePaginatorComponent {
   getAllPgeFromDB() {
     this.http.get<any[]>(`${settings.BASE_URL}/todos`).subscribe({
       next: data => {
-        for (let page of Array(data.length / settings.INVOICE_LIMIT)) {
+        for (let page of Array(data.length / this.dataService.$settings.value[0]["invoices_limit"])) {
           this.pages.push(page)
         }
       }
