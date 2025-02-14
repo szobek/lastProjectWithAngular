@@ -13,11 +13,7 @@ router = inject(Router)
 private dataService=inject(DataService)
 subscriptions:MySubscription[] = []
 constructor() {
-  this.dataService.$subscriptions.subscribe({
-    next: (subscriptions:MySubscription[]) => {
-      this.subscriptions = subscriptions
-    } 
-  })
+  this.subscriptions = JSON.parse(this.dataService.$settings.value[0].subscriptions)
  } 
   handleBackButtonToBilling() {
     this.router.navigateByUrl("billing")

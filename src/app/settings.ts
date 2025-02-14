@@ -9,10 +9,5 @@ export const settings = {
         { title: "500/month", subtitle: "base data", description: "it's a middle option", id: 2 },
         { title: "1200/month", subtitle: "all data", description: "it's a premium option", id: 3 },
     ],
-    SUBSCRIPTIONS: [
-        { title: "free package", subtitle: "", description: "it's a free option", id: 1 },
-        { title: "medium package", subtitle: "you have a medium package", description: "it's a medium option", id: 2 },
-        { title: "premium package", subtitle: "you have a premium package", description: "it's a premium option", id: 3 },
-    ],
     DUMMY_JSON_URL:'https://dummyjson.com/auth',
 }
