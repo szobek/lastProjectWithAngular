@@ -22,8 +22,16 @@ export class CallService {
     this.dataService.$subscriptions.next(settings.SUBSCRIPTIONS)
     this.dataService.$voluntaries.next(settings.VOLUNTARIES)
     this.dataService.$movies.next(settings.movies)
+    this.getNavItemsFromDB()
   }
 
+
+
+  getNavItemsFromDB() {
+    this.http.get<any>(`http://localhost:8000/settings`).subscribe({
+      next: (res: any) => this.dataService.$navItems.next(res)
+    })
+  }
   getAllPostsFromDB() {
     this.http.get<Post[]>(`${settings.BASE_URL}/posts`).subscribe({
       next: (posts: Post[]) => this.dataService.$posts.next(posts)

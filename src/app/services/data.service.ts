@@ -22,5 +22,5 @@ export class DataService {
   $coffees: BehaviorSubject<Coffee[] | null> = new BehaviorSubject<Coffee[] | null>(null)
   $recipes: BehaviorSubject<Recipe[] | null> = new BehaviorSubject<Recipe[] | null>(null)
   $movies:BehaviorSubject<Movie[]>=new BehaviorSubject<Movie[]>([])
- 
+ $navItems: BehaviorSubject<any> = new BehaviorSubject<any>(null)
 }
