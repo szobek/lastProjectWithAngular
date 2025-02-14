@@ -17,11 +17,9 @@ export class NavComponent {
   dataService = inject(DataService)
   navItems:Navitem[]=[]
   constructor(){
-   this.dataService.$navItems.subscribe({
+   this.dataService.$settings.subscribe({
     next:(data:any)=>{
       if(data) {
-        console.log(data[0]["navItems"])
-        console.log(JSON.parse(data[0]["navItems"]))
         this.navItems=JSON.parse(data[0]["navItems"]).map((item:any)=>{
           return {name:item.name,path:item.path,icon:item.icon,ariaLabel:item.ariaLabel}
         }

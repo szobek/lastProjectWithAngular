@@ -29,7 +29,7 @@ export class CallService {
 
   getNavItemsFromDB() {
     this.http.get<any>(`http://localhost:8000/settings`).subscribe({
-      next: (res: any) => this.dataService.$navItems.next(res)
+      next: (res: any) => this.dataService.$settings.next(res)
     })
   }
   getAllPostsFromDB() {
