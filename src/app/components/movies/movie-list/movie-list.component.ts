@@ -9,14 +9,11 @@ import { DataService } from 'src/app/services/data.service';
 })
 export class MovieListComponent {
   dataService=inject(DataService)
-  movies!:Movie[]
   filteredMovies!:Movie[]
  constructor(){
-  this.dataService.$movies.subscribe(res=>{
+  this.dataService.$settings.subscribe(res=>{
     if(res)   {
-
-      this.movies=res
-      this.filteredMovies=res
+      this.filteredMovies=JSON.parse(res[0]["movies"])
     }
   })  
  }

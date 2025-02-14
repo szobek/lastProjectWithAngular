@@ -13,7 +13,7 @@ import { Movie } from '../models/Movie';
   providedIn: 'root'
 })
 export class DataService {
- $userData: BehaviorSubject<User | null> = new BehaviorSubject<User | null>(null)
+  $userData: BehaviorSubject<User | null> = new BehaviorSubject<User | null>(null)
   $voluntaries: BehaviorSubject<Voluntary[]> = new BehaviorSubject<Voluntary[]>([])
   $subscriptions: BehaviorSubject<MySubscription[]> = new BehaviorSubject<MySubscription[]>([])
   $posts: BehaviorSubject<Post[]> = new BehaviorSubject<Post[]>([])
@@ -21,6 +21,5 @@ export class DataService {
   $todos: BehaviorSubject<Todo[] | null> = new BehaviorSubject<Todo[] | null>(null)
   $coffees: BehaviorSubject<Coffee[] | null> = new BehaviorSubject<Coffee[] | null>(null)
   $recipes: BehaviorSubject<Recipe[] | null> = new BehaviorSubject<Recipe[] | null>(null)
-  $movies:BehaviorSubject<Movie[]>=new BehaviorSubject<Movie[]>([])
- $settings: BehaviorSubject<any> = new BehaviorSubject<any>(null)
+  $settings: BehaviorSubject<any> = new BehaviorSubject<any>(null)
 }

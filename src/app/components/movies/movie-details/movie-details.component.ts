@@ -18,11 +18,11 @@ export class MovieDetailsComponent {
 
   ngOnInit(){
     this.id=Number(this.activateRoute.snapshot.paramMap.get("id"))
-    this.dataService.$movies.subscribe((movies:Movie[]|null)=>{
-      if(movies){
-        this.allMovie=movies
-        this.singleMovie=this.allMovie.filter((movie:Movie)=>movie.id===this.id)[0]
-        document.title=this.singleMovie.title
+    this.dataService.$settings.subscribe((res:any)=>{
+      if(res){
+        this.allMovie=JSON.parse(res[0]["movies"])
+        this.singleMovie=this.allMovie?.filter((movie:Movie)=>movie.id===this.id)[0]
+        document.title=(this.singleMovie)?this.singleMovie.title:""
         if(this.singleMovie===undefined) this.router.navigateByUrl('/')
       }
     
