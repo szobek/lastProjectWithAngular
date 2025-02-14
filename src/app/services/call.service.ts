@@ -19,8 +19,6 @@ export class CallService {
     this.getAllPostsFromDB()
     this.getAllTodoFromDB()
     this.getAllCoffeeFromDB()
-    this.dataService.$subscriptions.next(settings.SUBSCRIPTIONS)
-    this.dataService.$voluntaries.next(settings.VOLUNTARIES)
     this.getNavItemsFromDB()
   }
 
