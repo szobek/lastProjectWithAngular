@@ -1,8 +1,8 @@
 import { Component, inject, Input, SimpleChanges } from '@angular/core';
 import { Invoice } from 'src/app/models/Invoice';
 import { HttpClient } from "@angular/common/http";
-import { settings } from 'src/app/settings';
 import { CallService } from 'src/app/services/call.service';
+import { DataService } from 'src/app/services/data.service';
 
 @Component({
   selector: 'billing-invoice-list',
@@ -15,17 +15,19 @@ export class InvoiceListComponent {
   http = inject(HttpClient)
   callService = inject(CallService)
   invoices: Invoice[] = []
+  dataService = inject(DataService)
+
 
   ngOnInit() {
     this.getInvoiceListFromDB()
   }
 
   getInvoiceListFromDB(page: number = 1) {
-    this.http.get<Invoice[]>(`${settings.BASE_URL}/todos?_limit=${settings.INVOICE_LIMIT}&_page=${page}`)
+    this.http.get<Invoice[]>(`${this.dataService.$settings.value[0]["base_url"]}/todos?_limit=${this.dataService.$settings.value[0]["invoices_limit"]}&_page=${page}`)
       .subscribe(data => {
         this.invoices = data;
         this.invoices.map(invoice => {
-          invoice.url = settings.DUMMY_PDF_URL
+          invoice.url = this.dataService.$settings.value[0]["dummy_pdf_url"]
           invoice.selected = false
           this.allChecked = false
         })
@@ -55,6 +57,6 @@ export class InvoiceListComponent {
     return this.invoices.filter(invoice => invoice.selected).length
   }
   handleClickOnDownloadButton() {
-    window.open(settings.DUMMY_ZIP_URL, '_blank')
+    window.open(this.dataService.$settings.value[0]["dummy_zip_url"], '_blank')
   }
 }
