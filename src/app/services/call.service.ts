@@ -89,17 +89,17 @@ export class CallService {
   }
 
   login(username: string, password: string) {
-    return this.http.post(`${settings.DUMMY_JSON_URL}/login`, {
+    return this.http.post(`${this.dataService.$config.value[0]["dummy_url"]}/auth/login`, {
       username, password
     })
   }
 
   refreshToken() {
-    return this.http.post(`${settings.DUMMY_JSON_URL}/refresh`, { refreshToken: localStorage.getItem('refreshToken') || "" })
+    return this.http.post(`${this.dataService.$config.value[0]["dummy_url"]}/auth/refresh`, { refreshToken: localStorage.getItem('refreshToken') || "" })
   }
 
   getUserByJWT() {
-    return this.http.get(`${settings.DUMMY_JSON_URL}/me`, {
+    return this.http.get(`${this.dataService.$config.value[0]["dummy_url"]}/auth/me`, {
       headers: {
         'Authorization': localStorage.getItem('accessToken') || ""
       }
