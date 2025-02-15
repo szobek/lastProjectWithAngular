@@ -25,7 +25,7 @@ export class CallService {
 
 
   getSettingsFromDB() {
-    this.http.get<any>(`http://localhost:8000/settings`).subscribe({
+    this.http.get<any>(`https://dummy.szobekweb.hu/settings`).subscribe({
       next: (res: any) => {
         this.dataService.$settings.next(res)
       }
