@@ -77,7 +77,7 @@ export class CallService {
   }
   downloadInvoicesZIP() {
     return this.http.get(
-      settings.DUMMY_ZIP_URL,
+      this.dataService.$config.value[0]["dummy_zip_url"],
       {
         'headers': {
           'Content-Type': 'application/json',
