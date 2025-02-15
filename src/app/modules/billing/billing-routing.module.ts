@@ -6,7 +6,7 @@ import { VoluntariesComponent } from 'src/app/components/billing/setup/voluntari
 import { BillingWrapperComponent } from 'src/app/components/billing/wrapper/billing-wrapper.component';
 
 const routes:Routes = [
-  {path: '', component: BillingWrapperComponent,title:"Voluntaries"},
+  {path: '', component: BillingWrapperComponent,title:"Billing"},
   {path: 'voluntaries', component: VoluntariesComponent,title:"Voluntaries"},
   {path: 'subscriptions', component: SubscriptionsComponent,title:"Subscriptions"},
 ];
