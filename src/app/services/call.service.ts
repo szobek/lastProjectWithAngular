@@ -19,14 +19,16 @@ export class CallService {
     this.getAllPostsFromDB()
     this.getAllTodoFromDB()
     this.getAllCoffeeFromDB()
-    this.getNavItemsFromDB()
+    this.getSettingsFromDB()
   }
 
 
 
-  getNavItemsFromDB() {
+  getSettingsFromDB() {
     this.http.get<any>(`http://localhost:8000/settings`).subscribe({
-      next: (res: any) => this.dataService.$settings.next(res)
+      next: (res: any) => {
+        this.dataService.$settings.next(res)
+      }
     })
   }
   getAllPostsFromDB() {
