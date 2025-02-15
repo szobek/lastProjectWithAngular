@@ -12,6 +12,8 @@ main{
         padding-top: 40px;
     }
     #main-content{
+        display: flex;
+        justify-content: center;
         padding: 15px;
         background-color: blueviolet;
         flex: 5;

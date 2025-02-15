@@ -11,7 +11,7 @@ export class MovieListComponent {
   dataService=inject(DataService)
   filteredMovies!:Movie[]
  constructor(){
-  this.dataService.$settings.subscribe(res=>{
+  this.dataService.$config.subscribe(res=>{
     if(res)   {
       this.filteredMovies=JSON.parse(res[0]["movies"])
     }

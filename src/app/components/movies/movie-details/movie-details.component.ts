@@ -18,7 +18,7 @@ export class MovieDetailsComponent {
 
   ngOnInit(){
     this.id=Number(this.activateRoute.snapshot.paramMap.get("id"))
-    this.dataService.$settings.subscribe((res:any)=>{
+    this.dataService.$config.subscribe((res:any)=>{
       if(res){
         this.allMovie=JSON.parse(res[0]["movies"])
         this.singleMovie=this.allMovie?.filter((movie:Movie)=>movie.id===this.id)[0]

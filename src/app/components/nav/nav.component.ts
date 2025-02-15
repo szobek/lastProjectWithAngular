@@ -17,7 +17,7 @@ export class NavComponent {
   dataService = inject(DataService)
   navItems:Navitem[]=[]
   constructor(){
-   this.dataService.$settings.subscribe({
+   this.dataService.$config.subscribe({
     next:(data:any)=>{
       if(data) {
         this.navItems=JSON.parse(data[0]["navItems"]).map((item:any)=>{

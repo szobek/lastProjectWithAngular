@@ -8,6 +8,7 @@ import { Voluntary } from '../models/Voluntary';
 import { MySubscription } from '../models/MySubscription';
 import { Recipe } from '../models/Recipe';
 import { Movie } from '../models/Movie';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
@@ -21,5 +22,24 @@ export class DataService {
   $todos: BehaviorSubject<Todo[] | null> = new BehaviorSubject<Todo[] | null>(null)
   $coffees: BehaviorSubject<Coffee[] | null> = new BehaviorSubject<Coffee[] | null>(null)
   $recipes: BehaviorSubject<Recipe[] | null> = new BehaviorSubject<Recipe[] | null>(null)
-  $settings: BehaviorSubject<any> = new BehaviorSubject<any>(null)
+  $config: BehaviorSubject<any> = new BehaviorSubject<any>(null)
+  
+  constructor(private http: HttpClient) {}
+
+  loadConfig(): Promise<void> {
+    return new Promise((res,rej)=>{
+      this.http.get('https://dummy.szobekweb.hu/settings').subscribe({
+        next:(config)=>{
+          this.$config.next(config)
+          res()
+        },
+        error:()=> rej()
+      })
+    })
+    
+  }
+
+  getConfig() {
+    return this.$config.value;
+  }
 }

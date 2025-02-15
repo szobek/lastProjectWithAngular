@@ -15,7 +15,7 @@ export class VoluntariesComponent {
   voluntaries: Voluntary[] = []
   userData: User | null = null
   constructor() {
-    this.voluntaries = JSON.parse(this.dataService.$settings.value[0].voluntaries)
+    this.voluntaries = JSON.parse(this.dataService.$config.value[0].voluntaries)
 
     this.dataService.$userData.subscribe({
       next: (data: User | null) => {

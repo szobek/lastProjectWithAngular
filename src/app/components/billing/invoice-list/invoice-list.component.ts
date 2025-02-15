@@ -23,15 +23,18 @@ export class InvoiceListComponent {
   }
 
   getInvoiceListFromDB(page: number = 1) {
-    this.http.get<Invoice[]>(`${this.dataService.$settings.value[0]["base_url"]}/todos?_limit=${this.dataService.$settings.value[0]["invoices_limit"]}&_page=${page}`)
-      .subscribe(data => {
-        this.invoices = data;
-        this.invoices.map(invoice => {
-          invoice.url = this.dataService.$settings.value[0]["dummy_pdf_url"]
-          invoice.selected = false
-          this.allChecked = false
-        })
-      });
+    if(this.dataService.$config.value){
+
+      this.http.get<Invoice[]>(`${this.dataService.$config.value[0]["base_url"]}/todos?_limit=${this.dataService.$config.value[0]["invoices_limit"]}&_page=${page}`)
+        .subscribe(data => {
+          this.invoices = data;
+          this.invoices.map(invoice => {
+            invoice.url = this.dataService.$config.value[0]["dummy_pdf_url"]
+            invoice.selected = false
+            this.allChecked = false
+          })
+        });
+    }
   }
   ngOnChanges(changes: SimpleChanges) {
     if (changes.hasOwnProperty('page')) {
@@ -57,6 +60,6 @@ export class InvoiceListComponent {
     return this.invoices.filter(invoice => invoice.selected).length
   }
   handleClickOnDownloadButton() {
-    window.open(this.dataService.$settings.value[0]["dummy_zip_url"], '_blank')
+    window.open(this.dataService.$config.value[0]["dummy_zip_url"], '_blank')
   }
 }

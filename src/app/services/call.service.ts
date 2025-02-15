@@ -15,21 +15,24 @@ export class CallService {
   dataService = inject(DataService)
 
   getAllDataFromDB() {
-    this.getAllUserFromDB()
-    this.getAllPostsFromDB()
-    this.getAllTodoFromDB()
-    this.getAllCoffeeFromDB()
-    this.getSettingsFromDB()
+    return new Promise((res,rej)=>{
+      this.getSettingsFromDB().subscribe({
+        next:(settings)=>{
+          this.getAllTodoFromDB()
+          this.getAllCoffeeFromDB()
+          this.getAllPostsFromDB()
+          this.getAllUserFromDB()
+          this.dataService.$config.next(settings)
+          res("")
+        }
+      })
+    })
   }
 
 
 
   getSettingsFromDB() {
-    this.http.get<any>(`https://dummy.szobekweb.hu/settings`).subscribe({
-      next: (res: any) => {
-        this.dataService.$settings.next(res)
-      }
-    })
+    return this.http.get<any>(`https://dummy.szobekweb.hu/settings`)
   }
   getAllPostsFromDB() {
     this.http.get<Post[]>(`${settings.BASE_URL}/posts`).subscribe({
@@ -46,7 +49,7 @@ export class CallService {
     this.dataService.$users.subscribe({
       next: (data: User[] | null) => {
         if (data) {
-          const user = data.filter((user: User) => user.id === this.dataService.$settings.value[0]["userId"])[0]
+          const user = data.filter((user: User) => user.id === this.dataService.$config.value[0]["userId"])[0]
           if (user != null) this.dataService.$userData.next(user)
         }
       }

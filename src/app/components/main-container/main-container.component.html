@@ -3,6 +3,7 @@
         <app-nav/>
     </aside>
     <section id="main-content">
-        <router-outlet />
+        <div *ngIf="showLoader">load data</div>
+        <router-outlet *ngIf="!showLoader"/>
     </section>
 </main>

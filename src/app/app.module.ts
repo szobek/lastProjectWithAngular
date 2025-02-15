@@ -1,4 +1,4 @@
-import { inject, NgModule } from '@angular/core';
+import { APP_INITIALIZER, inject, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -15,7 +15,13 @@ import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 import { FormsModule } from '@angular/forms';
 import {MatButtonModule} from '@angular/material/button';
 import {MatIconModule} from '@angular/material/icon';
+import { DataService } from './services/data.service';
 
+export function initializeApp(dataService: DataService) {
+  return () => {
+    dataService.loadConfig();
+  }
+}
 @NgModule({
   declarations: [
     NavComponent,
@@ -35,7 +41,10 @@ import {MatIconModule} from '@angular/material/icon';
     MatButtonModule,
     MatIconModule,
 ],
-  providers: [],
+  providers: [
+    DataService,
+    { provide: APP_INITIALIZER, useFactory: initializeApp, deps: [DataService], multi: true }
+  ],
   bootstrap: [MainContainerComponent]
 })
 export class AppModule {
