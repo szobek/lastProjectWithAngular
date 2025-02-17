@@ -89,7 +89,7 @@ export class CallService {
   }
 
   login(username: string, password: string) {
-    return this.http.post(`${this.dataService.$config.value[0]["dummy_url"]}/auth/login`, {
+    return this.http.post(`${this.dataService.$config.value[0]["dummy_url"]}/user/login`, {
       username, password
     })
   }
