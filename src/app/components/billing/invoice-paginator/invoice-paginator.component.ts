@@ -39,7 +39,7 @@ export class InvoicePaginatorComponent {
 
       this.http.get<any[]>(`${settings.BASE_URL}/todos`).subscribe({
         next: data => {
-          for (let page of Array(data.length / this.dataService.$config.value[0]["invoices_limit"])) {
+          for (let page of Array(data.length / this.dataService.$config.value["invoices_limit"])) {
             this.pages.push(page)
           }
         }

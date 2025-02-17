@@ -49,7 +49,7 @@ export class CallService {
     this.dataService.$users.subscribe({
       next: (data: User[] | null) => {
         if (data) {
-          const user = data.filter((user: User) => user.id === this.dataService.$config.value[0]["userId"])[0]
+          const user = data.filter((user: User) => user.id === this.dataService.$config.value["userId"])[0]
           if (user != null) this.dataService.$userData.next(user)
         }
       }
@@ -77,7 +77,7 @@ export class CallService {
   }
   downloadInvoicesZIP() {
     return this.http.get(
-      this.dataService.$config.value[0]["dummy_zip_url"],
+      this.dataService.$config.value["dummy_zip_url"],
       {
         'headers': {
           'Content-Type': 'application/json',
@@ -89,17 +89,17 @@ export class CallService {
   }
 
   login(username: string, password: string) {
-    return this.http.post(`${this.dataService.$config.value[0]["dummy_url"]}/user/login`, {
+    return this.http.post(`${this.dataService.$config.value["dummy_url"]}/user/login`, {
       username, password
     })
   }
 
   refreshToken() {
-    return this.http.post(`${this.dataService.$config.value[0]["dummy_url"]}/auth/refresh`, { refreshToken: localStorage.getItem('refreshToken') || "" })
+    return this.http.post(`${this.dataService.$config.value["dummy_url"]}/auth/refresh`, { refreshToken: localStorage.getItem('refreshToken') || "" })
   }
 
   getUserByJWT() {
-    return this.http.get(`${this.dataService.$config.value[0]["dummy_url"]}/auth/me`, {
+    return this.http.get(`${this.dataService.$config.value["dummy_url"]}/auth/me`, {
       headers: {
         'Authorization': localStorage.getItem('accessToken') || ""
       }

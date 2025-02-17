@@ -20,7 +20,7 @@ export class MovieDetailsComponent {
     this.id=Number(this.activateRoute.snapshot.paramMap.get("id"))
     this.dataService.$config.subscribe((res:any)=>{
       if(res){
-        this.allMovie=JSON.parse(res[0]["movies"])
+        this.allMovie=JSON.parse(res["movies"])
         this.singleMovie=this.allMovie?.filter((movie:Movie)=>movie.id===this.id)[0]
         document.title=(this.singleMovie)?this.singleMovie.title:""
         if(this.singleMovie===undefined) this.router.navigateByUrl('/')

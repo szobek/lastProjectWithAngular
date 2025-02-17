@@ -13,7 +13,7 @@ export class MovieListComponent {
  constructor(){
   this.dataService.$config.subscribe(res=>{
     if(res)   {
-      this.filteredMovies=JSON.parse(res[0]["movies"])
+      this.filteredMovies=JSON.parse(res["movies"])
     }
   })  
  }

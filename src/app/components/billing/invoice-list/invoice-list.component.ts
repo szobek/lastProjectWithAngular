@@ -25,11 +25,11 @@ export class InvoiceListComponent {
   getInvoiceListFromDB(page: number = 1) {
     if(this.dataService.$config.value){
 
-      this.http.get<Invoice[]>(`${this.dataService.$config.value[0]["base_url"]}/todos?_limit=${this.dataService.$config.value[0]["invoices_limit"]}&_page=${page}`)
+      this.http.get<Invoice[]>(`${this.dataService.$config.value["base_url"]}/todos?_limit=${this.dataService.$config.value["invoices_limit"]}&_page=${page}`)
         .subscribe(data => {
           this.invoices = data;
           this.invoices.map(invoice => {
-            invoice.url = this.dataService.$config.value[0]["dummy_pdf_url"]
+            invoice.url = this.dataService.$config.value["dummy_pdf_url"]
             invoice.selected = false
             this.allChecked = false
           })
@@ -60,6 +60,6 @@ export class InvoiceListComponent {
     return this.invoices.filter(invoice => invoice.selected).length
   }
   handleClickOnDownloadButton() {
-    window.open(this.dataService.$config.value[0]["dummy_zip_url"], '_blank')
+    window.open(this.dataService.$config.value["dummy_zip_url"], '_blank')
   }
 }
