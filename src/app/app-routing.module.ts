@@ -18,6 +18,7 @@ const routes: Routes = [
   {path: 'movies', loadChildren: () => import('./modules/movies/movies.module').then(m => m.MoviesModule)},
   {path: 'recipes', loadChildren: () => import('./modules/recipes/recipes.module').then(m => m.RecipesModule)},
   {path: 'coffeeMachine', loadChildren: () => import('./modules/coffeeMachine/coffee-machine.module').then(m => m.CoffeeMachineModule)},
+  {path: 'admin', loadChildren: () => import('./modules/admin/admin.module').then(m => m.AdminModule)},
   {path: '**', component: NotFoundComponent,pathMatch: 'full',title:"Not found"},
 ];
 
