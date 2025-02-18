@@ -27,14 +27,13 @@ ul.nav {
     }
 }
 
-@media only screen and (min-width: 375px) and (max-width: 865px) {
-    .nav-text {
+
+@media only screen and (min-width: 300px) and (max-width: 1335px)  {
+    .nav-wrapper{
+        display: flex;
+        justify-content: center;
+    }
+    .nav-text{
         display: none;
     }
-}
-
-@media only screen and (min-width: 865px) and (max-width: 1250px) {
-    .nav-text {
-        font-size: 0.7rem;
-    }
-}
+  }

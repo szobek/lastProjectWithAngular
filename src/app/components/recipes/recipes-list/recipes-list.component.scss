@@ -5,7 +5,16 @@ $card-width:18rem;
     gap: 50px;
 }
 .card{
-    width: $card-width;
+    width: auto;
+    max-width: $card-width;
     height: auto;
     cursor: pointer;
 }
+
+@media only screen and (min-width: 300px) and (max-width: 1024px)  {
+    .recipes-list-wrapper{
+        flex-direction: column;
+        gap: 30px;
+        width: 100%;
+    }
+  }
