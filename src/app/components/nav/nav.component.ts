@@ -20,7 +20,7 @@ export class NavComponent {
    this.dataService.$config.subscribe({
     next:(data:any)=>{
       if(data) {
-        this.navItems=JSON.parse(data["navItems"]).map((item:any)=>{
+        this.navItems=JSON.parse(data["nav_items"]).map((item:any)=>{
           return {name:item.name,path:item.path,icon:item.icon,ariaLabel:item.ariaLabel}
         }
       )
