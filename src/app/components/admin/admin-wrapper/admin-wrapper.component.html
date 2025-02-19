@@ -1,5 +1,32 @@
-<p>admin-wrapper works!</p>
-<form [formGroup]="adminForm">
-    <input type="text" name="dummy_zip_url" formControlName="dummy_zip_url">
-    <input type="number" name="userId" formControlName="userId">
-</form>
+<div class="container">
+    <div class="row">
+        <div class="col-auto">
+
+            <form [formGroup]="adminForm" (submit)="onSubmit()">
+
+                <mat-form-field>
+                    <mat-label>dummy_zip_url</mat-label>
+                    <input matInput placeholder="dummy zip url" formControlName="dummy_zip_url" />
+                </mat-form-field>
+
+
+                <mat-form-field>
+                    <mat-label>dummy_pdf_url</mat-label>
+                    <input matInput placeholder="dummy_pdf_url" formControlName="dummy_pdf_url" />
+                </mat-form-field>
+
+                <mat-form-field>
+                    <mat-label>user_id</mat-label>
+                    <input type="number" matInput placeholder="Set user_id" formControlName="user_id" />
+                </mat-form-field>
+
+                <mat-form-field>
+                    <mat-label>invoices_limit</mat-label>
+                    <input type="number" matInput placeholder="Set invoices_limit" formControlName="invoices_limit" />
+                </mat-form-field>
+
+                <button mat-raised-button>Save</button>
+            </form>
+        </div>
+    </div>
+</div>
