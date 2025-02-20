@@ -32,7 +32,7 @@ export class CallService {
 
 
   getSettingsFromDB() {
-    return this.http.get<any>(`https://dummy.szobekweb.hu/settings`)
+    return this.http.get<any>(settings.CONFIG_URL)
   }
   getAllPostsFromDB() {
     this.http.get<Post[]>(`${settings.BASE_URL}/posts`).subscribe({
@@ -108,5 +108,8 @@ export class CallService {
 
   savePostInDB(post: Post) {
     return this.http.post(`${settings.BASE_URL}/posts`, post)
+  }
+  saveConfigInDB(config: any) {
+    return this.http.post(settings.CONFIG_URL, config).subscribe()
   }
 }
