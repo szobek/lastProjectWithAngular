@@ -17,11 +17,10 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatIconModule} from '@angular/material/icon';
 import { DataService } from './services/data.service';
 
-export function initializeApp(dataService: DataService) {
-  return () => {
-    dataService.loadConfig();
-  }
+export function initializeApp(configService: DataService) {
+  return () => configService.loadConfig();
 }
+
 @NgModule({
   declarations: [
     NavComponent,
@@ -41,10 +40,15 @@ export function initializeApp(dataService: DataService) {
     MatButtonModule,
     MatIconModule,
 ],
-  providers: [
-    DataService,
-    { provide: APP_INITIALIZER, useFactory: initializeApp, deps: [DataService], multi: true }
-  ],
+providers: [
+  DataService,
+  {
+    provide: APP_INITIALIZER,
+    useFactory: initializeApp,
+    deps: [DataService],
+    multi: true,
+  }
+],
   bootstrap: [MainContainerComponent]
 })
 export class AppModule {
