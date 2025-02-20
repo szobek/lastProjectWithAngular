@@ -4,6 +4,10 @@
             <mat-icon aria-hidden="false"[ariaLabel]="navItem.ariaLabel"  fontIcon="{{navItem.icon}}" class="nav-icon"/>
             <span class="nav-text" [title]="navItem.name" >{{navItem.name}}</span>
         </li>
+        <li *ngIf="showAdmin" routerLink="/admin" title="Admin" routerLinkActive="active-nav-item">
+            <mat-icon aria-hidden="false" ariaLabel="Admin" fontIcon="admin_panel_settings" class="nav-icon"/>
+            <span class="nav-text" title="Admin" >Admin</span>
+        </li>
     </ul>
 
 </div>
