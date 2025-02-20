@@ -1,5 +1,5 @@
-import { Injectable } from '@angular/core';
-import { BehaviorSubject, Subject, Subscription } from 'rxjs';
+import { inject, Injectable } from '@angular/core';
+import { BehaviorSubject, catchError, of } from 'rxjs';
 import { Coffee } from '../models/Coffee';
 import { Post } from '../models/Post';
 import { Todo } from '../models/Todo';
@@ -7,7 +7,6 @@ import { User } from '../models/User';
 import { Voluntary } from '../models/Voluntary';
 import { MySubscription } from '../models/MySubscription';
 import { Recipe } from '../models/Recipe';
-import { Movie } from '../models/Movie';
 import { HttpClient } from '@angular/common/http';
 
 @Injectable({
@@ -23,23 +22,28 @@ export class DataService {
   $coffees: BehaviorSubject<Coffee[] | null> = new BehaviorSubject<Coffee[] | null>(null)
   $recipes: BehaviorSubject<Recipe[] | null> = new BehaviorSubject<Recipe[] | null>(null)
   $config: BehaviorSubject<any> = new BehaviorSubject<any>(null)
-  
-  constructor(private http: HttpClient) {}
 
-  loadConfig(): Promise<void> {
-    return new Promise((res,rej)=>{
-      this.http.get('https://dummy.szobekweb.hu/settings').subscribe({
-        next:(config)=>{
-          this.$config.next(config)
-          res()
-        },
-        error:()=> rej()
-      })
-    })
-    
+  admin: boolean = false
+  private http=inject(HttpClient)
+
+  loadConfig() {
+    return this.http.get('https://dummy.szobekweb.hu/settings')
+      .pipe(
+        catchError((error) => {
+          console.error('Failed to load config:', error);
+          return of({});
+        })
+      )
+      .toPromise()
+      .then((data:any) => {
+        this.$config.next(data);
+        this.admin = data["user_id"]===7
+      });
   }
-
   getConfig() {
     return this.$config.value;
+  }
+  isAdmin() {
+    return this.admin
   }
 }

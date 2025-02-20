@@ -1,7 +1,6 @@
 import { Component, inject } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
-import { FloatLabelType } from '@angular/material/form-field';
-import { map, Observable } from 'rxjs';
+import { CallService } from 'src/app/services/call.service';
 import { DataService } from 'src/app/services/data.service';
 
 @Component({
@@ -17,6 +16,7 @@ export class AdminWrapperComponent {
     dummy_pdf_url: new FormControl(),
   })
   dataService = inject(DataService)
+  callService = inject(CallService)
   formBuilder = inject(FormBuilder)
   constructor() {
     this.adminForm.patchValue({
@@ -26,17 +26,8 @@ export class AdminWrapperComponent {
       dummy_pdf_url: this.dataService.$config.value["dummy_pdf_url"],
     })
   }
-  ngOnInit(){
-    // this.adminForm.valueChanges.subscribe({
-    //   next:(data:any)=>{
-    //     console.log(data);
-    //   }  
-    // })
-  }
-
   onSubmit() {
-    console.log(this.adminForm.value);
-    
+    this.callService.saveConfigInDB(this.adminForm.value)
   }
   
 }
