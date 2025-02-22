@@ -15,18 +15,10 @@ export class CallService {
   dataService = inject(DataService)
 
   getAllDataFromDB() {
-    return new Promise((res,rej)=>{
-      this.getSettingsFromDB().subscribe({
-        next:(settings)=>{
-          this.getAllTodoFromDB()
-          this.getAllCoffeeFromDB()
-          this.getAllPostsFromDB()
-          this.getAllUserFromDB()
-          this.dataService.$config.next(settings)
-          res("")
-        }
-      })
-    })
+    this.getAllTodoFromDB()
+    this.getAllCoffeeFromDB()
+    this.getAllPostsFromDB()
+    this.getAllUserFromDB()
   }
 
 
