@@ -45,9 +45,10 @@ export class HomeComponent {
   handleClickOnModeChangeButton() {
     this.modeText = (this.lightMode)? "Light mode":"Dark mode"
   }
-  makeMeAdmin() {
+  makeMeAdmin(toAdminUser:boolean) {
     const config=this.dataService.$config.value
-    config.user_id=7
+
+    config.user_id=(toAdminUser)?7:8
     this.callService.saveConfigInDB(config)
     setTimeout(() => {
       window.location.reload()
