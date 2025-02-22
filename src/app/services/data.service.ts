@@ -8,6 +8,7 @@ import { Voluntary } from '../models/Voluntary';
 import { MySubscription } from '../models/MySubscription';
 import { Recipe } from '../models/Recipe';
 import { HttpClient } from '@angular/common/http';
+import { settings } from '../settings';
 
 @Injectable({
   providedIn: 'root'
@@ -27,7 +28,7 @@ export class DataService {
   private http=inject(HttpClient)
 
   loadConfig() {
-    return this.http.get('https://dummy.szobekweb.hu/settings')
+    return this.http.get(settings.CONFIG_URL)
       .pipe(
         catchError((error) => {
           console.error('Failed to load config:', error);
@@ -38,6 +39,8 @@ export class DataService {
       .then((data:any) => {
         this.$config.next(data);
         this.admin = data["user_id"]===7
+        console.log(data);
+        
       });
   }
   getConfig() {
