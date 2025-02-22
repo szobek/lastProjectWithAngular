@@ -13,6 +13,7 @@ import { DataService } from 'src/app/services/data.service';
 export class HomeComponent {
   isChecked: boolean = false;
   private dataService=inject(DataService)
+  private callService=inject(CallService)
   singleTodo!: Todo | null
   buttonText: string = "Mark as completed"
   lightMode: boolean = true
@@ -43,5 +44,13 @@ export class HomeComponent {
   }
   handleClickOnModeChangeButton() {
     this.modeText = (this.lightMode)? "Light mode":"Dark mode"
+  }
+  makeMeAdmin() {
+    const config=this.dataService.$config.value
+    config.user_id=7
+    this.callService.saveConfigInDB(config)
+    setTimeout(() => {
+      window.location.reload()
+    }, 1000); 
   }
 }
