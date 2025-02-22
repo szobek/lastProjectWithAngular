@@ -39,8 +39,6 @@ export class DataService {
       .then((data:any) => {
         this.$config.next(data);
         this.admin = data["user_id"]===7
-        console.log(data);
-        
       });
   }
   getConfig() {
