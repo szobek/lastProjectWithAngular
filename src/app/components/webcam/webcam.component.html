@@ -1,0 +1,9 @@
+<div>
+    <video #video width="320" height="240" autoplay></video>
+    <button mat-raised-button color="primary" (click)="capture()">Capture Image</button>
+    <canvas #canvas width="320" height="240" style="display: none;"></canvas>
+    <div *ngIf="capturedImage">
+      <h3>Captured Image:</h3>
+      <img [src]="capturedImage" alt="Webcam snapshot">
+    </div>
+  </div>

@@ -19,6 +19,7 @@ const routes: Routes = [
   {path: 'recipes', loadChildren: () => import('./modules/recipes/recipes.module').then(m => m.RecipesModule)},
   {path: 'coffeeMachine', loadChildren: () => import('./modules/coffeeMachine/coffee-machine.module').then(m => m.CoffeeMachineModule)},
   {path: 'admin', loadChildren: () => import('./modules/admin/admin.module').then(m => m.AdminModule)},
+  {path: 'webcam', loadChildren: () => import('./modules/webcam/webcam.module').then(m => m.WebcamModule)},
   {path: '**', component: NotFoundComponent,pathMatch: 'full',title:"Not found"},
 ];
 
