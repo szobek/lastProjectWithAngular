@@ -18,7 +18,9 @@ export class HomeComponent {
   buttonText: string = "Mark as completed"
   lightMode: boolean = true
   modeText: string = "Light mode"
+  config 
   constructor() {
+    this.config = this.dataService.$config.value
     this.dataService.$todos.subscribe({
       next: (todos: Todo[] | null) => {
         if (todos) {
@@ -35,7 +37,6 @@ export class HomeComponent {
   }
   handleClickOnButton(todo: Todo | null) {
     if (todo) {
-
       todo.completed = !this.isChecked
       this.buttonText = todo.completed ? "Mark as uncompleted" : "Mark as completed"
     }
@@ -46,10 +47,8 @@ export class HomeComponent {
     this.modeText = (this.lightMode)? "Light mode":"Dark mode"
   }
   makeMeAdmin(toAdminUser:boolean) {
-    const config=this.dataService.$config.value
-
-    config.user_id=(toAdminUser)?7:8
-    this.callService.saveConfigInDB(config)
+    this.config.user_id=(toAdminUser)?7:8
+    this.callService.saveConfigInDB(this.config)
     setTimeout(() => {
       window.location.reload()
     }, 1000); 

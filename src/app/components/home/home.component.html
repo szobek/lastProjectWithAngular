@@ -14,6 +14,6 @@
             <mat-slide-toggle [(ngModel)]="lightMode" (change)="handleClickOnModeChangeButton()" />
             <span class="mode-text">{{modeText}}</span>
         </div>
-        <button mat-flat-button  (click)="makeMeAdmin(true)">Make me admin</button>
-        <button mat-flat-button class="danger-btn" (click)="makeMeAdmin(false)">Make me normal user</button>
+        <button mat-flat-button  (click)="makeMeAdmin(true)" *ngIf="config.user_id!=7">Make me admin</button>
+        <button mat-flat-button class="danger-btn" (click)="makeMeAdmin(false)" *ngIf="config.user_id===7">Make me normal user</button>
     </div>
